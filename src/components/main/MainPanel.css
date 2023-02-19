@@ -1,0 +1,112 @@
+@font-face {
+    font-family: Akkurat;
+    src: url("../images/Akkurat.ttf");
+}
+.main-site-wrapper {
+    overflow: hidden;
+    background-color: #272838;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+.bolid-wrapper, .bolid-shadow-wrapper {
+    position: absolute;
+    width: 140vmin;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+}
+.bolid, .bolid-shadow {
+    max-width: 100%;
+    object-fit: cover;
+}
+.bolid-shadow {
+    opacity: 0.8;
+}
+.bolid {
+    /*cursor: pointer;*/
+}
+.about-wrapper {
+    margin-left: 4vh;
+}
+.about  span{
+    color: #AAAABC;
+    text-transform: uppercase;
+    font-family: Akkurat;
+    display: block;
+    font-size: 5.2em;
+}
+.about span:nth-child(2) {
+    margin-top: -5vh;
+}
+.about span:nth-child(3) {
+    margin-top: -5vh;
+}
+.about span:nth-child(4) {
+    margin-top: -5vh;
+}
+.footer {
+    color: #AAAABC;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin-bottom: 0.5vh;
+}
+.sign-in {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-family: Akkurat;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    margin: 4vh 4vh 0 0;
+    background-color: #272838;
+    color: #AAAABC;
+    border: none;
+    cursor: pointer;
+}
+.relative-wrapper {
+    position: relative;
+}
+.box {
+    cursor: pointer;
+    position: absolute;
+    width: 90vmin;
+    height: 50vmin;
+    bottom: 0;
+    right: 0;
+    background-color: darkred;
+    z-index: 1000;
+    margin-right: 5vh;
+    margin-bottom: 15vh;
+    border-radius: 35% 40%;
+    transform: rotate(-40deg);
+    opacity: 0;
+}
+.rectangle {
+    cursor: pointer;
+    position: absolute;
+    width: 50vmin;
+    height: 20vmin;
+    bottom: 0;
+    right: 0;
+    background-color: blue;
+    z-index: 1000;
+    border-radius: 20%;
+    transform: translate(10%,-50%) rotate(-40deg);
+    opacity: 0;
+}
+.triangle {
+    cursor: pointer;
+    background-color: purple;
+    position: absolute;
+    width: 45vh;
+    height: 20vh;
+    margin-bottom: 10vh;
+    margin-left: 10vh;
+    bottom: 0;
+    z-index: 1000;
+    opacity: 0;
+}
