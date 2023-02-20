@@ -23,7 +23,19 @@
 .bolid-shadow {
     opacity: 0.8;
 }
-
+.bolid-wrapper:hover{
+    display: flex;
+}
+#bounce:hover ~ #bolid  {
+    animation: bounce-7;
+    animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    transform-origin: bottom;
+    align-self: flex-end;
+    width: 140vmin;
+    margin: 0 auto 0 auto;
+}
 .about-wrapper {
     margin-left: 4vh;
 }
@@ -71,9 +83,13 @@
     border: none;
     cursor: pointer;
 }
+.sign-in:hover {
+    color: #797986;
+}
 .relative-wrapper {
     position: relative;
 }
+
 .box {
     cursor: pointer;
     position: absolute;
@@ -106,14 +122,26 @@
     cursor: pointer;
     background-color: purple;
     position: absolute;
-    width: 45vh;
-    height: 20vh;
-    margin-bottom: 10vh;
-    margin-left: 10vh;
+    width: 45vmin;
+    height: 20vmin;
+    margin-bottom: 10vmin;
+    margin-left: 10vmin;
     bottom: 0;
     z-index: 1000;
     opacity: 0;
 }
+
+@keyframes bounce-7 {
+    0%   { transform: scale(1,1)      translateY(0); }
+    10%  { transform: scale(1.1,.9)   translateY(0); }
+    30%  { transform: scale(.9,1.1)   translateY(-0px); }
+    50%  { transform: scale(1.05,.95) translateY(0); }
+    57%  { transform: scale(.95,1.05)      translateY(-0px); }
+    64%  { transform: scale(1,1)      translateY(0); }
+    80%  { transform: scale(1,1)      translateY(0); }
+    100% { transform: scale(1,1)      translateY(0); }
+}
+
 @media all and (max-width: 1440px) {
 
     .bolid-wrapper, .bolid-shadow-wrapper {

@@ -34,15 +34,11 @@ function MainPanel () {
                     <img src={bolidshadow} alt="bolid shadow" className="bolid-shadow"/>
                 </div>
                 <div className="bolid-wrapper">
-                    <img src={bolid} alt="bolid" className="bolid" />
                         <div className="relative-wrapper" >
-                            <div className="box" onClick={handleClick}></div>
-                        </div>
-                        <div className="relative-wrapper" >
-                            <div className="rectangle" onClick={handleClick}></div>
-                        </div>
-                        <div className="relative-wrapper" >
-                            <div className="triangle" onClick={handleClick}></div>
+                            <div id="bounce" className="box" onClick={handleClick}></div>
+                            <div id="bounce" className="rectangle" onClick={handleClick}></div>
+                            <div id="bounce" className="triangle" onClick={handleClick}></div>
+                            <img id="bolid" src={bolid} alt="bolid" className="bolid" />
                         </div>
                 </div>
             <div className="footer">Copyright © 2023 PRzRacingTeam</div>
