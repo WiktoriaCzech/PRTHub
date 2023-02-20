@@ -10,8 +10,7 @@ function MainPanel () {
     let navigate = useNavigate();
 
     const handleClick = event => {
-        let path = `/login`;
-        navigate(path);
+        navigate('/login');
     };
 
     return (
@@ -19,10 +18,16 @@ function MainPanel () {
             <button className="sign-in" onClick={handleClick}>Sign in</button>
             <div className="about-wrapper">
                 <h1 className='about'>
-                    <span>PRz Racing Team</span>
-                    <span>Integrated</span>
-                    <span>Management</span>
-                    <span>System</span>
+                    <div className="correction">
+                        <span className="skn">PRz</span>
+                        <span className="skn-f">Racing</span>
+                        <div className="final-correction">
+                            <span className="skn-f">Team</span>
+                        </div>
+                    </div>
+                    <span className="rest">Integrated</span>
+                    <span className="rest">Management</span>
+                    <span className="rest">System</span>
                 </h1>
             </div>
                 <div className="bolid-shadow-wrapper">

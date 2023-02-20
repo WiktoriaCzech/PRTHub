@@ -23,11 +23,12 @@
 .bolid-shadow {
     opacity: 0.8;
 }
-.bolid {
-    /*cursor: pointer;*/
-}
+
 .about-wrapper {
     margin-left: 4vh;
+}
+.correction, .final-correction {
+    display: inline-flex;
 }
 .about  span{
     color: #AAAABC;
@@ -36,15 +37,16 @@
     display: block;
     font-size: 5.2em;
 }
-.about span:nth-child(2) {
+.about .skn-f:nth-child(1) {
+    margin-left: 3.5vh;
+}
+.about .skn-f:nth-child(2) {
+    margin-left: 3.5vh;
+}
+.about .rest {
     margin-top: -5vh;
 }
-.about span:nth-child(3) {
-    margin-top: -5vh;
-}
-.about span:nth-child(4) {
-    margin-top: -5vh;
-}
+
 .footer {
     color: #AAAABC;
     position: absolute;
@@ -62,6 +64,8 @@
     text-transform: uppercase;
     font-size: 1.3em;
     margin: 4vh 4vh 0 0;
+    padding: 1vh 2vh;
+    border-radius: 8px;
     background-color: #272838;
     color: #AAAABC;
     border: none;
@@ -109,4 +113,74 @@
     bottom: 0;
     z-index: 1000;
     opacity: 0;
+}
+@media all and (max-width: 1440px) {
+
+    .bolid-wrapper, .bolid-shadow-wrapper {
+        width: 120vmin;
+    }
+    .about  span{
+        font-size: 4.2em;
+    }
+}
+@media all and (max-width: 1280px) {
+
+    .bolid-wrapper, .bolid-shadow-wrapper {
+        width: 110vmin;
+    }
+    .about  span{
+        font-size: 3.9em;
+    }
+}
+@media all and (max-width: 810px) {
+    .about  span{
+        font-size: 3.5em;
+    }
+    .correction, .final-correction {
+        display: block;
+    }
+    .about .skn-f:nth-child(2) {
+        margin-left: 0;
+        margin-top: -5vh;
+    }
+    .about .skn-f:nth-child(1) {
+        margin-left: 1vh;
+        margin-top: -5vh;
+    }
+    .about .skn {
+        margin-top: 4vh;
+    }
+    .sign-in {
+        margin: 5.3vh 5vh 0 0;
+    }
+
+}
+@media all and (max-width: 450px) {
+    .about-wrapper {
+        margin-left: 1vh;
+    }
+    .about  span{
+        font-size: 3em;
+    }
+    .correction, .final-correction {
+        display: block;
+    }
+    .about .skn-f:nth-child(2) {
+        margin-left: 0;
+        margin-top: -5vh;
+    }
+    .about .skn-f:nth-child(1) {
+        margin-left: 1vh;
+        margin-top: -5vh;
+    }
+    .about .skn {
+        margin-top: 4vh;
+    }
+    .sign-in {
+        margin: 5.4vh 5vh 0 0;
+    }
+    .bolid-wrapper, .bolid-shadow-wrapper {
+        margin-bottom: 5vh;
+    }
+
 }
