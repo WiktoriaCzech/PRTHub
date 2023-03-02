@@ -1,0 +1,90 @@
+.navbar-option {
+    min-height: 100vh;
+}
+[data-theme="dark"], .navbar-option, .website{
+    background: #272838;
+}
+.ant-menu-dark, .logo, .ant-layout-sider {
+    background: #272838 !important;
+}
+.logo {
+    display: flex;
+    height: 48px;
+    margin: 16px 10px 16px 20px;
+    color: white;
+    font-size: 15px;
+}
+.icon {
+    padding: 3px;
+    cursor: pointer;
+}
+.text {
+    color: white;
+    padding-top: 12px;
+}
+.navbar-toggle {
+    display: block;
+    height: 28px;
+    padding-top: 8px;
+    margin-bottom: 8px;
+}
+.menu-cross{
+    color: rgba(255,255,255,0.80);
+    padding-left: 10px;
+}
+.anticon-close {
+    scale: 1.4;
+}
+.anticon-close:hover {
+    color: white;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    transition: 850ms;
+    background-color: #272838;
+    height: 1000px;
+    z-index: 1000;
+    min-height: 100vh;
+}
+.nav-menu.active {
+    left: 0;
+    transition: 350ms;
+    background-color: #272838;
+    height: 1000px;
+    z-index: 1000;
+    min-height: 100vh;
+}
+.logo-mobile {
+    display: flex;
+    height: 48px;
+    margin: 16px 10px 16px 10px;
+    color: white;
+    font-size: large;
+}
+.ant-btn.ant-btn-primary.barsMenu{
+    display: block;
+    /*position: absolute;*/
+    margin-left: 5px;
+    margin-top: 2px;
+    border: none;
+    color: #001529;
+    background-color: #001529;
+    width: 45px;
+    height: 45px;
+}
+.barsMenu .iconMobile{
+    display: flex;
+    height: 44px;
+    color: white;
+    font-size: large;
+    padding: 0 2px 6px 2px;
+    margin-left: -15px;
+}
+.ant-menu-item-selected, .ant-menu-item-active{
+    background-color: #454555 !important;
+}

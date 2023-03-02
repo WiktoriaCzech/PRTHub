@@ -2,3 +2,38 @@
     margin: 0;
     padding: 0;
 }
+.ant-layout-content {
+    margin: 0 16px;
+}
+.css-dev-only-do-not-override-10ed4xt {
+    background-color: #AAAABC;
+}
+.ant-breadcrumb {
+    margin: 16px 0;
+}
+.ant-layout {
+    min-height: 100vh;
+}
+.ant-layout-footer {
+    text-align: center;
+}
+.logout-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 16px 16px 16px 0;
+    border-radius: 8px;
+    background-color: #454555;
+    border: none;
+    padding: 8px 20px;
+    color: rgba(255, 255, 255, 0.65);
+}
+.logout-button:hover {
+    color: white;
+    transition: background 0.3s, cubic-bezier(0.215, 0.61, 0.355, 1);
+
+}
+.site-layout-background {
+    padding: 24px;
+    min-height: 560px;
+}
