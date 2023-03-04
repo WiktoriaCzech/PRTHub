@@ -43,7 +43,7 @@ function BaseLayout () {
                         </Breadcrumb>
                         <button type="button" className="logout-button" onClick={handleLogout}>Wyloguj się</button>
                     </div>
-                    <div className="site-layout-background" >
+                    <div className="site-layout-background">
                         <Routes>
                             <Route path="/main-panel" element={<CentralPanel />} />
                             {/*<Route path="/offers" element={<CentralPanel />} />*/}
