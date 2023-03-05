@@ -150,5 +150,40 @@ a:visited {
 a:hover {
     color: #fff;
     transition: .2s cubic-bezier(.17,.41,.85,.65)
-
+}
+.timer, .calendar-info-outline{
+    transition-property: transform;
+    transition-duration: 1s;
+    transition-delay: 0.3s;
+}
+.timer:hover, .calendar-info-outline:hover {
+    scale: 1.03;
+}
+@media all and (max-width: 1390px) {
+    .timers-wrapper {
+        grid-row-gap: 0;
+        grid-template-rows: none;
+    }
+    .btn {
+        font-size: 17px;
+    }
+}
+@media all and (max-width: 1024px) {
+    .site-wrapper {
+        display: grid;
+    }
+    .timers-wrapper {
+        width: 100%;
+    }
+    .calendar-wrapper {
+        width: 100%;
+        padding-left: 0;
+        margin-top: -3vh;
+    }
+    .timer-header {
+        margin-bottom: 2vh;
+    }
+    .button-links {
+        margin-top: 4vh;
+    }
 }

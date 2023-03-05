@@ -68,12 +68,10 @@
 }
 .ant-btn.ant-btn-primary.barsMenu{
     display: block;
-    /*position: absolute;*/
     margin-left: 5px;
     margin-top: 2px;
     border: none;
-    color: #001529;
-    background-color: #001529;
+    background-color: #272838;
     width: 45px;
     height: 45px;
 }

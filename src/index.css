@@ -24,8 +24,9 @@
     border-radius: 8px;
     background-color: #454555;
     border: none;
-    padding: 8px 20px;
+    padding: .6rem 1.2rem;
     color: rgba(255, 255, 255, 0.8);
+    font-size: 15px;
 }
 .logout-button:hover {
     color: white;
@@ -34,4 +35,51 @@
 }
 .site-layout-background {
     padding: 24px 10px;
+}
+@media all and (max-width: 1024px) {
+    .menuCon {
+        background-color: #272838;
+    }
+}
+@media all and (max-width: 810px) {
+    .menuCon {
+        background-color: #AAAABC;
+    }
+    .site-layout-background {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+@media all and (max-width: 600px) {
+    .site-layout-background {
+        margin-left: -30px;
+    }
+    .logout-button {
+        font-size: 14px;
+        margin: 10px 5px 5px 0;
+    }
+}
+@media all and (max-width: 430px) {
+    .site-layout-background {
+        margin-left: -70px;
+    }
+    .logout-button {
+        font-size: 12px;
+        margin: 10px 5px 5px 0;
+    }
+}
+@media all and (max-width: 430px) {
+    body {
+        background-color: #AAAABC;
+    }
+    .site-layout-background {
+        position: absolute;
+        margin-left: -60px;
+    }
+    .logout-button {
+        font-size: 12px;
+        margin: 10px 5px 5px 0;
+    }
 }
