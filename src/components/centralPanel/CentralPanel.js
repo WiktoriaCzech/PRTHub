@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Statistic, Col, Progress, Tooltip, Card, Calendar, Row, Select} from 'antd';
+import {Statistic, Col, Progress, Card, Calendar, Row, Select} from 'antd';
 import "./CentralPanel.css";
 import {CloudUploadOutlined} from "@ant-design/icons";
 
@@ -46,7 +46,7 @@ function CentralPanel () {
     }//displays text on counter with proper array attribute
 
     function timeLeft (id) {
-        const allTime = deadlinesArray[id].deadline - seasonStartDate; //100%
+        const allTime = deadlinesArray[id].deadline - seasonStartDate;
         const timeTillToday = new Date() - seasonStartDate;
         return Math.round(timeTillToday * 100 / allTime);
     }//returns time left in percent to the competition
@@ -98,14 +98,12 @@ function CentralPanel () {
                               <Col className="counter">
                                   <Countdown title={getFSInfo(2)} value={deadlinesArray[2].deadline}
                                              format="DD dni HH:mm:ss godz"/>
-                                  <Tooltip title="4 done / 1 in progress / 0 to do">
-                                      <Progress strokeColor={{
-                                          '0%': '#cfb8af',
-                                          '50%': '#b47a62',
-                                          '100%': '#99350a',
-                                      }} percent={ timeLeft(2) }
-                                         strokeWidth={14} />
-                                  </Tooltip>
+                                  <Progress strokeColor={{
+                                      '0%': '#cfb8af',
+                                      '50%': '#b47a62',
+                                      '100%': '#99350a',
+                                  }} percent={timeLeft(2)}
+                                            strokeWidth={14}/>
                               </Col>
                           }></Card>
                 </div>
@@ -115,88 +113,78 @@ function CentralPanel () {
                     <div className="calendar-info-outline">
                         <div className="site-calendar-customize-header-wrapper">
                             <Calendar style={{overflow: 'hidden', display: 'block', width: '100%'}}
-                                      fullscreen={false}
-                                      headerRender={({ value, type, onChange, onTypeChange }) => {
-                                          const start = 0;
-                                          const end = 12;
-                                          const monthOptions = [];
-                                          const current = value.clone();
-                                          const localeData = value.localeData();
-                                          const months = [];
-
-                                          for (let i = 0; i < 12; i++) {
-                                              current.month(i);
-                                              months.push(localeData.months(current));
-                                          }
-
-                                          for (let i = start; i < end; i++) {
-                                              monthOptions.push(
-                                                  <Select.Option key={i} value={i} className="month-item">
-                                                      {months[i]}
-                                                  </Select.Option>,
-                                              );
-                                          }
-
-                                          const year = value.year();
-                                          const month = value.month();
-                                          const options = [];
-
-                                          for (let i = year - 10; i < year + 10; i += 1) {
-                                              options.push(
-                                                  <Select.Option key={i} value={i} className="year-item">
-                                                      {i}
-                                                  </Select.Option>,
-                                              );
-                                          }
-                                          for (let i = 0; i < 7; i++) {
-                                              console.log()
-                                          }
-
-                                          return (
-                                              <div
-                                                  style={{
-                                                      padding: 8,
-                                                  }}
-                                              >
-                                                  <Row gutter={8}>
-                                                      {/*column for months*/}
-                                                      <Col >
-                                                          <Select
-                                                              size="small"
-                                                              dropdownMatchSelectWidth={true}
-                                                              value={month}
-                                                              onChange={(newMonth) => {
-                                                                  const now = value.clone().month(newMonth);
-                                                                  onChange(now);
-                                                              }}
-
-                                                          >
-                                                              {monthOptions}
-                                                          </Select>
-                                                      </Col>
-                                                      {/*column for years*/}
-                                                      <Col>
-                                                          <Select
-                                                              size="small"
-                                                              dropdownMatchSelectWidth={true}
-                                                              className="my-year-select"
-                                                              value={year}
-                                                              onChange={(newYear) => {
-                                                                  const now = value.clone().year(newYear);
-                                                                  onChange(now);
-                                                              }}
-                                                          >
-                                                              {options}
-                                                          </Select>
-                                                      </Col>
-                                                  </Row>
-                                              </div>
-                                          );
-                                      }}
-                                      onPanelChange={onPanelChange}
-                                      onSelect={onDateChange}
-                                      onChange={onDateChange}
+                                fullscreen={false}
+                                headerRender={({ value, type, onChange, onTypeChange }) => {
+                                    const start = 0;
+                                    const end = 12;
+                                    const monthOptions = [];
+                                    let current = value.clone();
+                                    const localeData = value.localeData();
+                                    const months = [];
+                                    for (let i = 0; i < 12; i++) {
+                                        current = current.month(i);
+                                        months.push(localeData.monthsShort(current));
+                                    }
+                                    for (let i = start; i < end; i++) {
+                                        monthOptions.push(
+                                            <Select.Option key={i} value={i} className="month-item">
+                                                {months[i]}
+                                            </Select.Option>,
+                                        );
+                                    }
+                                    const year = value.year();
+                                    const month = value.month();
+                                    const options = [];
+                                    for (let i = year - 10; i < year + 10; i += 1) {
+                                        options.push(
+                                            <Select.Option key={i} value={i} className="year-item">
+                                                {i}
+                                            </Select.Option>,
+                                        );
+                                    }
+                                    return (
+                                        <div
+                                            style={{
+                                                padding: 8,
+                                            }}
+                                        >
+                                            <Row gutter={8}>
+                                                <Col>
+                                                    <Select
+                                                        size="small"
+                                                        dropdownMatchSelectWidth={true}
+                                                        value={month}
+                                                        onChange={(newMonth) => {
+                                                            const now = value.clone().month(newMonth);
+                                                            onChange(now);
+                                                        }}
+                                                    >
+                                                        {monthOptions}
+                                                    </Select>
+                                                </Col>
+                                                <Col>
+                                                    <Select
+                                                        size="small"
+                                                        dropdownMatchSelectWidth={true}
+                                                        className="my-year-select"
+                                                        value={year}
+                                                        onChange={(newYear) => {
+                                                            const now = value.clone().year(newYear);
+                                                            onChange(now);
+                                                        }}
+                                                    >
+                                                        {options}
+                                                    </Select>
+                                                </Col>
+                                            </Row>
+                                        </div>
+                                    );
+                                }}
+                                onPanelChange={onPanelChange}
+                                onSelect={onDateChange}
+                                onChange={onDateChange}
                             />
+
                         </div>
                         <div className="cleaning-info">
                             <header className="cleaning-header"> Dzisiaj sprząta:</header>
