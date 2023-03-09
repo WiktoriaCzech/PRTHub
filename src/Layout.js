@@ -2,7 +2,9 @@ import Navigation from "./components/navigation/Navigation";
 import {Breadcrumb, Layout} from "antd";
 import {Route, Routes, useNavigate} from "react-router-dom";
 import React from "react";
+
 import CentralPanel from "./components/centralPanel/CentralPanel";
+import SponsorsPanel from "./components/sponsorsPanel/SponsorsPanel";
 
 const {Content, Footer} = Layout;
 
@@ -30,9 +32,12 @@ function BaseLayout () {
                                 <Route path="/offers" element={
                                     <Breadcrumb.Item>Tworzenie Ofert</Breadcrumb.Item>
                                 }/>
+                                <Route path="/footer" element={
+                                    <Breadcrumb.Item>Tworzenie Stopek</Breadcrumb.Item>
+                                }/>
                                 <Route path="/sponsorsfinall" element={
                                     <Breadcrumb.Item>Panel Sponsorów</Breadcrumb.Item>
-                                }/>
+                                }/>S
                                 <Route path="/intelligent-storage" element={
                                     <Breadcrumb.Item>Inteligentny Magazyn</Breadcrumb.Item>
                                 }/>
@@ -47,7 +52,8 @@ function BaseLayout () {
                         <Routes>
                             <Route path="/main-panel" element={<CentralPanel />} />
                             {/*<Route path="/offers" element={<CentralPanel />} />*/}
-                            {/*<Route path="/sponsorsfinall" element={<CentralPanel />} />*/}
+                            {/*<Route path="/footer" element={<CentralPanel />} />*/}
+                            <Route path="/sponsorsfinall" element={<SponsorsPanel />} />
                             {/*<Route path="/intelligent-storage" element={<CentralPanel />} />*/}
                             {/*<Route path="/search-bar" element={<CentralPanel />} />*/}
                         </Routes>

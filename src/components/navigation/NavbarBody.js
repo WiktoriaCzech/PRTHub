@@ -18,7 +18,7 @@ function NavbarBody () {
                 </Menu.Item>
                 <Menu.Item key="3" icon={<MenuUnfoldOutlined />} >
                     Tworzenie stopek
-                    <Link to="/central/offers"/>
+                    <Link to="/central/footer"/>
                 </Menu.Item>
                 <Menu.Item key="4" icon={<LineChartOutlined />} >
                     Panel Sponsorów
