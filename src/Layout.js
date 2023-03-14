@@ -5,7 +5,7 @@ import React from "react";
 
 import CentralPanel from "./components/centralPanel/CentralPanel";
 import SponsorsPanel from "./components/sponsorsPanel/SponsorsPanel";
-
+import FooterPanel from "./components/footers/FooterPanel";
 const {Content, Footer} = Layout;
 
 function BaseLayout () {
@@ -33,7 +33,7 @@ function BaseLayout () {
                                     <Breadcrumb.Item>Tworzenie Ofert</Breadcrumb.Item>
                                 }/>
                                 <Route path="/footer" element={
-                                    <Breadcrumb.Item>Tworzenie Stopek</Breadcrumb.Item>
+                                    <Breadcrumb.Item>Generator Stopek</Breadcrumb.Item>
                                 }/>
                                 <Route path="/sponsorsfinall" element={
                                     <Breadcrumb.Item>Panel Sponsorów</Breadcrumb.Item>
@@ -52,14 +52,14 @@ function BaseLayout () {
                         <Routes>
                             <Route path="/main-panel" element={<CentralPanel />} />
                             {/*<Route path="/offers" element={<CentralPanel />} />*/}
-                            {/*<Route path="/footer" element={<CentralPanel />} />*/}
+                            <Route path="/footer" element={<FooterPanel />} />
                             <Route path="/sponsorsfinall" element={<SponsorsPanel />} />
                             {/*<Route path="/intelligent-storage" element={<CentralPanel />} />*/}
                             {/*<Route path="/search-bar" element={<CentralPanel />} />*/}
                         </Routes>
                     </div>
                 </Content>
-                <Footer>PRz-Racing Team ©2022</Footer>
+                <Footer>© 2023 PRz-Racing Team</Footer>
             </Layout>
         </Layout>
     )

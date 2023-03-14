@@ -17,7 +17,7 @@ function NavbarBody () {
                     <Link to="/central/offers"/>
                 </Menu.Item>
                 <Menu.Item key="3" icon={<MenuUnfoldOutlined />} >
-                    Tworzenie stopek
+                    Generator stopek
                     <Link to="/central/footer"/>
                 </Menu.Item>
                 <Menu.Item key="4" icon={<LineChartOutlined />} >
