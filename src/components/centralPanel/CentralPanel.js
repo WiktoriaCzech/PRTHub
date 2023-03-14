@@ -17,13 +17,13 @@ function CentralPanel () {
         {id: 2, deadline: new Date(`2023-08-28`), fs: 'FSCroatia' },
     ];
     const sectionArray = [
-        {   id:0, section: 'Zawieszenie'},
-        {   id:1, section: 'Aerodynamika'},
-        {   id:2, section: 'Marketing'},
-        {   id:3, section: 'Konstrukcja Nośna'},
-        {   id:4, section: 'Elektronika'},
-        {   id:5, section: 'Informatyka'},
-        {   id:6, section: 'Silnik'},
+        {   id:0, section: 'Konstrukcja Nośna'},
+        {   id:1, section: 'Elektronika'},
+        {   id:2, section: 'Informatyka'},
+        {   id:3, section: 'Silnik'},
+        {   id:4, section: 'Zawieszenie'},
+        {   id:5, section: 'Aerodynamika'},
+        {   id:6, section: 'Marketing'},
     ];
 
     const [getId, setId] = useState(0);
