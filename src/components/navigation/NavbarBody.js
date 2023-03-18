@@ -1,14 +1,16 @@
 import {Menu} from "antd";
-import {DatabaseOutlined, FormOutlined, HomeOutlined, LineChartOutlined, SearchOutlined,MenuUnfoldOutlined} from "@ant-design/icons";
+import {DatabaseOutlined, FormOutlined, HomeOutlined,
+    LineChartOutlined, SearchOutlined,MenuUnfoldOutlined, CodeOutlined} from "@ant-design/icons";
 import {Link} from "react-router-dom";
 import React from "react";
 import "./Navigation.css";
 
 function NavbarBody () {
+
     return (
         <div className="website">
-            <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-                <Menu.Item key="1" icon={<HomeOutlined />} to="/">
+            <Menu theme="dark" mode="inline" >
+                <Menu.Item key="1" icon={<HomeOutlined />} >
                     Strona główna
                     <Link to="/central/main-panel"/>
                 </Menu.Item>
@@ -31,6 +33,10 @@ function NavbarBody () {
                 <Menu.Item key="6" icon={<SearchOutlined />} >
                     Wyszukiwarka
                     <Link to="/central/search-bar"/>
+                </Menu.Item>
+                <Menu.Item key="7" icon={<CodeOutlined />} >
+                    Webhooks
+                    <Link to="/central/hooks"/>
                 </Menu.Item>
             </Menu>
         </div>

@@ -6,6 +6,8 @@ import React from "react";
 import CentralPanel from "./components/centralPanel/CentralPanel";
 import SponsorsPanel from "./components/sponsorsPanel/SponsorsPanel";
 import FooterPanel from "./components/footers/FooterPanel";
+import OffersPanel from "./components/offers/OffersPanel";
+
 const {Content, Footer} = Layout;
 
 function BaseLayout () {
@@ -44,6 +46,9 @@ function BaseLayout () {
                                 <Route path="/search-bar" element={
                                     <Breadcrumb.Item>Wyszukiwarka</Breadcrumb.Item>
                                 }/>
+                                <Route path="/hooks" element={
+                                    <Breadcrumb.Item>Webhooks</Breadcrumb.Item>
+                                }/>
                             </Routes>
                         </Breadcrumb>
                         <button type="button" className="logout-button" onClick={handleLogout}>Wyloguj się</button>
@@ -51,11 +56,12 @@ function BaseLayout () {
                     <div className="site-layout-background">
                         <Routes>
                             <Route path="/main-panel" element={<CentralPanel />} />
-                            {/*<Route path="/offers" element={<CentralPanel />} />*/}
+                            <Route path="/offers" element={<OffersPanel />} />
                             <Route path="/footer" element={<FooterPanel />} />
                             <Route path="/sponsorsfinall" element={<SponsorsPanel />} />
                             {/*<Route path="/intelligent-storage" element={<CentralPanel />} />*/}
                             {/*<Route path="/search-bar" element={<CentralPanel />} />*/}
+                            {/*<Route path="/hooks" element={<CentralPanel />} />*/}
                         </Routes>
                     </div>
                 </Content>

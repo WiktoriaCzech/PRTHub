@@ -1,0 +1,19 @@
+.offer-form {
+    padding: 1rem;
+    background-color: #F2F2F2;
+    border-radius: 8px;
+    /*display: grid;*/
+    margin-top: 1rem;
+    /*grid-template-rows: auto;*/
+    /*grid-template-columns: 1fr 1fr;*/
+}
+.single-product {
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 0.5rem;
+    margin-top: 1rem;
+}
+
+.offer-btn {
+    margin-top: 1rem;
+}
