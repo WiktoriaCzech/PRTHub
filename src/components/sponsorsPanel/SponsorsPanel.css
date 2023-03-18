@@ -82,3 +82,36 @@
     margin-right: 2vmin;
     min-width: 18vw;
 }
+@media all and (max-width: 1727px) {
+    .cards-upper-two {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        padding-top: 2rem;
+    }
+    .card {
+        margin-top: 0;
+    }
+}
+@media all and (max-width: 973px) {
+    .card {
+        min-width: unset;
+    }
+    .card h2 {
+        font-size: 1.75em;
+    }
+    .card span {
+        font-size: 1.25em;
+    }
+}
+@media all and (max-width: 727px) {
+    .sponsors-wrapper h1 {
+        font-size: 2em;
+    }
+    .cards-wrapper {
+        justify-content: center;
+    }
+    .cards-upper-two {
+        grid-template-columns: 1fr;
+    }
+}

@@ -119,6 +119,8 @@
     cursor: pointer;
     color: #F2F2F2;
     font-size: 20px;
+    min-width: 123px;
+    display: inline-block;
 }
 .btn-linktree {
     background-color: #454555;
@@ -185,5 +187,24 @@ a:hover {
     }
     .button-links {
         margin-top: 4vh;
+    }
+}
+@media all and (max-width: 600px) {
+
+    .button-links {
+        display: grid;
+        grid-template-rows: repeat(3, 0.5fr);
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        text-align: center;
+    }
+    .btn-linktree, .btn-nextcloud {
+        margin-right: 0;
+    }
+}
+@media all and (max-width: 480px) {
+
+    .timer-header {
+        font-size: 26px;
     }
 }

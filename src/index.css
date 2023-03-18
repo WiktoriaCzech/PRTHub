@@ -77,4 +77,10 @@
         margin: 10px 5px 5px 0;
         padding: .5rem .8rem;
     }
+    .ant-layout-footer {
+        margin-left: -50px;
+    }
+    .ant-breadcrumb {
+        font-size: 10px !important;
+    }
 }
