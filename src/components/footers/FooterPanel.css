@@ -65,6 +65,10 @@
     color: red;
     margin-right: 0.2rem;
 }
+.err-message {
+    margin: 5px 0 5px 5px;
+    color: red;
+}
 .shadow-wrapped {
     margin-top: 1rem;
     max-width: 930px;
