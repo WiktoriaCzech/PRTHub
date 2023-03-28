@@ -5,12 +5,12 @@
     cursor: default;
 }
 .generator-wrapper h2 {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 300;
     margin-top: 1rem;
     cursor: default;
 }
-.mailbox-span {
+.mailbox-span, .bold {
     color: #272838;
     font-weight: 500;
 }
@@ -186,6 +186,13 @@
 .alert-wrapper {
     margin-top: 2rem;
     max-width: 1050px;
+}
+.generated-footer-wrapper {
+    margin: 2rem 1rem;
+    border-radius: 8px;
+    background-color: #cbcbd0;
+    max-width: 600px;
+    padding: 20px;
 }
 @media all and (max-width: 600px) {
 
