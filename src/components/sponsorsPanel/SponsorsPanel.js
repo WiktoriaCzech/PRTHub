@@ -1,10 +1,10 @@
 import React from "react";
 import "./SponsorsPanel.css";
 
-import bolid1 from "../images/IMG_6311.jpg";
-import bolid2 from "../images/IMG_9446.jpg";
-import bolid3 from "../images/IMG_9453.jpg";
-import bolid4 from "../images/IMG_9730.jpg";
+import bolid1 from "../images/IMG_6311.webp";
+import bolid2 from "../images/IMG_9446.webp";
+import bolid3 from "../images/IMG_9453.webp";
+import bolid4 from "../images/IMG_9730.webp";
 
 // import { DownOutlined  } from '@ant-design/icons';
 // import { Input } from 'antd';

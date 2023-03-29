@@ -2,14 +2,14 @@ import React from 'react';
 import { useNavigate } from "react-router-dom";
 
 import "./MainPanel.css";
-import bolid from "../images/IMG_1134.png";
-import bolidshadow from "../images/shadow.png";
+import bolid from "../images/IMG_1134.webp";
+import bolidshadow from "../images/shadow.webp";
 
 function MainPanel () {
 
     let navigate = useNavigate();
 
-    const handleClick = event => {
+    const handleClick = () => {
         navigate('/login');
     };
 
