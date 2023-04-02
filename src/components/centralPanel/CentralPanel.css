@@ -29,7 +29,7 @@
     justify-content: center;
     margin-top: 8vh;
 }
-.timer-header {
+.timer-header, .buttons-title {
     font-size: 32px;
     font-weight: 400;
     color: #272838;
@@ -41,8 +41,8 @@
 }
 .ant-card {
     border-radius: 10px;
-    background: #796D56;
-    box-shadow: 8px 8px #483E28;
+    background: #616177;
+    box-shadow: 8px 8px #454555;
     border: none;
     padding-left: 10px;
     padding-right: 5px;
@@ -54,16 +54,16 @@
 }
 .ant-statistic-title {
     padding-top: 5px;
-    color: #F2F2F2 !important;
+    color: #f1f1e6 !important;
     font-weight: 400;
     font-size: 16px !important;
 }
 .ant-statistic-content, .ant-progress-text{
-    color: #F2F2F2 !important;
+    color: #f1f1e6 !important;
 }
 .calendar-info-outline {
     margin-top: 4vh;
-    background-color: rgba(72,62,40,1);
+    background-color: #454555;
     border-radius: 10px;
     padding: 14px 10px 14px 10px;
     max-width: 460px;
@@ -78,7 +78,7 @@
 }
 .cleaning-info {
     margin-top: 20px;
-    background: #796D56;
+    background: #616177;
     border-radius: 10px;
     /*max-width: 380px;*/
     text-align: center;
@@ -94,11 +94,11 @@
     font-size: 16px;
 }
 .ant-picker-calendar, .ant-select-selector, .ant-select-selection-search {
-    background: #796D56 !important;
+    background: #616177 !important;
     border: none !important;
 }
 .ant-picker-body, .ant-picker-panel {
-    background: #796D56 !important;
+    background: #616177 !important;
     border-radius: 0 0 10px 10px;
 }
 .ant-picker-content th {
@@ -108,10 +108,10 @@
     color: #F2F2F2 !important;
 }
 .ant-picker-cell-selected .ant-picker-cell-inner {
-    background: #99350a !important;
+    background: #e06a21 !important;
 }
 .ant-picker-calendar-date-today::before {
-    border: 1px solid #99350a !important;
+    border: 1px solid #e06a21 !important;
 }
 .btn {
     border-radius: 30px;
@@ -120,7 +120,11 @@
     color: #F2F2F2;
     font-size: 20px;
     min-width: 123px;
-    display: inline-block;
+    display: flex;
+}
+.anticon {
+
+    margin: 0.25rem 0 0 0.5rem;
 }
 .btn-linktree {
     background-color: #454555;
@@ -161,6 +165,13 @@ a:hover {
 .timer:hover, .calendar-info-outline:hover {
     scale: 1.03;
 }
+.buttons {
+    display: flex;
+}
+.buttons-title {
+    display: none;
+}
+
 @media all and (max-width: 1390px) {
     .timers-wrapper {
         grid-row-gap: 0;
@@ -173,30 +184,49 @@ a:hover {
 @media all and (max-width: 1024px) {
     .site-wrapper {
         display: grid;
+        grid-template-areas: "calendarWrapper" "timers";
     }
     .timers-wrapper {
         width: 100%;
+        grid-area: timers;
     }
     .calendar-wrapper {
+        display: grid;
+        grid-template-areas: "links" "calendar";
+        grid-area: calendarWrapper;
         width: 100%;
         padding-left: 0;
         margin-top: -3vh;
     }
+    .calendar-position-center {
+        grid-area: calendar;
+    }
+    .button-links {
+        grid-area: links;
+        display: inline-block;
+        margin-top: 4vh;
+    }
+    .buttons-title {
+        display: block;
+    }
     .timer-header {
         margin-bottom: 2vh;
     }
-    .button-links {
-        margin-top: 4vh;
+    .buttons {
+        margin-top: 1rem;
     }
 }
 @media all and (max-width: 600px) {
 
-    .button-links {
+    .buttons {
         display: grid;
         grid-template-rows: repeat(3, 0.5fr);
         grid-template-columns: 1fr;
         gap: 0.75rem;
-        text-align: center;
+    }
+    .btn {
+        display: flex;
+        justify-content: center;
     }
     .btn-linktree, .btn-nextcloud {
         margin-right: 0;
@@ -204,7 +234,7 @@ a:hover {
 }
 @media all and (max-width: 480px) {
 
-    .timer-header {
+    .timer-header,.buttons-title {
         font-size: 26px;
     }
 }

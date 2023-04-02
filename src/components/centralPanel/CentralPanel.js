@@ -69,8 +69,8 @@ function CentralPanel () {
                                   <Countdown title={getFSInfo(0)} value={deadlinesArray[0].deadline}
                                              format="DD dni HH:mm:ss godz"/>
                                   <Progress strokeColor={{
-                                      '0%': '#cfb8af',
-                                      '50%': '#b47a62',
+                                      '0%': '#d0a291',
+                                      '50%': '#e06a21',
                                       '100%': '#99350a',
                                   }} percent={ timeLeft(0) }
                                      strokeWidth={14}/>
@@ -84,8 +84,8 @@ function CentralPanel () {
                                   <Countdown title={getFSInfo(1)} value={deadlinesArray[1].deadline}
                                              format="DD dni HH:mm:ss godz"/>
                                   <Progress strokeColor={{
-                                      '0%': '#cfb8af',
-                                      '50%': '#b47a62',
+                                      '0%': '#d0a291',
+                                      '50%': '#e06a21',
                                       '100%': '#99350a',
                                   }} percent={ timeLeft(1) }
                                      strokeWidth={14} />
@@ -99,8 +99,8 @@ function CentralPanel () {
                                   <Countdown title={getFSInfo(2)} value={deadlinesArray[2].deadline}
                                              format="DD dni HH:mm:ss godz"/>
                                   <Progress strokeColor={{
-                                      '0%': '#cfb8af',
-                                      '50%': '#b47a62',
+                                      '0%': '#d0a291',
+                                      '50%': '#e06a21',
                                       '100%': '#99350a',
                                   }} percent={timeLeft(2)}
                                             strokeWidth={14}/>
@@ -195,9 +195,12 @@ function CentralPanel () {
                     </div>
                 </div>
                 <div className="button-links">
-                    <a href="https://linktr.ee/PRzRacingTeam" className="btn-linktree btn" >Linktr.ee <CloudUploadOutlined /></a>
-                    <a href="https://nextcloud.przracing.pl" className="btn-nextcloud btn" >Nextcloud <CloudUploadOutlined /></a>
-                    <a href="https://docs.przracing.pl/" className="btn-docs btn" >Dokumentacja <CloudUploadOutlined /></a>
+                    <h1 className="buttons-title">Przydatne linki: </h1>
+                    <div className="buttons">
+                        <a href="https://linktr.ee/PRzRacingTeam" className="btn-linktree btn" >Linktr.ee <CloudUploadOutlined /></a>
+                        <a href="https://nextcloud.przracing.pl" className="btn-nextcloud btn" >Nextcloud <CloudUploadOutlined /></a>
+                        <a href="https://docs.przracing.pl/" className="btn-docs btn" >Dokumentacja <CloudUploadOutlined /></a>
+                    </div>
                 </div>
             </div>
         </div>
