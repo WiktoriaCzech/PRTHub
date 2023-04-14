@@ -18,16 +18,10 @@ const Navigation = () => {
     const showSidebar = () => setSidebar(!sidebar);
 
     let navigate = useNavigate();
-    let changeNavbar = document.getElementById("change-navi-bg" );
 
     window.addEventListener("resize", function () {
-        if(window.matchMedia("(max-width: 810px)").matches ) {
-            setNavbarOption(true);
-            changeNavbar.style.backgroundColor = "#AAAABC";
-        } else {
-            setNavbarOption(false);
-            changeNavbar.style.backgroundColor = "#272838";
-        }
+       window.matchMedia("(max-width: 810px)").matches ?
+            setNavbarOption(true) : setNavbarOption(false);
     });
 
     function handleLogo () {

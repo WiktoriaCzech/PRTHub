@@ -86,3 +86,12 @@
 .ant-menu-item-selected, .ant-menu-item-active{
     background-color: #454555 !important;
 }
+#change-navi-bg{
+    background-color: #272838;
+}
+
+@media all and (max-width: 810px) {
+    #change-navi-bg{
+        background-color: #AAAABC;
+    }
+}
