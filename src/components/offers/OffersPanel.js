@@ -155,15 +155,14 @@ function OffersPanel () {
                 }
             });
 
-            let finalArrayToServer = {
-                mainData: formik.values,
-                productsNamesData: productNamesArr,
-            };
-            console.log(finalArrayToServer);
+            // let finalArrayToServer = {
+            //     mainData: formik.values,
+            //     productsNamesData: productNamesArr,
+            // };
+            // console.log(finalArrayToServer);
 
-            // formik.values.items = productNamesArr;
+            formik.values.items = productNamesArr;
     }
-
 
     useEffect(() => {
         console.log('updated state');

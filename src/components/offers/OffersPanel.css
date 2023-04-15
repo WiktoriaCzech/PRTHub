@@ -64,9 +64,50 @@ p a:hover, .remove-single-item:hover {
     text-align: center;
     padding: 0.5rem 1.4rem;
     height: unset !important;
-    color: #003B4A;
-    background-color: rgba(224, 107, 46, 0.82);
+    color: #F2F2F2;
+    background-color: #616177;
+}
+.submit-btn-offer:hover {
+    background-color: #444456;
 }
 .upload-file-button {
     border-style: dashed !important;
+}
+@media all and (max-width: 700px) {
+    .offers-title {
+        font-size: 28px;
+    }
+    .offers-panel-wrapper p {
+        font-size: 20px;
+    }
+    .company-data-fields {
+        grid-template-columns: repeat(1, 100%);
+    }
+    .company-data-fields :nth-child(even) {
+        margin-left: 0;
+    }
+    .single-product-placing {
+        display: grid;
+    }
+}
+@media all and (max-width: 430px) {
+    .offers-title {
+        font-size: 24px;
+    }
+    .offers-panel-wrapper p {
+        font-size: 16px;
+    }
+}
+@media all and (max-width: 320px) {
+    .ant-radio-group {
+        display: grid;
+        gap: 0.2rem;
+    }
+    .ant-radio-button-wrapper {
+        border-radius: 6px;
+        border-inline-start: 1px solid #d9d9d9;
+    }
+    .ant-radio-button-wrapper::before {
+        background-color: unset !important;
+    }
 }
