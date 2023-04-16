@@ -73,6 +73,23 @@ p a:hover, .remove-single-item:hover {
 .upload-file-button {
     border-style: dashed !important;
 }
+.clear-all-fields-btn {
+    float: right;
+    background-color: #71718c;
+    color: #F2F2F2;
+    text-align: center;
+    border-radius: 8px;
+    border-color: unset !important;
+    border: none;
+}
+.clear-all-fields-btn:hover {
+    transition: 300ms ease-in-out;
+    background-color: #99350a;
+    color: #F2F2F2 !important;
+}
+.offer-form-title {
+
+}
 @media all and (max-width: 700px) {
     .offers-title {
         font-size: 28px;
@@ -96,6 +113,10 @@ p a:hover, .remove-single-item:hover {
     }
     .offers-panel-wrapper p {
         font-size: 16px;
+    }
+    .clear-all-fields-btn {
+        font-size: 12px;
+        padding: 0 8px;
     }
 }
 @media all and (max-width: 320px) {

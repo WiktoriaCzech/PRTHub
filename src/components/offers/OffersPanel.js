@@ -13,6 +13,7 @@ function OffersPanel () {
     const nip = /^[0-9]{10}$/;
 
     const [howManyItems, setHowManyItems] = useState(0);
+    const [toggleResetOnSmallerForms, setToggleResetOnSmallerForms] = useState(false);
 
 
     const itemsNamesRefs = useRef([]);
@@ -37,6 +38,11 @@ function OffersPanel () {
             onSuccess("ok");
         }, 0);
     };
+    //reset fields
+    const handleReset = () => {
+        formik.resetForm();
+        setToggleResetOnSmallerForms(true);
+    }
 
     const formik = useFormik({
         initialValues: {
@@ -185,8 +191,9 @@ function OffersPanel () {
                     <span className="dot"/>
                     <span className="dot"/>
                     <span className="dot"/>
-                    <Form className="offer-form" onFinish={formik.handleSubmit} noValidate>
-                        <Divider className="form-title" orientation="left" orientationMargin="0">
+                    <Form className="offer-form" onFinish={formik.handleSubmit} noValidate >
+                        <Button className="clear-all-fields-btn" onClick={handleReset} >Wyczyść pola </Button>
+                        <Divider className="offer-form-title" orientation="left" orientationMargin="0">
                             Szczegóły dokumentu
                         </Divider>
                         <span className="info">Wybierz rodzaj oferty jaką chcesz wygenerować,
@@ -313,162 +320,172 @@ function OffersPanel () {
                             <Form.List name="single_product">
                                 {(fields, {add, remove}) => (
                                     <div className="single-product-placing">
-                                            {fields.map((field) => (
+                                        {fields.map((field) => {
+                                            if (toggleResetOnSmallerForms) {
+                                                //REMOVES ALL FIELDS!!
+                                                remove(fields.map(item => item.name));
+                                                setHowManyItems(0);
+                                                setToggleResetOnSmallerForms(false);
+                                            }
+                                            return (
                                                 <div className="single-product" key={field.key}>
-                                                        <CloseOutlined
-                                                            className="remove-single-item"
-                                                            onClick={() => {
-                                                                //REMOVES ALL FIELDS!!
-                                                                //remove(fields.map(item => item.name));
-
-                                                                remove(fields.filter( function (item) {
-                                                                    return item.name === field.name;
-
-                                                                }).map(function (field) {return field.name}));
-
-                                                                setHowManyItems(howManyItems - 1);
-                                                        }}/>
-                                                        <Form.Item  required={true} label="Nazwa produktu:">
-                                                            <Input
-                                                                name="item.product"
-                                                                ref={element => (itemsNamesRefs.current[field.name] = element)}
-                                                                id={`name_${field.name}`}
-                                                                onChange={() => {
-                                                                    setValidate({
-                                                                        ...validate,
-                                                                        productValid: true,
-                                                                    });
-                                                                }}
-                                                            />
-                                                            {/*{formik.errors.items[field.name] && formik.errors.items[field.name].product && formik.touched.items[field.name].product ? (*/}
-                                                            {/*    <div className="err-message">{formik.errors.items[field.name].product}</div>*/}
-                                                            {/*) : null}*/}
-                                                        </Form.Item>
-
-                                                        <Form.Item required={true} label="Ilość:" >
-                                                            <Input
-                                                                name="item.amount"
-                                                                ref={element => (amountNamesRefs.current[field.name] = element)}
-                                                                id={`amount_${field.name}`}
-                                                                onChange={() => {
-                                                                    setValidate({
-                                                                        ...validate,
-                                                                        amountValid: true,
-                                                                    });
-                                                                }}
-                                                            />
-                                                            {/*{formik.errors.item && formik.errors.item.amount && formik.touched.item.amount ? (*/}
-                                                            {/*    <div className="err-message">{formik.errors.item.amount}</div>*/}
-                                                            {/*) : null}*/}
-                                                        </Form.Item>
-
-                                                        <Form.Item required={true} label="Wartość brutto:" >
-                                                            <Input
-                                                                name="item.brutto"
-                                                                ref={element => (bruttoNamesRefs.current[field.name] = element)}
-                                                                id={`brutto_${field.name}`}
-                                                                onChange={() => {
-                                                                    setValidate({
-                                                                        ...validate,
-                                                                        bruttoValid: true,
-                                                                    });
-                                                                }}
-                                                            />
-                                                            {/*{formik.errors.item && formik.errors.item.brutto && formik.touched.item.brutto ? (*/}
-                                                            {/*    <div className="err-message">{formik.errors.item.brutto}</div>*/}
-                                                            {/*) : null}*/}
-                                                        </Form.Item>
-
-                                                        <Form.Item  required={true} label="stawka VAT:" >
-                                                            <Input
-                                                                name="item.vat"
-                                                                ref={element => (vatNamesRefs.current[field.name] = element)}
-                                                                id={`vat_${field.name}`}
-                                                                placeholder="Wpisz bez znaku %"
-                                                                onChange={() => {
-                                                                    setValidate({
-                                                                        ...validate,
-                                                                        vatValid: true,
-                                                                    });
-                                                                }}
-                                                            />
-                                                            {/*{formik.errors.item && formik.errors.item.vat && formik.touched.item.vat ? (*/}
-                                                            {/*    <div className="err-message">{formik.errors.item.vat}</div>*/}
-                                                            {/*) : null}*/}
-                                                        </Form.Item>
-
-                                                        <Form.Item  required={true} label="Cena dostawy:" >
-                                                            <Input
-                                                                name="item.delivery_price"
-                                                                ref={element => (deliveryNamesRefs.current[field.name] = element)}
-                                                                id={`delivery_price_${field.name}`}
-                                                                placeholder="Jeśli odbierasz osobiście wpisz 0"
-                                                                onChange={() => {
-                                                                    setValidate({
-                                                                        ...validate,
-                                                                        delivery_priceValid: true,
-                                                                    });
-                                                                }}
-                                                            />
-                                                            {/*{formik.errors.item && formik.errors.item.delivery_price && formik.touched.item.delivery_price ? (*/}
-                                                            {/*    <div className="err-message">{formik.errors.item.delivery_price}</div>*/}
-                                                            {/*) : null}*/}
-                                                        </Form.Item>
-
-                                                        <Form.Item  required={true} label="Zrzut ekranu:" valuePropName="fileList">
-                                                            <Upload
-                                                                name="item.screen"
-                                                                ref={element => (screenNamesRefs.current[field.name] = element)}
-                                                                customRequest={dummyRequest}
-                                                                id={`upload_${field.name}`}
-                                                                maxCount={1}
-                                                                onChange={() => {
-                                                                    setValidate({
-                                                                        ...validate,
-                                                                        screenValid: true,
-                                                                    });
-                                                                   // console.log(screenNamesRefs.current[field.name].fileList[field.name].originFileObj);
-                                                                }}
-                                                                listType="picture"
-                                                            >
-                                                             <Button className="upload-file-button" icon={<UploadOutlined />} >Dodaj (Max: 1)</Button>
-                                                            </Upload>
-                                                            {/*{formik.errors.item && formik.errors.item.screen && formik.touched.item.screen ? (*/}
-                                                            {/*    <div className="err-message">{formik.errors.item.screen}</div>*/}
-                                                            {/*) : null}*/}
-                                                        </Form.Item>
-                                                    </div>
-
-                                            ))}
-                                            <div className="add-product">
-                                                <Form.Item>
-                                                    <Button
-                                                        className="offer-btn"
-                                                        type="dashed"
+                                                    <CloseOutlined
+                                                        className="remove-single-item"
                                                         onClick={() => {
-                                                            add();
-                                                            setHowManyItems(howManyItems + 1);
-                                                            //set all fields to false, non loop method -> lodash lib
-                                                            validate = _.mapValues(validate, () => false);
-                                                        }}
-                                                        // disabled={fields.length > 0 && !Object.values(validate).every(item => item === true)}
-                                                        block
-                                                        icon={<PlusOutlined/>}
-                                                    >
-                                                        Dodaj kolejny przedmiot
-                                                    </Button>
-                                                </Form.Item>
-                                            </div>
+                                                            remove(fields.filter(function (item) {
+                                                                return item.name === field.name;
+
+                                                            }).map(function (field) {
+                                                                return field.name
+                                                            }));
+
+                                                            setHowManyItems(howManyItems - 1);
+
+                                                        }}/>
+                                                    <Form.Item required={true} label="Nazwa produktu:">
+                                                        <Input
+                                                            name="item.product"
+                                                            ref={element => (itemsNamesRefs.current[field.name] = element)}
+                                                            id={`name_${field.name}`}
+                                                            onChange={() => {
+                                                                setValidate({
+                                                                    ...validate,
+                                                                    productValid: true,
+                                                                });
+                                                            }}
+                                                        />
+                                                        {/*{formik.errors.items[field.name] && formik.errors.items[field.name].product && formik.touched.items[field.name].product ? (*/}
+                                                        {/*    <div className="err-message">{formik.errors.items[field.name].product}</div>*/}
+                                                        {/*) : null}*/}
+                                                    </Form.Item>
+
+                                                    <Form.Item required={true} label="Ilość:">
+                                                        <Input
+                                                            name="item.amount"
+                                                            ref={element => (amountNamesRefs.current[field.name] = element)}
+                                                            id={`amount_${field.name}`}
+                                                            onChange={() => {
+                                                                setValidate({
+                                                                    ...validate,
+                                                                    amountValid: true,
+                                                                });
+                                                            }}
+                                                        />
+                                                        {/*{formik.errors.item && formik.errors.item.amount && formik.touched.item.amount ? (*/}
+                                                        {/*    <div className="err-message">{formik.errors.item.amount}</div>*/}
+                                                        {/*) : null}*/}
+                                                    </Form.Item>
+
+                                                    <Form.Item required={true} label="Wartość brutto:">
+                                                        <Input
+                                                            name="item.brutto"
+                                                            ref={element => (bruttoNamesRefs.current[field.name] = element)}
+                                                            id={`brutto_${field.name}`}
+                                                            onChange={() => {
+                                                                setValidate({
+                                                                    ...validate,
+                                                                    bruttoValid: true,
+                                                                });
+                                                            }}
+                                                        />
+                                                        {/*{formik.errors.item && formik.errors.item.brutto && formik.touched.item.brutto ? (*/}
+                                                        {/*    <div className="err-message">{formik.errors.item.brutto}</div>*/}
+                                                        {/*) : null}*/}
+                                                    </Form.Item>
+
+                                                    <Form.Item required={true} label="stawka VAT:">
+                                                        <Input
+                                                            name="item.vat"
+                                                            ref={element => (vatNamesRefs.current[field.name] = element)}
+                                                            id={`vat_${field.name}`}
+                                                            placeholder="Wpisz bez znaku %"
+                                                            onChange={() => {
+                                                                setValidate({
+                                                                    ...validate,
+                                                                    vatValid: true,
+                                                                });
+                                                            }}
+                                                        />
+                                                        {/*{formik.errors.item && formik.errors.item.vat && formik.touched.item.vat ? (*/}
+                                                        {/*    <div className="err-message">{formik.errors.item.vat}</div>*/}
+                                                        {/*) : null}*/}
+                                                    </Form.Item>
+
+                                                    <Form.Item required={true} label="Cena dostawy:">
+                                                        <Input
+                                                            name="item.delivery_price"
+                                                            ref={element => (deliveryNamesRefs.current[field.name] = element)}
+                                                            id={`delivery_price_${field.name}`}
+                                                            placeholder="Jeśli odbierasz osobiście wpisz 0"
+                                                            onChange={() => {
+                                                                setValidate({
+                                                                    ...validate,
+                                                                    delivery_priceValid: true,
+                                                                });
+                                                            }}
+                                                        />
+                                                        {/*{formik.errors.item && formik.errors.item.delivery_price && formik.touched.item.delivery_price ? (*/}
+                                                        {/*    <div className="err-message">{formik.errors.item.delivery_price}</div>*/}
+                                                        {/*) : null}*/}
+                                                    </Form.Item>
+
+                                                    <Form.Item required={true} label="Zrzut ekranu:"
+                                                               valuePropName="fileList">
+                                                        <Upload
+                                                            name="item.screen"
+                                                            ref={element => (screenNamesRefs.current[field.name] = element)}
+                                                            customRequest={dummyRequest}
+                                                            id={`upload_${field.name}`}
+                                                            maxCount={1}
+                                                            onChange={() => {
+                                                                setValidate({
+                                                                    ...validate,
+                                                                    screenValid: true,
+                                                                });
+                                                                // console.log(screenNamesRefs.current[field.name].fileList[field.name].originFileObj);
+                                                            }}
+                                                            listType="picture"
+                                                        >
+                                                            <Button className="upload-file-button"
+                                                                    icon={<UploadOutlined/>}>Dodaj (Max: 1)</Button>
+                                                        </Upload>
+                                                        {/*{formik.errors.item && formik.errors.item.screen && formik.touched.item.screen ? (*/}
+                                                        {/*    <div className="err-message">{formik.errors.item.screen}</div>*/}
+                                                        {/*) : null}*/}
+                                                    </Form.Item>
+                                                </div>
+                                            )
+                                        })}
+                                        <div className="add-product">
+                                            <Form.Item>
+                                                <Button
+                                                    className="offer-btn"
+                                                    type="dashed"
+                                                    onClick={() => {
+                                                        add();
+                                                        setHowManyItems(howManyItems + 1);
+                                                        //set all fields to false, non loop method -> lodash lib
+                                                        validate = _.mapValues(validate, () => false);
+                                                    }}
+                                                    // disabled={fields.length > 0 && !Object.values(validate).every(item => item === true)}
+                                                    block
+                                                    icon={<PlusOutlined/>}
+                                                >
+                                                    Dodaj kolejny przedmiot
+                                                </Button>
+                                            </Form.Item>
                                         </div>
+                                    </div>
                                 )
                                 }
                             </Form.List>
                         </div>
                         <Form.Item>
-                            <Button type="submit"
-                                    htmlType="submit"
-                                    className="submit-btn-offer"
-                                    onClick={createArrayOnSubmit}
+                            <Button
+                                type="submit"
+                                htmlType="submit"
+                                className="submit-btn-offer"
+                                onClick={createArrayOnSubmit}
                             >
                                 {" "}
                                 Stwórz dokument PDF{" "}
