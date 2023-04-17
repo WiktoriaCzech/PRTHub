@@ -1,0 +1,50 @@
+.licence-header {
+    margin-bottom: 0.5rem;
+    font-size: 32px;
+    font-weight: 400;
+    color: #272838;
+}
+.timers-on-licence {
+    display: grid;
+    gap: 3rem;
+    max-width: 40vw;
+}
+.licence .ant-card {
+    border-radius: 10px;
+    background: #83838f;
+    box-shadow: 8px 8px #454555;
+    border: none;
+    padding-left: 10px;
+    padding-right: 5px;
+    min-width: 280px;
+}
+.licence .ant-statistic-title,
+.licence .ant-statistic-content,
+.licence .ant-progress-text{
+    color: #272838 !important;
+}
+.licence .ant-statistic-title {
+    font-size: 18px !important;
+}
+.licence .ant-progress-text {
+    font-weight: 400 !important;
+}
+@media all and (max-width: 810px) {
+    .timers-on-licence {
+        max-width: unset;
+    }
+    .certificate-panel-wrapper {
+        margin-left: -35vw;
+        width: 55vw;
+    }
+}
+@media all and (max-width: 600px) {
+    .licence-header {
+        font-size: 28px;
+    }
+}
+@media all and (max-width: 520px) {
+    .licence-header {
+        font-size: 24px;
+    }
+}
