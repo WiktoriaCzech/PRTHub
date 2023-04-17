@@ -1,20 +1,19 @@
 import React, {useEffect, useState, useRef} from "react";
-import { useFormik } from 'formik';
+import {useFormik} from 'formik';
 import * as Yup from 'yup';
 import "./OffersPanel.css";
 import {Button, Divider, Form, Radio, Input, Upload} from "antd";
 import {CloseOutlined, PlusOutlined, UploadOutlined} from "@ant-design/icons";
 
-let _ = require('lodash');
 
-function OffersPanel () {
+function OffersPanel() {
 
     const postalCode = /^[0-9]{2}-[0-9]{3}/;
     const nip = /^[0-9]{10}$/;
 
     const [howManyItems, setHowManyItems] = useState(0);
     const [toggleResetOnSmallerForms, setToggleResetOnSmallerForms] = useState(false);
-
+    const [errorArray, setErrorArray] = useState([]);
 
     const itemsNamesRefs = useRef([]);
     const amountNamesRefs = useRef([]);
@@ -23,32 +22,19 @@ function OffersPanel () {
     const deliveryNamesRefs = useRef([]);
     const screenNamesRefs = useRef([]);
 
-    let [validate, setValidate] = useState({
-        productValid: false,
-        amountValid: false,
-        bruttoValid: false,
-        vatValid: false,
-        delivery_priceValid: false,
-        screenValid: false,
-    });
 
     // req for falsy upload from antd Upload component
-    const dummyRequest = ({ file, onSuccess }) => {
+    const dummyRequest = ({file, onSuccess}) => {
         setTimeout(() => {
             onSuccess("ok");
         }, 0);
     };
-    //reset fields
-    const handleReset = () => {
-        formik.resetForm();
-        setToggleResetOnSmallerForms(true);
-    }
 
     const formik = useFormik({
         initialValues: {
             type: '',
             company_name: '',
-            street:'',
+            street: '',
             postal_code: '',
             city: '',
             country: '',
@@ -71,20 +57,13 @@ function OffersPanel () {
             city: Yup.string()
                 .required('To pole jest wymagane'),
             country: Yup.string()
-                .required( 'To pole jest wymagane'),
+                .required('To pole jest wymagane'),
             NIP: Yup.string()
                 .matches(nip, 'Numer NIP jest niepoprawny')
-                .required( 'To pole jest wymagane'),
-            // items: Yup.object({
-            //     product: Yup.string().required('To pole jest wymagane'),
-            //     amount: Yup.string().required('To pole jest wymagane'),
-            //     brutto: Yup.string().required('To pole jest wymagane'),
-            //     vat: Yup.string().required('To pole jest wymagane'),
-            //     delivery_price: Yup.string().required('To pole jest wymagane'),
-            //     // screen: Yup.string().required('To pole jest wymagane'),
-            // })
+                .required('To pole jest wymagane'),
+            items: Yup.array().required(),
         }),
-        onSubmit: values => {
+        onSubmit: async values => {
             // change first letter to upper case
             values.company_name = values.company_name.charAt(0).toUpperCase() + values.company_name.slice(1);
             values.street = values.street.charAt(0).toUpperCase() + values.street.slice(1);
@@ -95,13 +74,36 @@ function OffersPanel () {
 
         },
     });
+    const onlyNumbers = /^(\s*|\d+)$/;
+    const numbersWithDecimal = /^[0-9]*([,.][0-9]{0,2})?$/;
 
-    function createArrayOnSubmit() {
-            // validate = _.mapValues(validate, () => false);
+    const itemSchema = Yup.object().shape({
+        product: Yup.string().required('A_To pole jest wymagane'),
+        amount: Yup.string()
+            .matches(onlyNumbers, 'B_Wprowadź liczbę całkowitą')
+            .max(20, 'B_Max 20 znaków')
+            .required('B_To pole jest wymagane'),
+        brutto: Yup.string()
+            .matches(numbersWithDecimal, 'C_Wprowadź liczbę')
+            .max(30, 'C_Max 30 znaków')
+            .required('C_To pole jest wymagane'),
+        vat: Yup.string()
+            .matches(numbersWithDecimal, 'D_Wprowadź liczbę')
+            .max(15, 'D_Max 15 znaków')
+            .required('D_To pole jest wymagane'),
+        delivery_price: Yup.string()
+            .matches(numbersWithDecimal, 'E_Wprowadź liczbę')
+            .max(30, 'E_Max 30 znaków')
+            .required('E_To pole jest wymagane'),
+        screen: Yup.object()
+            .typeError('F_To pole jest wymagane'),
+    })
 
-            let productNamesArr = [];
-            itemsNamesRefs.current.forEach(element => {
-                if(element !== null) {
+    async function createArrayOnSubmit() {
+
+        let productNamesArr = [];
+        itemsNamesRefs.current.forEach(element => {
+            if (element !== null) {
                 //create object in array & assign value with first letter to uppercase to product name
                 productNamesArr.push({
                     product: element.input.defaultValue.charAt(0).toUpperCase() + element.input.defaultValue.slice(1),
@@ -111,71 +113,94 @@ function OffersPanel () {
                     delivery_price: '',
                     screen: '',
                 });
-                }
-            });
-            let i = 0;
-            amountNamesRefs.current.forEach(element => {
-                if(element !== null) {
-                    productNamesArr[i].amount = element.input.defaultValue;
-                    i++;
-                }
-            });
-            i = 0;
-            bruttoNamesRefs.current.forEach(element => {
-                if(element !== null) {
-                    productNamesArr[i].brutto = element.input.defaultValue;
-                    i++;
-                }
-            });
-            i = 0;
-            vatNamesRefs.current.forEach(element => {
-                if(element !== null) {
-                    productNamesArr[i].vat = element.input.defaultValue;
-                    i++;
-                }
-            });
-            i = 0;
-            deliveryNamesRefs.current.forEach(element => {
-                if(element !== null) {
-                    productNamesArr[i].delivery_price = element.input.defaultValue;
-                    i++;
-                }
-            });
-            i = 0;
-            let fileDataToServer = {};
-            screenNamesRefs.current.forEach(element => {
-                if(element !== null) {
-                    // create object to store full file data due to the JSON stringify issue
-                    fileDataToServer = {
-                        lastModified: element.fileList[0].originFileObj.lastModified,
-                        name: element.fileList[0].originFileObj.name,
-                        size: element.fileList[0].originFileObj.size,
-                        type: element.fileList[0].originFileObj.type,
-                        uid: element.fileList[0].originFileObj.uid,
-                        webkitRelativePath: element.fileList[0].originFileObj.webkitRelativePath,
-                    };
-                    // fileDataToServer = element.fileList[0].originFileObj;
-                    productNamesArr[i].screen = fileDataToServer;
-                    // console.log(JSON.stringify(fileDataToServer));
-                    i++;
-                }
-            });
+            }
+        });
+        let i = 0;
+        amountNamesRefs.current.forEach(element => {
+            if (element !== null) {
+                productNamesArr[i].amount = element.input.defaultValue;
+                i++;
+            }
+        });
+        i = 0;
+        bruttoNamesRefs.current.forEach(element => {
+            if (element !== null) {
+                productNamesArr[i].brutto = element.input.defaultValue;
+                i++;
+            }
+        });
+        i = 0;
+        vatNamesRefs.current.forEach(element => {
+            if (element !== null) {
+                productNamesArr[i].vat = element.input.defaultValue;
+                i++;
+            }
+        });
+        i = 0;
+        deliveryNamesRefs.current.forEach(element => {
+            if (element !== null) {
+                productNamesArr[i].delivery_price = element.input.defaultValue;
+                i++;
+            }
+        });
+        i = 0;
+        let fileDataToServer = {};
+        screenNamesRefs.current.forEach(element => {
+            if (element !== null && element.fileList.length !== 0) {
+                // create object to store full file data due to the JSON stringify issue on files
+                fileDataToServer = {
+                    lastModified: element.fileList[0].originFileObj.lastModified,
+                    name: element.fileList[0].originFileObj.name,
+                    size: element.fileList[0].originFileObj.size,
+                    type: element.fileList[0].originFileObj.type,
+                    uid: element.fileList[0].originFileObj.uid,
+                    webkitRelativePath: element.fileList[0].originFileObj.webkitRelativePath,
+                };
+                // fileDataToServer = element.fileList[0].originFileObj;
+                productNamesArr[i].screen = fileDataToServer;
+                // console.log(JSON.stringify(fileDataToServer));
+                i++;
+            } else {
+                i++;
+            }
+        });
 
-            // let finalArrayToServer = {
-            //     mainData: formik.values,
-            //     productsNamesData: productNamesArr,
-            // };
-            // console.log(finalArrayToServer);
+        // let isValidArray = [];
+        // for (const element of productNamesArr) {
+        //     isValidArray.push(await itemSchema.isValid(element));
+        //    // console.log(element);
+        // }
+        // console.log(isValidArray);
 
+        let isValidArray = [];
+        let errorArrayForSingleItem = [];
+
+        for (const element of productNamesArr) {
+            itemSchema
+                .validate(element, {abortEarly: false})
+                .then(() => {
+                    isValidArray.push(true);
+                })
+                .catch((err) => {
+                    isValidArray.push(false);
+                    errorArrayForSingleItem.push({errors: err.errors});
+                });
+        }
+        setErrorArray(errorArrayForSingleItem);
+        //check if all items are valid
+        if (isValidArray.every(element => element === true)) {
             formik.values.items = productNamesArr;
+        }else {
+            formik.values.items = '';
+        }
     }
 
     useEffect(() => {
-        console.log('updated state');
-        //console.log(itemsNamesRefs);
+       // console.log('updated state');
 
-
-    },[howManyItems,itemsNamesRefs,amountNamesRefs, bruttoNamesRefs,vatNamesRefs,screenNamesRefs,deliveryNamesRefs]);
+    }, [howManyItems, itemsNamesRefs, amountNamesRefs,
+        bruttoNamesRefs, vatNamesRefs, screenNamesRefs,
+        deliveryNamesRefs, toggleResetOnSmallerForms]);
 
     return (
         <div className="offers-panel-wrapper">
@@ -183,7 +208,7 @@ function OffersPanel () {
             <p>W tym miejscu, możliwe jest tworzenie dokumentów ofertowych
                 wykorzystywanych w celu przeprowadzania zakupów w naszym zespole,
                 poprzez Politechnikę Rzeszowską.</p>
-            <p>Wygenerowany dokument należy wysłać na: <a href='mailto:fundraising.przracingteam@gmail.com' >
+            <p>Wygenerowany dokument należy wysłać na: <a href='mailto:fundraising.przracingteam@gmail.com'>
                 fundraising.przracingteam@gmail.com</a></p>
 
             <div className="forms-with-response">
@@ -191,17 +216,23 @@ function OffersPanel () {
                     <span className="dot"/>
                     <span className="dot"/>
                     <span className="dot"/>
-                    <Form className="offer-form" onFinish={formik.handleSubmit} noValidate >
-                        <Button className="clear-all-fields-btn" onClick={handleReset} >Wyczyść pola </Button>
+                    <Form className="offer-form" onFinish={formik.handleSubmit} noValidate>
+                        <Button className="clear-all-fields-btn"
+                                onClick={() => {
+                                    formik.resetForm();
+                                    setToggleResetOnSmallerForms(true);
+                                }}>
+                            Wyczyść pola
+                        </Button>
                         <Divider className="offer-form-title" orientation="left" orientationMargin="0">
                             Szczegóły dokumentu
                         </Divider>
                         <span className="info">Wybierz rodzaj oferty jaką chcesz wygenerować,
                             pomiędzy ofertą a kontrofertą.<br/><br/></span>
 
-                        <Form.Item label="Typ oferty:" name="offer-type" required={true} onChange={formik.handleChange} >
+                        <Form.Item label="Typ oferty:" name="offer-type" required={true} onChange={formik.handleChange}>
                             <div className="offer-type-with-response">
-                                <Radio.Group  name="type">
+                                <Radio.Group name="type">
                                     <Radio.Button value="oferta">Oferta</Radio.Button>
                                     <Radio.Button value="kontroferta1">Kontroferta I</Radio.Button>
                                     <Radio.Button value="kontroferta2">Kontroferta II</Radio.Button>
@@ -325,6 +356,7 @@ function OffersPanel () {
                                                 //REMOVES ALL FIELDS!!
                                                 remove(fields.map(item => item.name));
                                                 setHowManyItems(0);
+                                                setErrorArray([]);
                                                 setToggleResetOnSmallerForms(false);
                                             }
                                             return (
@@ -347,16 +379,19 @@ function OffersPanel () {
                                                             name="item.product"
                                                             ref={element => (itemsNamesRefs.current[field.name] = element)}
                                                             id={`name_${field.name}`}
-                                                            onChange={() => {
-                                                                setValidate({
-                                                                    ...validate,
-                                                                    productValid: true,
-                                                                });
-                                                            }}
                                                         />
-                                                        {/*{formik.errors.items[field.name] && formik.errors.items[field.name].product && formik.touched.items[field.name].product ? (*/}
-                                                        {/*    <div className="err-message">{formik.errors.items[field.name].product}</div>*/}
-                                                        {/*) : null}*/}
+                                                        {errorArray.length > 0 && errorArray[field.name] !== undefined ? (
+                                                            errorArray[field.name].errors.map((e,index) => {
+                                                                if(e.charAt(0) === 'A') {
+                                                                    return (
+                                                                        <div className="err-message" key={index}>
+                                                                            {e.slice(2)}
+                                                                        </div>
+                                                                    );
+                                                                }
+                                                                return null;
+                                                            })
+                                                        ) : null}
                                                     </Form.Item>
 
                                                     <Form.Item required={true} label="Ilość:">
@@ -364,16 +399,19 @@ function OffersPanel () {
                                                             name="item.amount"
                                                             ref={element => (amountNamesRefs.current[field.name] = element)}
                                                             id={`amount_${field.name}`}
-                                                            onChange={() => {
-                                                                setValidate({
-                                                                    ...validate,
-                                                                    amountValid: true,
-                                                                });
-                                                            }}
                                                         />
-                                                        {/*{formik.errors.item && formik.errors.item.amount && formik.touched.item.amount ? (*/}
-                                                        {/*    <div className="err-message">{formik.errors.item.amount}</div>*/}
-                                                        {/*) : null}*/}
+                                                        {errorArray.length > 0 && errorArray[field.name] !== undefined ? (
+                                                            errorArray[field.name].errors.map((e,index) => {
+                                                                if(e.charAt(0) === 'B') {
+                                                                    return (
+                                                                        <div className="err-message" key={index}>
+                                                                            {e.slice(2)}
+                                                                        </div>
+                                                                    );
+                                                                }
+                                                                return null;
+                                                            })
+                                                        ) : null}
                                                     </Form.Item>
 
                                                     <Form.Item required={true} label="Wartość brutto:">
@@ -381,16 +419,19 @@ function OffersPanel () {
                                                             name="item.brutto"
                                                             ref={element => (bruttoNamesRefs.current[field.name] = element)}
                                                             id={`brutto_${field.name}`}
-                                                            onChange={() => {
-                                                                setValidate({
-                                                                    ...validate,
-                                                                    bruttoValid: true,
-                                                                });
-                                                            }}
                                                         />
-                                                        {/*{formik.errors.item && formik.errors.item.brutto && formik.touched.item.brutto ? (*/}
-                                                        {/*    <div className="err-message">{formik.errors.item.brutto}</div>*/}
-                                                        {/*) : null}*/}
+                                                        {errorArray.length > 0 && errorArray[field.name] !== undefined ? (
+                                                            errorArray[field.name].errors.map((e,index) => {
+                                                                if(e.charAt(0) === 'C') {
+                                                                    return (
+                                                                        <div className="err-message" key={index}>
+                                                                            {e.slice(2)}
+                                                                        </div>
+                                                                    );
+                                                                }
+                                                                return null;
+                                                            })
+                                                        ) : null}
                                                     </Form.Item>
 
                                                     <Form.Item required={true} label="stawka VAT:">
@@ -399,16 +440,19 @@ function OffersPanel () {
                                                             ref={element => (vatNamesRefs.current[field.name] = element)}
                                                             id={`vat_${field.name}`}
                                                             placeholder="Wpisz bez znaku %"
-                                                            onChange={() => {
-                                                                setValidate({
-                                                                    ...validate,
-                                                                    vatValid: true,
-                                                                });
-                                                            }}
                                                         />
-                                                        {/*{formik.errors.item && formik.errors.item.vat && formik.touched.item.vat ? (*/}
-                                                        {/*    <div className="err-message">{formik.errors.item.vat}</div>*/}
-                                                        {/*) : null}*/}
+                                                        {errorArray.length > 0 && errorArray[field.name] !== undefined ? (
+                                                            errorArray[field.name].errors.map((e,index) => {
+                                                                if(e.charAt(0) === 'D') {
+                                                                    return (
+                                                                        <div className="err-message" key={index}>
+                                                                            {e.slice(2)}
+                                                                        </div>
+                                                                    );
+                                                                }
+                                                                return null;
+                                                            })
+                                                        ) : null}
                                                     </Form.Item>
 
                                                     <Form.Item required={true} label="Cena dostawy:">
@@ -417,16 +461,19 @@ function OffersPanel () {
                                                             ref={element => (deliveryNamesRefs.current[field.name] = element)}
                                                             id={`delivery_price_${field.name}`}
                                                             placeholder="Jeśli odbierasz osobiście wpisz 0"
-                                                            onChange={() => {
-                                                                setValidate({
-                                                                    ...validate,
-                                                                    delivery_priceValid: true,
-                                                                });
-                                                            }}
                                                         />
-                                                        {/*{formik.errors.item && formik.errors.item.delivery_price && formik.touched.item.delivery_price ? (*/}
-                                                        {/*    <div className="err-message">{formik.errors.item.delivery_price}</div>*/}
-                                                        {/*) : null}*/}
+                                                        {errorArray.length > 0 && errorArray[field.name] !== undefined ? (
+                                                            errorArray[field.name].errors.map((e,index) => {
+                                                                if(e.charAt(0) === 'E') {
+                                                                    return (
+                                                                        <div className="err-message" key={index}>
+                                                                            {e.slice(2)}
+                                                                        </div>
+                                                                    );
+                                                                }
+                                                                return null;
+                                                            })
+                                                        ) : null}
                                                     </Form.Item>
 
                                                     <Form.Item required={true} label="Zrzut ekranu:"
@@ -437,21 +484,24 @@ function OffersPanel () {
                                                             customRequest={dummyRequest}
                                                             id={`upload_${field.name}`}
                                                             maxCount={1}
-                                                            onChange={() => {
-                                                                setValidate({
-                                                                    ...validate,
-                                                                    screenValid: true,
-                                                                });
-                                                                // console.log(screenNamesRefs.current[field.name].fileList[field.name].originFileObj);
-                                                            }}
+                                                             // console.log(screenNamesRefs.current[field.name].fileList[field.name].originFileObj);
                                                             listType="picture"
                                                         >
                                                             <Button className="upload-file-button"
                                                                     icon={<UploadOutlined/>}>Dodaj (Max: 1)</Button>
                                                         </Upload>
-                                                        {/*{formik.errors.item && formik.errors.item.screen && formik.touched.item.screen ? (*/}
-                                                        {/*    <div className="err-message">{formik.errors.item.screen}</div>*/}
-                                                        {/*) : null}*/}
+                                                        {errorArray.length > 0 && errorArray[field.name] !== undefined ? (
+                                                            errorArray[field.name].errors.map((e,index) => {
+                                                                if(e.charAt(0) === 'F') {
+                                                                    return (
+                                                                        <div className="err-message" key={index}>
+                                                                            {e.slice(2)}
+                                                                        </div>
+                                                                    );
+                                                                }
+                                                                return null;
+                                                            })
+                                                        ) : null}
                                                     </Form.Item>
                                                 </div>
                                             )
@@ -464,10 +514,7 @@ function OffersPanel () {
                                                     onClick={() => {
                                                         add();
                                                         setHowManyItems(howManyItems + 1);
-                                                        //set all fields to false, non loop method -> lodash lib
-                                                        validate = _.mapValues(validate, () => false);
                                                     }}
-                                                    // disabled={fields.length > 0 && !Object.values(validate).every(item => item === true)}
                                                     block
                                                     icon={<PlusOutlined/>}
                                                 >
@@ -497,4 +544,5 @@ function OffersPanel () {
         </div>
     )
 }
+
 export default OffersPanel;

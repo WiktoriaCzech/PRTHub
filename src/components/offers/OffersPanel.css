@@ -90,6 +90,11 @@ p a:hover, .remove-single-item:hover {
 .offer-form-title {
 
 }
+@media all and (max-width: 920px) {
+    .single-product-placing {
+        display: grid;
+    }
+}
 @media all and (max-width: 700px) {
     .offers-title {
         font-size: 28px;
@@ -102,9 +107,6 @@ p a:hover, .remove-single-item:hover {
     }
     .company-data-fields :nth-child(even) {
         margin-left: 0;
-    }
-    .single-product-placing {
-        display: grid;
     }
 }
 @media all and (max-width: 430px) {
