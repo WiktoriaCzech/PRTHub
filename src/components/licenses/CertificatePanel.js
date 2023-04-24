@@ -3,15 +3,19 @@ import './CertificatePanel.css';
 import {Card, Col, Progress, Statistic} from "antd";
 
 const { Countdown } = Statistic;
-const refreshExpirationDate = new Date(`2022-10-01`);
+
 
 function CertificatePanel () {
 
     const expirationDateArray = [
-        {id: 0, deadline: new Date(`2023-08-14`), name: 'Nazwa_licencji_1' },
-        {id: 1, deadline: new Date(`2023-07-18`), name: 'Nazwa_licencji_2' },
-        {id: 2, deadline: new Date(`2023-08-28`), name: 'Nazwa_licencji_3' },
-        {id: 3, deadline: new Date(`2023-08-28`), name: 'Nazwa_licencji_4' },
+        {id: 0, deadline: new Date(`2024-04-24`),
+            refreshExpirationDate : new Date(`2023-04-24`), name: 'Domena PRz-Racing' },
+        {id: 1, deadline: new Date(`2023-07-18`),
+            refreshExpirationDate : new Date(`2022-10-01`), name: 'Nazwa_licencji_2' },
+        {id: 2, deadline: new Date(`2023-08-28`),
+            refreshExpirationDate : new Date(`2022-10-01`),name: 'Nazwa_licencji_3' },
+        {id: 3, deadline: new Date(`2023-08-28`),
+            refreshExpirationDate : new Date(`2022-10-01`),name: 'Nazwa_licencji_4' },
     ];
 
     //displays text on counter with proper array attribute
@@ -21,8 +25,8 @@ function CertificatePanel () {
 
     //returns time left in percent
     function timeLeft (id) {
-        const allTime = expirationDateArray[id].deadline - refreshExpirationDate;
-        const timeTillToday = new Date() - refreshExpirationDate;
+        const allTime = expirationDateArray[id].deadline - expirationDateArray[id].refreshExpirationDate;
+        const timeTillToday = new Date() - expirationDateArray[id].refreshExpirationDate;
         return Math.round(timeTillToday * 100 / allTime);
     }
     return (
