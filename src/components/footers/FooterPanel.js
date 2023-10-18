@@ -39,9 +39,9 @@ function FooterPanel() {
             name: '',
             surname: '',
             position:'',
-            email: '',
+            mail: '',
             phone_number: '',
-            photo: '',
+            photo_link: '',
         },
         validationSchema: Yup.object({
             name: Yup.string()
@@ -53,12 +53,12 @@ function FooterPanel() {
             position: Yup.string()
                 .max(50, 'Max 50 znaków')
                 .required("To pole jest wymagane"),
-            email: Yup.string().email('Adress email jest niepoprawny')
+            mail: Yup.string().email('Adress email jest niepoprawny')
                 .required('To pole jest wymagane'),
             phone_number: Yup.string()
                 .matches(phoneRegExp, 'Numer telefonu jest niepoprawny')
                 .required( 'To pole jest wymagane'),
-            photo: Yup.string().required( 'To pole jest wymagane'),
+            photo_link: Yup.string().required( 'To pole jest wymagane'),
         }),
         onSubmit: values => {
 
@@ -161,15 +161,15 @@ function FooterPanel() {
                                         </label>
                                         <input
                                             className="input-data"
-                                            name="email"
+                                            name="mail"
                                             type="email"
                                             placeholder="Jan.Kowalski@gmail.com"
                                             onChange={formik.handleChange}
                                             onBlur={formik.handleBlur}
-                                            value={formik.values.email}
+                                            value={formik.values.mail}
                                         />
-                                        {formik.touched.email && formik.errors.email ? (
-                                            <div className="err-message">{formik.errors.email}</div>
+                                        {formik.touched.mail && formik.errors.mail ? (
+                                            <div className="err-message">{formik.errors.mail}</div>
                                         ) : null}
                                     </div>
 
@@ -199,15 +199,15 @@ function FooterPanel() {
                                         </label>
                                         <input
                                             className="input-data"
-                                            name="photo"
+                                            name="photo_link"
                                             type="url"
                                             placeholder="https://dysk.google/twoje-zdjecie.jpeg"
                                             onChange={formik.handleChange}
                                             onBlur={formik.handleBlur}
-                                            value={formik.values.photo}
+                                            value={formik.values.photo_link}
                                         />
-                                        {formik.touched.photo && formik.errors.photo ? (
-                                            <div className="err-message">{formik.errors.photo}</div>
+                                        {formik.touched.photo_link && formik.errors.photo_link ? (
+                                            <div className="err-message">{formik.errors.photo_link}</div>
                                         ) : null}
                                     </div>
 

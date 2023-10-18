@@ -5,19 +5,22 @@ function  GenerateFooter ({data}) {
 
     const [htmlresponse, setHTMLresponse] = useState({__html: ""});
 
-    //console.log(JSON.stringify(data));
+    console.log(JSON.stringify(data));
 
     useEffect(() => {
 
         async function createMarkup() {
             let res;
             res = await fetch(
-                'https://api.przracing.pl/v1/footer',
+                'http://patkepa.pythonanywhere.com/submit',
                 {
                     method: 'POST',
-                    // headers: {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Accept: 'application/json',
+                        'Access-Control-Allow-Origin' : "http://patkepa.pythonanywhere.com/submit",
                     // "Authorization" : `Bearer ${localStorage.token}`,
-                    // },
+                    },
                     body: JSON.stringify(data),
                 }
             );

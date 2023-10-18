@@ -8,6 +8,7 @@ import SponsorsPanel from "./components/sponsorsPanel/SponsorsPanel";
 import FooterPanel from "./components/footers/FooterPanel";
 import OffersPanel from "./components/offers/OffersPanel";
 import CertificatePanel from "./components/licenses/CertificatePanel";
+import ShortcutsPanel from "./components/shortcuts/ShortcutsPanel";
 
 const {Content, Footer} = Layout;
 
@@ -48,10 +49,13 @@ function BaseLayout () {
                                     <Breadcrumb.Item>Wyszukiwarka</Breadcrumb.Item>
                                 }/>
                                 <Route path="/certificate" element={
-                                    <Breadcrumb.Item>Webhooks</Breadcrumb.Item>
+                                    <Breadcrumb.Item>Licencje</Breadcrumb.Item>
                                 }/>
                                 <Route path="/hooks" element={
                                     <Breadcrumb.Item>Webhooks</Breadcrumb.Item>
+                                }/>
+                                <Route path="/shortcuts" element={
+                                    <Breadcrumb.Item>Ważne linki</Breadcrumb.Item>
                                 }/>
                             </Routes>
                         </Breadcrumb>
@@ -66,6 +70,7 @@ function BaseLayout () {
                             {/*<Route path="/intelligent-storage" element={<CentralPanel />} />*/}
                             {/*<Route path="/search-bar" element={<CentralPanel />} />*/}
                             <Route path="/certificate" element={<CertificatePanel />} />
+                            <Route path="/shortcuts" element={<ShortcutsPanel />} />
                             {/*<Route path="/hooks" element={<CentralPanel />} />*/}
                         </Routes>
                     </div>
