@@ -1,0 +1,156 @@
+.siteWrapper {
+  background-color: #e8e8eb;
+  /* display: grid;
+  grid-template-columns: 2fr 1fr; */
+  /* height: 100vh;
+  width: 100vw; */
+}
+.contentsPlacing {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2.222vw;
+}
+.loginWrapper {
+  display: flex;
+  flex-direction: column;
+  /* position: relative; */
+  /* margin-top: 5vw; */
+}
+.logoPRzRT {
+  padding-top: 2vw;
+  margin-left: -1.8vw;
+  width: 27.778vw;
+}
+.loginCredentials {
+  max-width: 30.903vw;
+  aspect-ratio: 13/16;
+  background-color: #4f5b75;
+  border-radius: 4vmin;
+  margin-top: 7.261vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 35px;
+}
+.graphic {
+  overflow: hidden;
+  height: 100vh;
+  width: 60vw;
+  position: relative;
+}
+.backgroundSVG {
+  margin-top: -25vh;
+  margin-left: -1vh;
+}
+.loginText {
+  font-weight: 500;
+  font-size: 2.083vw;
+}
+.textLoginSite {
+  font-family: "Clash Display";
+  color: #fff;
+}
+.loginForm {
+  margin-top: 2.056vw;
+  display: flex;
+  flex-direction: column;
+}
+.formLabel {
+  margin-bottom: 0.694vw;
+  font-weight: 400;
+  font-size: 1.389vw;
+}
+.formInput {
+  margin-bottom: 27px;
+  aspect-ratio: 386/65;
+  width: 21.978vw;
+  border-radius: 1.5vmin;
+  border: unset;
+  padding-left: 10px;
+  font-size: 0.972vw;
+}
+.formInput:focus,
+.formInput:active {
+  background: #fff;
+}
+.errMessage {
+  color: #ff3c00;
+  font-family: "Clash Display";
+  margin-top: -20px;
+  font-size: 1vw;
+}
+.footer {
+  color: #000000;
+  /* position: absolute;
+  bottom: 0; */
+  text-align: center;
+  margin-bottom: 0.5vh;
+  font-family: Barlow;
+  font-size: 0.972vw;
+  margin-top: 1vw;
+}
+.mainPhotoSVG {
+  z-index: 10;
+  position: absolute;
+  top: 8vw;
+  right: -43vw;
+}
+/* .btnWrapper {
+  margin-top: 2vw;
+} */
+.submitBtn {
+  margin-top: 2vw;
+  background-color: #5bc1a1;
+  border: unset;
+  width: 21.978vw;
+  text-align: center;
+  border-radius: 1.5vmin;
+  color: #0d1e42;
+  font-family: "Clash Display";
+  font-size: 1.736vw;
+  font-weight: 500;
+  aspect-ratio: 386/65;
+  position: relative;
+  overflow: hidden;
+}
+.submitBtn:hover {
+  cursor: pointer;
+}
+.bolidPixel {
+  position: absolute;
+  left: -50%;
+  transition: left 0.9s;
+  top: -2.5%;
+  width: 6.944vw;
+}
+.btnWrapper:hover .bolidPixel {
+  left: 100%;
+}
+.forgottPassword {
+  color: #fff;
+  text-decoration: underline !important;
+  font-family: "Clash Display";
+  font-size: 1.111vw;
+  font-weight: 400;
+  margin-top: 1vw;
+}
+.hiddenBtn {
+  position: absolute;
+  top: 30vh;
+  right: 30vw;
+  z-index: 10;
+  width: 30px;
+  height: 30px;
+  background-color: #ff3c00;
+}
+@keyframes wroomWroom {
+  0% {
+    transform: translate(50px);
+  }
+  100% {
+    transform: translate(100px);
+  }
+}
