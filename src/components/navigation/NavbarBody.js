@@ -1,55 +1,58 @@
-import {Menu} from "antd";
-import {
-    DatabaseOutlined, FormOutlined, HomeOutlined,
-    LineChartOutlined, SearchOutlined, MenuUnfoldOutlined, CodeOutlined, SafetyCertificateOutlined, LinkOutlined
-} from "@ant-design/icons";
-import {Link} from "react-router-dom";
-import React from "react";
+import React, { useState } from "react";
+import { Menu } from "antd";
+import { Link } from "react-router-dom";
+
+import { ReactComponent as Pointer } from "../images/svg/pointer.svg";
 import "./Navigation.css";
 
-function NavbarBody () {
+function NavbarBody() {
+  const [hoveredItem, setHoveredItem] = useState(null);
+  const [selectedItem, setSelectedItem] = useState(1);
 
-    return (
-        <div className="website">
-            <Menu theme="dark" mode="inline" >
-                <Menu.Item key="1" icon={<HomeOutlined />} >
-                    Strona główna
-                    <Link to="/central/main-panel"/>
-                </Menu.Item>
-                <Menu.Item key="2" icon={<LinkOutlined />} >
-                    Ważne linki
-                    <Link to="/central/shortcuts"/>
-                </Menu.Item>
-                <Menu.Item key="3" icon={<FormOutlined />} >
-                    Tworzenie ofert
-                    <Link to="/central/offers"/>
-                </Menu.Item>
-                <Menu.Item key="4" icon={<MenuUnfoldOutlined />} >
-                    Generator stopek
-                    <Link to="/central/footer"/>
-                </Menu.Item>
-                <Menu.Item key="5" icon={<LineChartOutlined />} >
-                    Panel Sponsorów
-                    <Link to="/central/sponsorsfinall"/>
-                </Menu.Item>
-                <Menu.Item key="6" icon={<DatabaseOutlined />} >
-                    Inteligentny Magazyn
-                    <Link to="/central/intelligent-storage"/>
-                </Menu.Item>
-                <Menu.Item key="7" icon={<SearchOutlined />} >
-                    Wyszukiwarka
-                    <Link to="/central/search-bar"/>
-                </Menu.Item>
-                <Menu.Item key="8" icon={<SafetyCertificateOutlined />} >
-                    Licencje
-                    <Link to="/central/certificate"/>
-                </Menu.Item>
-                <Menu.Item key="9" icon={<CodeOutlined />} >
-                    Webhooks
-                    <Link to="/central/hooks"/>
-                </Menu.Item>
-            </Menu>
-        </div>
-    )
+  const menuItemList = [
+    { id: 1, title: "Strona główna", link: "home" },
+    { id: 2, title: "Ważne linki", link: "links" },
+    { id: 3, title: "Generator ofert", link: "offerGen" },
+    { id: 4, title: "Stopki e-mail", link: "footerGen" },
+    { id: 5, title: "Licencje", link: "licenses" },
+  ];
+  const renderIcon = (key) => {
+    if (selectedItem === key) {
+      return (
+        <Pointer
+          className="pointer-transition"
+          style={{ fill: "#FF3C00", "fill-opacity": "0.7" }}
+        />
+      ); // selected
+    } else if (hoveredItem === key) {
+      return (
+        <Pointer className="pointer-transition" style={{ fill: "#4F5B75" }} />
+      ); // hovered
+    }
+    return null;
+  };
+
+  return (
+    <div className="website">
+      <Menu
+        theme="dark"
+        mode="inline"
+        onSelect={({ key }) => setSelectedItem(Number(key))}
+      >
+        {menuItemList.map((item) => (
+          <Menu.Item
+            key={item.id}
+            icon={renderIcon(item.id)}
+            onMouseEnter={() => setHoveredItem(item.id)}
+            onMouseLeave={() => setHoveredItem(null)}
+          >
+            {item.title}
+            <Link to={`/v1/${item.link}`} />
+          </Menu.Item>
+        ))}
+      </Menu>
+    </div>
+  );
 }
+
 export default NavbarBody;

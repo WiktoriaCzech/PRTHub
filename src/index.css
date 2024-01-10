@@ -6,50 +6,29 @@
   font-family: "Clash Display";
   src: url("./components/fonts/ClashDisplay-Variable.ttf");
 }
-/* @font-face {
+@font-face {
   font-family: "Barlow";
-  src: url("./components/fonts/ClashDisplay-Variable.ttf");
-} */
+  src: url("./components/fonts/Barlow-Regular.ttf");
+}
 .ant-layout-content {
   margin: 0 16px;
 }
-.ant-breadcrumb {
-  margin: 16px 0;
-}
+
 .ant-layout {
   min-height: 100vh;
-  background-color: #aaaabc;
+  background-color: #e8e8eb;
 }
-.ant-layout-footer {
-  text-align: center;
-  background-color: #aaaabc;
-}
-.logout-button {
-  position: absolute;
-  right: 0;
-  top: 0;
-  margin: 16px 16px 16px 0;
-  border-radius: 8px;
-  background-color: #454555;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 15px;
-}
-.logout-button:hover {
-  color: white;
-  transition: background 0.3s, cubic-bezier(0.215, 0.61, 0.355, 1);
-}
+
 .site-layout-background {
   padding: 24px 10px;
 }
 .menuCon {
   min-height: 100vh;
-  background-color: #272838;
+  /* background-color: #272838; */
 }
 @media all and (max-width: 1024px) {
   .menuCon {
-    background-color: #272838;
+    /* background-color: #272838; */
   }
 }
 @media all and (max-width: 810px) {

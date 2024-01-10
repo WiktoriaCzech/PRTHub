@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { useNavigate } from "react-router-dom";
 
 import "./Login.css";
 import BolidPixel from "../images/bolidPixelSmall.png";
@@ -10,11 +11,32 @@ import { ReactComponent as BackgroundLong } from "../images/svg/backgroundLong.s
 import { ReactComponent as MainPhoto } from "../images/svg/mainPhoto.svg";
 
 function Login() {
-  const [loginData, setLoginData] = useState({});
+  let navigate = useNavigate();
+  const [loginError, setLoginError] = useState();
 
   //TODO: fetch req
-  const sendLoginData = async () => {
-    await fetch("url");
+  const sendLoginData = async (data) => {
+    try {
+      const response = await fetch(
+        process.env.REACT_APP_DOMAIN_ADDRESS + "/v1/", //TODO: check if workee
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
+
+      const body = await response.json();
+      if (body.success) {
+        navigate("/home");
+      } else {
+        setLoginError(true);
+      }
+    } catch (error) {
+      console.log("There was an issue with login req: ", error);
+    }
   };
 
   const formik = useFormik({
@@ -92,7 +114,7 @@ function Login() {
               </a>
             </form>
           </div>
-          <div className="footer">Prz Racing Team © Copyright 2023</div>
+          <div className="footer">Prz Racing Team © Copyright 2024</div>
         </div>
         <div className="graphic">
           <BackgroundLong className="backgroundSVG" />

@@ -1,83 +1,38 @@
-import Navigation from "./components/navigation/Navigation";
-import {Breadcrumb, Layout} from "antd";
-import {Route, Routes, useNavigate} from "react-router-dom";
 import React from "react";
+import { Route, Routes, Navigate } from "react-router-dom";
+import { Layout } from "antd";
+
+import Navigation from "./components/navigation/Navigation";
 
 import CentralPanel from "./components/centralPanel/CentralPanel";
-import SponsorsPanel from "./components/sponsorsPanel/SponsorsPanel";
 import FooterPanel from "./components/footers/FooterPanel";
 import OffersPanel from "./components/offers/OffersPanel";
 import CertificatePanel from "./components/licenses/CertificatePanel";
 import ShortcutsPanel from "./components/shortcuts/ShortcutsPanel";
 
-const {Content, Footer} = Layout;
+const { Content } = Layout;
 
-function BaseLayout () {
-    let navigate = useNavigate();
-
-    const handleLogout = () => {
-        navigate('/main');
-    };
-
-    return (
-        <Layout>
-            <div className="menuCon">
-                <Navigation/>
-            </div>
-            <Layout className="site-layout">
-                <Content>
-                    <div className="site-layout-top">
-                        <Breadcrumb>
-                            <Breadcrumb.Item>PRz-Racing-Team</Breadcrumb.Item>
-                            <Routes>
-                                <Route path="/main-panel" element={
-                                    <Breadcrumb.Item>Strona Główna</Breadcrumb.Item>
-                                }/>
-                                <Route path="/offers" element={
-                                    <Breadcrumb.Item>Tworzenie Ofert</Breadcrumb.Item>
-                                }/>
-                                <Route path="/footer" element={
-                                    <Breadcrumb.Item>Generator Stopek</Breadcrumb.Item>
-                                }/>
-                                <Route path="/sponsorsfinall" element={
-                                    <Breadcrumb.Item>Panel Sponsorów</Breadcrumb.Item>
-                                }/>S
-                                <Route path="/intelligent-storage" element={
-                                    <Breadcrumb.Item>Inteligentny Magazyn</Breadcrumb.Item>
-                                }/>
-                                <Route path="/search-bar" element={
-                                    <Breadcrumb.Item>Wyszukiwarka</Breadcrumb.Item>
-                                }/>
-                                <Route path="/certificate" element={
-                                    <Breadcrumb.Item>Licencje</Breadcrumb.Item>
-                                }/>
-                                <Route path="/hooks" element={
-                                    <Breadcrumb.Item>Webhooks</Breadcrumb.Item>
-                                }/>
-                                <Route path="/shortcuts" element={
-                                    <Breadcrumb.Item>Ważne linki</Breadcrumb.Item>
-                                }/>
-                            </Routes>
-                        </Breadcrumb>
-                        <button type="button" className="logout-button" onClick={handleLogout}>Wyloguj się</button>
-                    </div>
-                    <div className="site-layout-background">
-                        <Routes>
-                            <Route path="/main-panel" element={<CentralPanel />} />
-                            <Route path="/offers" element={<OffersPanel />} />
-                            <Route path="/footer" element={<FooterPanel />} />
-                            <Route path="/sponsorsfinall" element={<SponsorsPanel />} />
-                            {/*<Route path="/intelligent-storage" element={<CentralPanel />} />*/}
-                            {/*<Route path="/search-bar" element={<CentralPanel />} />*/}
-                            <Route path="/certificate" element={<CertificatePanel />} />
-                            <Route path="/shortcuts" element={<ShortcutsPanel />} />
-                            {/*<Route path="/hooks" element={<CentralPanel />} />*/}
-                        </Routes>
-                    </div>
-                </Content>
-                <Footer>© 2023 PRz-Racing Team</Footer>
-            </Layout>
-        </Layout>
-    )
+function BaseLayout() {
+  return (
+    <Layout>
+      <div className="menuCon">
+        <Navigation />
+      </div>
+      <Layout className="site-layout">
+        <Content>
+          <div className="site-layout-background">
+            <Routes>
+              <Route path="/" element={<Navigate replace to="/v1/home" />} />
+              <Route path="/home" element={<CentralPanel />} />
+              <Route path="/offerGen" element={<OffersPanel />} />
+              <Route path="/footerGen" element={<FooterPanel />} />
+              <Route path="/licenses" element={<CertificatePanel />} />
+              <Route path="/links" element={<ShortcutsPanel />} />
+            </Routes>
+          </div>
+        </Content>
+      </Layout>
+    </Layout>
+  );
 }
 export default BaseLayout;

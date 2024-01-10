@@ -1,9 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import MainPanel from "./components/main/MainPanel";
 import Login from "./components/login/Login";
 
 import { createBrowserHistory } from "history";
@@ -15,8 +14,7 @@ function Main() {
     <BrowserRouter history={history}>
       <Routes>
         <Route path="" element={<Login />}></Route>
-        <Route path="/central/*" element={<BaseLayout />}></Route>
-        {/* <Route path="*" element={<Navigate to="/main" replace />}></Route> */}
+        <Route path="/v1/*" element={<BaseLayout />}></Route>
       </Routes>
     </BrowserRouter>
   );
