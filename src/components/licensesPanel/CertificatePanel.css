@@ -1,50 +1,88 @@
-.licence-header {
-    margin-bottom: 0.5rem;
-    font-size: 32px;
-    font-weight: 400;
-    color: #272838;
+.licensesWrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1.694vw;
+  padding: 9vh 0 2.64vh 0;
+  height: 100vh;
+  color: #0d1e42;
 }
-.timers-on-licence {
-    display: grid;
-    gap: 3rem;
-    max-width: 40vw;
+.licenceHeader {
+  font-family: "Clash Display";
+  font-weight: 500;
+  font-size: 1.667vw;
+  margin-bottom: 0.99vh;
 }
-.licence .ant-card {
-    border-radius: 10px;
-    background: #83838f;
-    box-shadow: 8px 8px #454555;
-    border: none;
-    padding-left: 10px;
-    padding-right: 5px;
-    min-width: 280px;
+.licenceInfo {
+  font-family: "Barlow";
+  font-weight: 400;
+  font-size: 1.25vw;
+  margin-bottom: 2.2vh;
 }
-.licence .ant-statistic-title,
-.licence .ant-statistic-content,
-.licence .ant-progress-text{
-    color: #272838 !important;
+.licence {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 4.4vh;
 }
-.licence .ant-statistic-title {
-    font-size: 18px !important;
+.timer {
+  width: 31.25vw;
 }
-.licence .ant-progress-text {
-    font-weight: 400 !important;
+.searchBarWrapper {
+  width: 30.694vw;
+  height: 4.07vh;
+  margin-bottom: 5.611vh;
+  background-color: #d9d9d9;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
-@media all and (max-width: 810px) {
-    .timers-on-licence {
-        max-width: unset;
-    }
-    .certificate-panel-wrapper {
-        margin-left: -35vw;
-        width: 55vw;
-    }
+.searchSVG {
+  margin-left: 10px;
 }
-@media all and (max-width: 600px) {
-    .licence-header {
-        font-size: 28px;
-    }
+
+.ant-input-affix-wrapper {
+  border-start-start-radius: 0 !important;
+  border-end-start-radius: 0 !important;
+  border-start-end-radius: 0 !important;
+  border-end-end-radius: 0 !important;
+  background-color: unset !important;
+  border: unset !important;
 }
-@media all and (max-width: 520px) {
-    .licence-header {
-        font-size: 24px;
-    }
+.ant-input {
+  background-color: unset;
+}
+.ant-input:focus {
+  border-color: unset !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.ant-input-group-addon {
+  display: none !important;
+}
+.ant-input::placeholder {
+  color: #888888;
+}
+
+@media all and (max-width: 1920px) {
+  .licenceHeader {
+    font-size: 1.25vw;
+  }
+  .licenceInfo {
+    font-size: 0.938vw;
+  }
+  .searchBarWrapper {
+    width: 23.021vw;
+  }
+}
+@media all and (max-width: 1024px) {
+  .licenceHeader {
+    font-size: 2.344vw;
+  }
+  .licenceInfo {
+    font-size: 1.758vw;
+  }
+  .searchBarWrapper {
+    width: 43.164vw;
+  }
 }
