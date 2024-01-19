@@ -4,11 +4,11 @@ import { Layout } from "antd";
 
 import Navigation from "./components/navigation/Navigation";
 
-import CentralPanel from "./components/centralPanel/CentralPanel";
-import FooterPanel from "./components/footers/FooterPanel";
-import OffersPanel from "./components/offers/OffersPanel";
-import CertificatePanel from "./components/licenses/CertificatePanel";
-import ShortcutsPanel from "./components/shortcuts/ShortcutsPanel";
+import CentralPanel from "./components/homePanel/CentralPanel";
+import FooterPanel from "./components/footerGenPanel/FooterPanel";
+import OffersPanel from "./components/offersPanel/OffersPanel";
+import CertificatePanel from "./components/licensesPanel/CertificatePanel";
+import ShortcutsPanel from "./components/shortcutsPanel/ShortcutsPanel";
 
 const { Content } = Layout;
 

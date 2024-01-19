@@ -1,0 +1,454 @@
+.mainSiteWrapper,
+.timersWrapper {
+  display: flex;
+  flex-direction: column;
+}
+.mainSiteWrapper {
+  margin: 0 1.694vw;
+  padding: 2.64vh 0;
+  height: 100vh;
+  justify-content: space-around;
+}
+
+.upperHalf,
+.links,
+.bottomHalf {
+  display: flex;
+  flex-direction: row;
+}
+.upperHalf {
+  justify-content: space-between;
+}
+.telegramPhotoHolder {
+  border-radius: 1.736vw;
+  width: 30.556vw;
+  background-color: #d9d9d9;
+}
+.calendarWrapper {
+  width: 37.847vw;
+  border-radius: 1.042vw;
+  border: 0.1vw solid #4f5b75;
+  display: inherit;
+  flex-direction: row;
+}
+.cleaningDuty {
+  display: inherit;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  margin-top: -4.4vh;
+  color: #0d1e42;
+  font-family: "Barlow";
+  font-size: 1vw;
+  font-weight: 700;
+}
+.section {
+  margin-top: 2.2vh;
+  font-family: "Clash Display";
+  font-size: 1.806vw;
+  font-weight: 600;
+  background: linear-gradient(to right, #0e1d42, rgba(255, 60, 0, 0.7));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline;
+  padding: 0 0.347vw;
+  text-align: center;
+}
+.calendar {
+  width: 24.653vw;
+  display: flex;
+  flex-direction: column;
+  background-color: #4f5b75;
+  padding: 1.87vh 1.389vw;
+  border-radius: inherit;
+  /* //comment below if calendar ugly */
+  min-width: 280px;
+  position: relative;
+}
+.calendarGraphicPlacement {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 4.236vw;
+  height: auto;
+}
+.mirrored {
+  top: 0;
+  left: 0;
+  transform: scale(-1, -1);
+}
+.links {
+  /* margin-top: 5.611vh; */
+  justify-content: space-between;
+  align-items: center;
+}
+.mainLinksBtn.section {
+  margin-top: unset;
+  padding: unset;
+  width: 24.653vw;
+  padding: 1.32vh 0;
+  /* aspect-ratio: 355/58; */
+  border: 0.09vw solid #5f6e90;
+  border-radius: 1.042vw;
+  position: relative;
+  cursor: pointer;
+
+  background: linear-gradient(
+    to right,
+    #0e1d42 0%,
+    rgba(255, 60, 0, 0.7) 50%,
+    #0e1d42 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  background-size: 250% 100%; /* Increased for a longer gradient */
+}
+
+@keyframes slideGradient {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
+
+.mainLinksBtn.section:hover {
+  animation: slideGradient 3s linear infinite;
+}
+
+.linkBtnPlacement {
+  position: absolute;
+  right: 0;
+  bottom: 0.55vh;
+  width: 3.472vw;
+  height: auto;
+}
+.bolid360 {
+  flex: auto;
+  background-color: #d9d9d9;
+  margin-left: 7vw;
+}
+.timersWrapper {
+  gap: 3.85vh;
+  justify-content: flex-end;
+  /* margin-bottom: 2vh; */
+  margin-left: 0.88vh;
+}
+.timer {
+  width: 31.25vw;
+  /* aspect-ratio: 45/8; */
+  height: 7.701vh;
+  background: unset;
+  border: 0.139vw solid #5bc1a1;
+  border-radius: 1.042vw;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.translated {
+  transform: translate(-0.89vh, 0.36vw);
+  background-color: #e8e8eb;
+}
+.ant-card-small {
+  border: unset !important;
+  background: transparent !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ant-card-body {
+  padding: unset !important;
+}
+.ant-statistic {
+  display: flex;
+}
+.ant-statistic-title {
+  font-size: 1.389vw !important;
+  font-family: "Clash Display" !important;
+  font-weight: 500 !important;
+  color: #0e1d42 !important;
+  margin-bottom: unset !important;
+  margin-top: 0.33vh;
+  display: flex;
+  align-items: center;
+  margin-right: 1.389vw;
+}
+.ant-statistic-content {
+  font-family: "Clash Display" !important;
+  font-size: 1.806vw !important;
+  font-weight: 600;
+  background: linear-gradient(to right, #0e1d42, #5bc1a1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  display: inline;
+}
+.secretBtnPlacement {
+  display: flex;
+  flex-direction: row-reverse;
+  /* if bad workee then delete */
+  position: absolute;
+  bottom: 1vh;
+  right: 2.847vw;
+}
+.secretBtn {
+  border-radius: 0.694vw;
+  color: #ff3c00;
+  background-color: #edc6bc;
+  width: 4.861vw;
+  aspect-ratio: 14/5;
+  border: none;
+  cursor: pointer;
+  font-size: 0.833vw;
+  font-family: "Barlow";
+}
+
+.ant-picker-calendar,
+.ant-select-selector,
+.ant-select-selection-search {
+  background: #ffffff !important;
+  border: none !important;
+}
+.ant-picker-calendar {
+  display: flex;
+  flex-direction: column;
+  border-radius: inherit;
+  flex: 1;
+}
+.ant-picker-body {
+  background: #fff !important;
+  border-radius: 1.042vw !important;
+}
+.ant-picker-content th {
+  color: #4f5b75 !important;
+}
+.ant-picker-content {
+  height: inherit !important;
+}
+.ant-picker-cell-in-view,
+.ant-select-selection-item {
+  color: #0e1d42 !important;
+}
+.ant-picker-cell-inner {
+  font-weight: 600;
+}
+.ant-picker-cell-selected .ant-picker-cell-inner {
+  background: rgba(255, 60, 0, 0.45) !important;
+  border-radius: 50% !important;
+}
+.ant-picker-cell-selected .ant-picker-calendar-date-value {
+  color: #ff3c00;
+}
+.ant-picker-calendar-date-today::before {
+  border: 1px solid #ff3c00 !important;
+  border-radius: 50% !important;
+}
+.ant-picker-panel {
+  background: #fff !important;
+  border-top: unset !important;
+  padding: 0 1.389vw;
+  border-radius: 0 0 1.042vw 1.042vw !important;
+}
+.calendarHeader {
+  padding: 1.042vw 1.389vw;
+}
+.displayMonth {
+  color: #ef4123;
+  font-weight: 700;
+  font-size: 16px;
+}
+.changeMonthBtn {
+  background-color: #fff;
+  width: 2.014vw;
+  height: 2.014vw;
+  border: 0.1vw solid #b3b3b3;
+  border-radius: 0.556vw !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* ///////Media adjustments for 1920px///////// 
+440px -> 22.917vw
+25px -> 1.302vw
+5px -> 0.26vw
+1.44px -> 0.075vw
+545px -> 28.385vw
+15px -> 0.781vw
+14.4px -> 0.75vw
+26px  -> 1.354vw
+355px -> 18.49vw
+20px -> 1.042vw
+61px -> 3.177vw
+1.296px -> 0.068vw
+50px -> 2.604vw
+100px -> 5.208vw
+450px -> 23.438vw
+2px -> 0.104vw
+10px -> 0.521vw
+70px -> 3.646vw
+12px -> 0.625vw
+29px -> 1.51vw
+8px -> 0.417vw
+*/
+@media all and (max-width: 1920px) {
+  .mainSiteWrapper {
+    margin: 0 1.736vw;
+  }
+  .telegramPhotoHolder {
+    /*set for 1600px width */
+    border-radius: 1.302vw;
+    width: 27.5vw;
+  }
+  .calendarWrapper {
+    /*set for 1600px width */
+    width: 34.063vw;
+    border-radius: 0.781vw;
+    border: 0.075vw solid #4f5b75;
+  }
+  .cleaningDuty {
+    /*set for 1600px width */
+    font-size: 0.9vw;
+  }
+  .section {
+    font-size: 1.528vw;
+    padding: 0 0.26vw;
+  }
+  .calendar {
+    /*set for 1600px width */
+    width: 22.188vw;
+    padding: 1.87vh 1.25vw;
+  }
+  .calendarGraphicPlacement {
+    width: 3.177vw;
+  }
+  .mainLinksBtn.section {
+    width: 22.188vw;
+    border: 0.068vw solid #5f6e90;
+    border-radius: 0.781vw;
+  }
+  .linkBtnPlacement {
+    width: 2.604vw;
+  }
+  .bolid360 {
+    margin-left: 5.208vw;
+  }
+  .timer {
+    width: 28.125vw;
+    border: 0.104vw solid #5bc1a1;
+    border-radius: 0.781vw;
+  }
+  .translated {
+    transform: translate(-0.89vh, 0.26vw);
+  }
+  .ant-statistic-title {
+    font-size: 1.042vw !important;
+    margin-right: 1.042vw;
+  }
+  .ant-statistic-content {
+    font-size: 1.354vw !important;
+  }
+  .secretBtn {
+    border-radius: 0.521vw;
+    width: 3.646vw;
+    font-size: 0.625vw;
+  }
+  .ant-picker-body {
+    border-radius: 0.781vw !important;
+  }
+  .ant-picker-panel {
+    padding: 0 1.042vw;
+    border-radius: 0 0 0.781vw 0.781vw !important;
+  }
+  .calendarHeader {
+    padding: 0.781vw 1.042vw;
+  }
+  .changeMonthBtn {
+    width: 1.51vw;
+    height: 1.51vw;
+    border: 0.075vw solid #b3b3b3;
+    border-radius: 0.417vw !important;
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .mainSiteWrapper {
+    margin: 0 2.441vw;
+  }
+  .telegramPhotoHolder {
+    border-radius: 2.441vw;
+    width: 34.375vw;
+  }
+  .calendarWrapper {
+    width: 42.578vw;
+    border-radius: 1.465vw;
+    border: 0.141vw solid #4f5b75;
+  }
+  .cleaningDuty {
+    font-size: 1.125vw;
+  }
+  .section {
+    font-size: 1.042vw;
+    padding: 0 0.488vw;
+  }
+  .calendar {
+    width: 27.734vw;
+    padding: 1.87vh 1.563vw;
+  }
+  .calendarGraphicPlacement {
+    width: 5.957vw;
+  }
+  .mainLinksBtn.section {
+    width: 27.734vw;
+    border: 0.127vw solid #5f6e90;
+    border-radius: 1.465vw;
+  }
+  .linkBtnPlacement {
+    width: 4.883vw;
+  }
+  .bolid360 {
+    margin-left: 9.766vw;
+  }
+  .timer {
+    width: 35.156vw;
+    border: 0.195vw solid #5bc1a1;
+    border-radius: 1.465vw;
+  }
+  .translated {
+    transform: translate(-0.89vh, 0.488vw);
+  }
+  .ant-statistic-title {
+    font-size: 1.953vw !important;
+    margin-right: 1.953vw;
+  }
+  .ant-statistic-content {
+    font-size: 0.488vw !important;
+  }
+  .secretBtn {
+    border-radius: 0.977vw;
+    width: 6.836vw;
+    font-size: 1.172vw;
+  }
+  .ant-picker-body {
+    border-radius: 1.465vw !important;
+  }
+  .ant-picker-panel {
+    padding: 0 1.953vw;
+    border-radius: 0 0 1.465vw 1.465vw !important;
+  }
+  .calendarHeader {
+    padding: 1.465vw 1.953vw;
+  }
+  .changeMonthBtn {
+    width: 2.832vw;
+    height: 2.832vw;
+    border: 0.141vw solid #b3b3b3;
+    border-radius: 0.781vw !important;
+  }
+}
