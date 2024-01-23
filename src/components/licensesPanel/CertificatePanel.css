@@ -48,6 +48,10 @@
   border-end-end-radius: 0 !important;
   background-color: unset !important;
   border: unset !important;
+  box-shadow: unset !important;
+}
+.ant-input-affix-wrapper:focus {
+  box-shadow: unset !important;
 }
 .ant-input {
   background-color: unset;
