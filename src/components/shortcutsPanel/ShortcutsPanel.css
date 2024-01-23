@@ -1,35 +1,136 @@
-.shortcuts-panel-wrapper  {
-  /*background-color: #272838;*/
+.shortcutsWrapper {
+  padding: 5.171vh 2.361vw 4.07vh 2.361vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
-.buttons-frame-wrapper {
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-    flex-wrap: nowrap;
-    overflow: auto;
+.buttonsWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 2.778vw;
+  margin-bottom: 3.63vh;
 }
-.important-btn-links {
-    /*flex: 1;*/
-    padding: 0.7rem 1.7rem;
-    border-radius:  15px;
-    border-style: none;
-    background-color: #616177;
-    color: rgba(255,255,255,1);
-    font-size: 16px;
-    font-weight: 400;
+.btnLinks {
+  background-color: #d3e2e0;
+  color: #0e1d42;
+  font-family: "Clash Display";
+  font-weight: 500;
+  font-size: 1.111vw;
+  padding: 0.903vw 1.458vw;
+  cursor: pointer;
+
+  background: linear-gradient(to left, #d3e2e0 50%, #bdd2d0 50%) right;
+  background-size: 200% 100%;
+  transition: background-position 0.5s ease-in-out;
 }
-.important-btn-links:hover {
-    background-color: #454555;
-    transition: 300ms ease-in-out;
-    cursor: pointer;
+.btnLinks:hover {
+  background-position: left;
 }
-.content-placing {
-    margin-top: 1rem;
-    min-height: 90vh;
+.translated {
+  transform: translate(-0.39vh, 0.26vw);
+}
+.outlined {
+  /* width: 21.875vw; */
+  border: 0.104vw solid #5bc1a1;
+  border-radius: 1.042vw;
+}
+.embeddedGoogleChartsWrapper {
+  flex: 1;
+  background-color: #4f5b75;
+  border-radius: 1.042vw;
+  display: flex;
+  position: relative;
 }
 .embedded-file {
-    width: 100%;
-    min-height: 90vh;
-    border-radius: 10px;
-    border-style: none;
+  flex: 1;
+  margin: 1.528vw;
+  border: 0.139vw solid #5bc1a1;
+  border-radius: 1.042vw;
+}
+.graphicposition {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 3.583vw;
+}
+.mirrored {
+  top: 0;
+  left: 0;
+  transform: scale(-1, -1);
+}
+/* ////px to vw for 1440px vieport
+315px -> 21.875vw 
+34px -> 2.361vw
+15px -> 1.042vw
+1.49px -> 0.104vw
+16px -> 1.111vw
+21px -> 1.458vw
+13px -> 0.903vw
+22px -> 1.528vw
+2px -> 0.139vw
+164px -> 11.389vw
+51.595px -> 3.583vw
+*/
+
+@media all and (max-width: 1920px) {
+  .shortcutsWrapper {
+    padding: 5.171vh 1.771vw 4.07vh 1.771vw;
+  }
+  .buttonsWrapper {
+    gap: 2.083vw;
+  }
+  .btnLinks {
+    font-size: 0.833vw;
+    padding: 0.677vw 1.094vw;
+  }
+  .outlined {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 16.406vw; */
+    border: 0.078vw solid #5bc1a1;
+    border-radius: 0.781vw;
+  }
+  .embeddedGoogleChartsWrapper {
+    border-radius: 0.781vw;
+  }
+  .embedded-file {
+    margin: 1.146vw;
+    border: 0.104vw solid #5bc1a1;
+    border-radius: 0.781vw;
+  }
+  .graphicposition {
+    height: 2.687vw;
+  }
+}
+@media all and (max-width: 1024px) {
+  .shortcutsWrapper {
+    padding: 5.171vh 3.32vw 4.07vh 3.32vw;
+  }
+  .buttonsWrapper {
+    gap: 3.906vw;
+  }
+  .btnLinks {
+    font-size: 1.563vw;
+    padding: 1.27vw 2.051vw;
+  }
+  .outlined {
+    /* width: 30.762vw; */
+    border: 0.146vw solid #5bc1a1;
+    border-radius: 1.465vw;
+  }
+  .embeddedGoogleChartsWrapper {
+    border-radius: 1.465vw;
+  }
+  .embedded-file {
+    margin: 2.148vw;
+    border: 0.195vw solid #5bc1a1;
+    border-radius: 1.465vw;
+  }
+  .graphicposition {
+    height: 5.039vw;
+  }
 }
