@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Menu } from "antd";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import { ReactComponent as Pointer } from "../images/svg/pointer.svg";
 import "./Navigation.css";
@@ -8,6 +8,7 @@ import "./Navigation.css";
 function NavbarBody() {
   const [hoveredItem, setHoveredItem] = useState(null);
   const [selectedItem, setSelectedItem] = useState(1);
+  const location = useLocation();
 
   const menuItemList = [
     { id: 1, title: "Strona główna", link: "home" },
@@ -31,6 +32,13 @@ function NavbarBody() {
     }
     return null;
   };
+
+  // Set the selected menu item based on the current location
+  useEffect(() => {
+    const path = location.pathname.split("/")[2]; // Assuming the path is like "/v1/link"
+    const activeItem = menuItemList.find((item) => item.link === path);
+    setSelectedItem(activeItem ? activeItem.id : null);
+  }, [location]);
 
   return (
     <div className="website">
