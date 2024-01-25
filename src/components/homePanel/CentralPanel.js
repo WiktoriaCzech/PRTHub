@@ -158,12 +158,12 @@ function CentralPanel() {
           ))}
         </div>
         <div className="bolid360">
-          {/* <ThreeSixty
+          <ThreeSixty
             amount={36}
-            imagePath="https://drive.google.com/drive/folders/1uMPasXACAJlyRqSDtHip4f6iUVQgNnA0?usp=sharing"
-            fileName="bolid_{index}.jpg?v1"
+            imagePath="https://przracing.pl/uploads/react360/"
+            fileName="PMT04_{index}.png?aaaa"
             spinReverse
-          /> */}
+          />
         </div>
       </div>
       <div className="secretBtnPlacement">

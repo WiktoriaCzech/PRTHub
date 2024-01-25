@@ -130,8 +130,17 @@
 }
 .bolid360 {
   flex: auto;
-  background-color: #d9d9d9;
   margin-left: 7vw;
+}
+.v360-menu-btns {
+  display: none;
+  padding: unset;
+}
+.v360-image-container,
+.v360-viewport {
+  border-radius: 1.042vw;
+  height: 38.504vh;
+  width: auto;
 }
 .timersWrapper {
   gap: 3.85vh;
@@ -339,6 +348,10 @@
   .bolid360 {
     margin-left: 5.208vw;
   }
+  .v360-image-container,
+  .v360-viewport {
+    border-radius: 0.781vw;
+  }
   .timer {
     width: 28.125vw;
     border: 0.104vw solid #5bc1a1;
@@ -414,6 +427,10 @@
   }
   .bolid360 {
     margin-left: 9.766vw;
+  }
+  .v360-image-container,
+  .v360-viewport {
+    border-radius: 1.465vw;
   }
   .timer {
     width: 35.156vw;
