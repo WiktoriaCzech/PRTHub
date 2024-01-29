@@ -1,136 +1,684 @@
-.offers-title {
-    font-size: 32px;
-    font-weight: 400;
-    color: #272838;
+.offersPanelWrapper {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  padding-top: 8.161vh;
 }
-.offers-panel-wrapper p {
-    font-size: 22px;
-    font-weight: 300;
-    margin-top: 1rem;
+.infoSectionWrapper {
+  margin-left: 0.694vw;
+  max-width: 34.722vw;
+  margin-right: 1.389vw;
 }
-p a {
-    color: #272838;
-    font-weight: 500;
+.infoAboutOffersGen {
+  margin-bottom: 11.661vh;
+  color: #0d1e42;
+  display: flex;
+  flex-direction: column;
 }
-.remove-single-item {
-    scale:  1.06;
-    margin: 0;
+.infoAboutOffersGen h1,
+.sendOfferInfo h1 {
+  font-family: "Clash Display";
+  font-size: 1.667vw;
+  font-weight: 500;
 }
-p a:hover, .remove-single-item:hover {
-    color: #99350a;
+.formWithResponse {
+  margin: 0 auto;
 }
-.offer-form {
-    padding: 1rem;
-    background-color: #F2F2F2;
-    border-radius: 8px;
-    margin-top: 1rem;
+.infoAboutOffersGen span:first-of-type {
+  margin-top: 3.96vh;
 }
-.company-data-fields {
-    display: grid;
-    grid-template-columns: repeat(2,50%);
-    grid-template-rows: auto;
+.infoAboutOffersGen span,
+.sendOfferInfo span {
+  font-family: "Barlow";
+  font-size: 1.25vw;
+  line-height: 2.222vw;
 }
-.company-data-fields :nth-child(even) {
-    margin-left: 1rem;
+.textHighlited,
+.textHighlited:hover {
+  font-weight: 500;
+  color: #ff3c00;
+  text-decoration: underline;
 }
-.ant-form-item-required {
-    width: 130px !important;
+.sendOfferInfo {
+  display: flex;
+  flex-direction: column;
+  color: #0d1e42;
+}
+.sendOfferInfo span:first-of-type {
+  margin-top: 0.99vh;
+}
+.formOutlineWrapper {
+  background-color: #4f5b75;
+  border-radius: 1.042vw;
+  padding: 1.597vw;
+  position: relative;
+  width: 49.306vw;
+  min-width: 630px;
+}
+.offerForm {
+  background-color: #f2f2f2;
+  border: 0.139vw solid #5bc1a1;
+  border-radius: 1.042vw;
+  padding-left: 1.389vw;
+  padding-right: 0.903vw;
+  overflow-y: auto;
+  max-height: 86.909vh;
+  scrollbar-width: thin;
+  scrollbar-color: #6b918b #b3b3b3;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 0.694vw;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #b3b3b3;
+  border-top-right-radius: 1.042vw;
+  border-bottom-right-radius: 1.042vw;
+  border-top-left-radius: 0.347vw;
+  border-bottom-left-radius: 0.347vw;
+  /* border-radius: 5px; */
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #6b918b;
+  /* border-radius: 5px; */
+  border-top-right-radius: 1.042vw;
+  border-bottom-right-radius: 1.042vw;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #648782;
+}
+.clearAllFieldsBtn {
+  margin-top: 1.87vh;
+  background-color: #fb7349;
+  color: #0e1d42;
+  font-family: "Barlow";
+  font-weight: 400;
+  font-size: 1.111vw;
+  border-top-left-radius: 1.042vw;
+  border-bottom-right-radius: 1.042vw;
+  height: 3.63vh;
+  float: right;
+  text-decoration: unset !important;
+  text-align: center;
+}
+.clearAllFieldsBtn:hover {
+  color: #0e1d42 !important;
+  text-decoration: unset !important;
+  border-color: #ee673d !important;
+  transition: 300ms ease-in-out;
+  background-color: #ee673d;
+}
+.ant-divider {
+  font-size: 1.25vw !important;
+  font-family: "Barlow";
+  font-weight: 400 !important;
+  border-bottom: 0.069vw solid #5bc1a1;
+}
+.ant-divider::after {
+  border-block-start: unset !important;
+}
+.info {
+  font-size: 0.972vw;
+}
+.ant-radio-button-wrapper {
+  background-color: #d3e2e0;
+  border: unset;
+}
+.ant-radio-group-outline {
+  border: 0.069vw solid #5bc1a1;
+  border-radius: 0.694vw;
+}
+.ant-radio-button-wrapper:first-child {
+  border-inline-start: unset;
+  border-start-start-radius: 0.694vw;
+  border-end-start-radius: 0.694vw;
+}
+.ant-radio-button-wrapper:not(:first-child)::before {
+  background-color: #5bc1a1 !important;
+}
+.ant-radio-button-wrapper:last-child {
+  border-start-end-radius: 0.694vw;
+  border-end-end-radius: 0.694vw;
+}
+.ant-radio-button-wrapper:hover,
+.ant-radio-button-wrapper-checked {
+  color: #000 !important;
+  background-color: #9bd2c2;
+  background: #9bd2c2 !important;
+}
+.ant-input {
+  border: 0.069vw solid #5bc1a1;
+  border-radius: 0.694vw;
+  height: 3.85vh;
+  /* max-width: 400px; */
+  background-color: #fff;
+}
+.ant-input:hover {
+  border: 0.069vw solid #5bc1a1;
+}
+.ant-input:focus {
+  border-color: #5bc1a1 !important;
+  background-color: #fff;
+}
+.gridWrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: auto;
+}
+.GridSpacing {
+  margin-left: 1rem !important;
+}
+.ant-btn-dashed,
+.ant-btn-dashed:hover {
+  border-color: #5bc1a1 !important;
+  color: #ff3c00 !important;
+}
+.ant-btn-dashed:hover {
+  background-color: #e7e7e7;
+}
+.submitOfferBtn {
+  background-color: #fb7349;
+  border-radius: 0.694vw;
+  color: #0e1d42;
+  font-size: 1.111vw;
+  font-family: "Barlow";
+  height: 4.4vh;
 }
 .single-product-placing {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 .single-product-placing > div {
-    flex: 48%;
+  flex: 48%;
 }
 .single-product {
-    border: 1px solid rgba(0,0,0,0.1);
-    border-radius: 8px;
-    padding: 0.5rem;
-    margin-top: 1rem;
-    margin-left: 0.2rem;
-    margin-right: 0.2rem;
+  border: 0.069vw solid #5bc1a1;
+  border-radius: 1.042vw;
+  background-color: #d3e2e0;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  display: flex;
+  flex-direction: column;
 }
-.add-product {
-    display: block;
-    flex: 100% !important;
-}
-.offer-btn {
-    margin-top: 1rem;
-    width: 100%;
-}
-.submit-btn-offer {
-    border-radius: 8px;
-    text-align: center;
-    padding: 0.5rem 1.4rem;
-    height: unset !important;
-    color: #F2F2F2;
-    background-color: #616177;
-}
-.submit-btn-offer:hover {
-    background-color: #444456;
+.remove-single-item {
+  scale: 1.06;
+  margin: 0;
+  align-self: self-end;
+  margin-bottom: 1.32vh;
+  cursor: pointer;
 }
 .upload-file-button {
-    border-style: dashed !important;
+  border-color: #4e877e;
+  background-color: #f2f2f2;
+  color: #ff3c00;
+  border-style: dashed !important;
 }
-.clear-all-fields-btn {
-    float: right;
-    background-color: #71718c;
-    color: #F2F2F2;
-    text-align: center;
-    border-radius: 8px;
-    border-color: unset !important;
-    border: none;
+.upload-file-button.ant-btn-default:hover {
+  border-color: #4e877e;
+  background-color: #e8e8eb;
+  color: #ff3c00;
 }
-.clear-all-fields-btn:hover {
-    transition: 300ms ease-in-out;
-    background-color: #99350a;
-    color: #F2F2F2 !important;
+.ant-upload-list-item {
+  border: 0.069vw solid #5bc1a1 !important;
 }
-.offer-form-title {
-
+.anticon-delete {
+  color: #ff3c00 !important;
 }
-@media all and (max-width: 920px) {
-    .single-product-placing {
-        display: grid;
-    }
+.ant-form-item-required {
+  width: 9.028vw !important;
 }
-@media all and (max-width: 700px) {
-    .offers-title {
-        font-size: 28px;
-    }
-    .offers-panel-wrapper p {
-        font-size: 20px;
-    }
-    .company-data-fields {
-        grid-template-columns: repeat(1, 100%);
-    }
-    .company-data-fields :nth-child(even) {
-        margin-left: 0;
-    }
+.offer-btn {
+  margin-top: 1rem;
+  width: 100%;
 }
-@media all and (max-width: 430px) {
-    .offers-title {
-        font-size: 24px;
-    }
-    .offers-panel-wrapper p {
-        font-size: 16px;
-    }
-    .clear-all-fields-btn {
-        font-size: 12px;
-        padding: 0 8px;
-    }
+.add-product {
+  display: block;
+  flex: 100% !important;
 }
-@media all and (max-width: 320px) {
-    .ant-radio-group {
-        display: grid;
-        gap: 0.2rem;
-    }
-    .ant-radio-button-wrapper {
-        border-radius: 6px;
-        border-inline-start: 1px solid #d9d9d9;
-    }
-    .ant-radio-button-wrapper::before {
-        background-color: unset !important;
-    }
+@media all and (max-width: 3840px) and (min-width: 2800px) {
+  .infoSectionWrapper {
+    margin-left: 0.26vw;
+    max-width: 13.021vw;
+    margin-right: 0.521vw;
+  }
+  .infoAboutOffersGen h1,
+  .sendOfferInfo h1 {
+    font-size: 0.625vw;
+  }
+  .infoAboutOffersGen span,
+  .sendOfferInfo span {
+    font-size: 0.469vw;
+    line-height: 0.833vw;
+  }
+  .formOutlineWrapper {
+    border-radius: 0.391vw;
+    padding: 0.599vw;
+    width: 18.49vw;
+  }
+  .offerForm {
+    border: 0.052vw solid #5bc1a1;
+    border-radius: 0.391vw;
+    padding-left: 0.26vw;
+    padding-right: 0.339vw;
+  }
+  ::-webkit-scrollbar {
+    width: 0.26vw;
+  }
+  ::-webkit-scrollbar-track {
+    border-top-right-radius: 0.391vw;
+    border-bottom-right-radius: 0.391vw;
+    border-top-left-radius: 0.26vw;
+    border-bottom-left-radius: 0.26vw;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-top-right-radius: 0.391vw;
+    border-bottom-right-radius: 0.391vw;
+  }
+  .clearAllFieldsBtn {
+    font-size: 0.417vw;
+    border-top-left-radius: 0.391vw;
+    border-bottom-right-radius: 0.391vw;
+  }
+  .ant-divider {
+    font-size: 0.469vw !important;
+    border-bottom: 0.026vw solid #5bc1a1;
+  }
+  .info {
+    font-size: 0.365vw;
+  }
+  .ant-radio-group-outline {
+    border: 0.026vw solid #5bc1a1;
+    border-radius: 0.26vw;
+  }
+  .ant-radio-button-wrapper:first-child {
+    border-start-start-radius: 0.26vw;
+    border-end-start-radius: 0.26vw;
+  }
+  .ant-radio-button-wrapper:last-child {
+    border-start-end-radius: 0.26vw;
+    border-end-end-radius: 0.26vw;
+  }
+  .ant-input {
+    border: 0.026vw solid #5bc1a1;
+    border-radius: 0.26vw;
+  }
+  .ant-input:hover {
+    border: 0.026vw solid #5bc1a1;
+  }
+  .submitOfferBtn {
+    border-radius: 0.26vw;
+    font-size: 0.417vw;
+  }
+  .single-product {
+    border: 0.026vw solid #5bc1a1;
+    border-radius: 0.391vw;
+  }
+  .ant-upload-list-item {
+    border: 0.026vw solid #5bc1a1 !important;
+  }
+  .ant-form-item-required {
+    width: 3.385vw !important;
+  }
+}
+@media all and (max-width: 2560px) and (min-width: 2000px) {
+  .infoSectionWrapper {
+    margin-left: 0.391vw;
+    max-width: 19.531vw;
+    margin-right: 0.781vw;
+  }
+  .infoAboutOffersGen h1,
+  .sendOfferInfo h1 {
+    font-size: 0.938vw;
+  }
+  .infoAboutOffersGen span,
+  .sendOfferInfo span {
+    font-size: 0.703vw;
+    line-height: 1.25vw;
+  }
+  .formOutlineWrapper {
+    border-radius: 0.586vw;
+    padding: 0.898vw;
+    width: 27.734vw;
+  }
+  .offerForm {
+    border: 0.078vw solid #5bc1a1;
+    border-radius: 0.586vw;
+    padding-left: 0.391vw;
+    padding-right: 0.508vw;
+  }
+  ::-webkit-scrollbar {
+    width: 0.391vw;
+  }
+  ::-webkit-scrollbar-track {
+    border-top-right-radius: 0.586vw;
+    border-bottom-right-radius: 0.586vw;
+    border-top-left-radius: 0.26vw;
+    border-bottom-left-radius: 0.26vw;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-top-right-radius: 0.586vw;
+    border-bottom-right-radius: 0.586vw;
+  }
+  .clearAllFieldsBtn {
+    font-size: 0.625vw;
+    border-top-left-radius: 0.586vw;
+    border-bottom-right-radius: 0.586vw;
+  }
+  .ant-divider {
+    font-size: 0.703vw !important;
+    border-bottom: 0.039vw solid #5bc1a1;
+  }
+  .info {
+    font-size: 0.547vw;
+  }
+  .ant-radio-group-outline {
+    border: 0.039vw solid #5bc1a1;
+    border-radius: 0.391vw;
+  }
+  .ant-radio-button-wrapper:first-child {
+    border-start-start-radius: 0.391vw;
+    border-end-start-radius: 0.391vw;
+  }
+  .ant-radio-button-wrapper:last-child {
+    border-start-end-radius: 0.391vw;
+    border-end-end-radius: 0.391vw;
+  }
+  .ant-input {
+    border: 0.039vw solid #5bc1a1;
+    border-radius: 0.391vw;
+  }
+  .ant-input:hover {
+    border: 0.039vw solid #5bc1a1;
+  }
+  .submitOfferBtn {
+    border-radius: 0.391vw;
+    font-size: 0.625vw;
+  }
+  .single-product {
+    border: 0.039vw solid #5bc1a1;
+    border-radius: 0.586vw;
+  }
+  .ant-upload-list-item {
+    border: 0.039vw solid #5bc1a1 !important;
+  }
+  .ant-form-item-required {
+    width: 5.078vw !important;
+  }
+}
+@media all and (max-width: 1920px) and (min-width: 1600px) {
+  .infoSectionWrapper {
+    margin-left: 0.521vw;
+    max-width: 26.042vw;
+    margin-right: 1.042vw;
+  }
+  .infoAboutOffersGen h1,
+  .sendOfferInfo h1 {
+    font-size: 1.25vw;
+  }
+  .infoAboutOffersGen span,
+  .sendOfferInfo span {
+    font-size: 0.938vw;
+    line-height: 1.667vw;
+  }
+  .formOutlineWrapper {
+    border-radius: 0.781vw;
+    padding: 1.198vw;
+    width: 36.979vw;
+  }
+  .offerForm {
+    border: 0.104vw solid #5bc1a1;
+    border-radius: 0.781vw;
+    padding-left: 1.042vw;
+    padding-right: 0.677vw;
+  }
+  ::-webkit-scrollbar {
+    width: 0.521vw;
+  }
+  ::-webkit-scrollbar-track {
+    border-top-right-radius: 0.781vw;
+    border-bottom-right-radius: 0.781vw;
+    border-top-left-radius: 0.26vw;
+    border-bottom-left-radius: 0.26vw;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-top-right-radius: 0.781vw;
+    border-bottom-right-radius: 0.781vw;
+  }
+  .clearAllFieldsBtn {
+    font-size: 0.833vw;
+    border-top-left-radius: 0.781vw;
+    border-bottom-right-radius: 0.781vw;
+  }
+  .ant-divider {
+    font-size: 0.938vw !important;
+    border-bottom: 0.052vw solid #5bc1a1;
+  }
+  .info {
+    font-size: 0.729vw;
+  }
+  .ant-radio-group-outline {
+    border: 0.052vw solid #5bc1a1;
+    border-radius: 0.521vw;
+  }
+  .ant-radio-button-wrapper:first-child {
+    border-start-start-radius: 0.521vw;
+    border-end-start-radius: 0.521vw;
+  }
+  .ant-radio-button-wrapper:last-child {
+    border-start-end-radius: 0.521vw;
+    border-end-end-radius: 0.521vw;
+  }
+  .ant-input {
+    border: 0.052vw solid #5bc1a1;
+    border-radius: 0.521vw;
+  }
+  .ant-input:hover {
+    border: 0.052vw solid #5bc1a1;
+  }
+  .submitOfferBtn {
+    border-radius: 0.521vw;
+    font-size: 0.833vw;
+  }
+  .single-product {
+    border: 0.052vw solid #5bc1a1;
+    border-radius: 0.781vw;
+  }
+  .ant-upload-list-item {
+    border: 0.052vw solid #5bc1a1 !important;
+  }
+  .ant-form-item-required {
+    width: 6.771vw !important;
+  }
+}
+@media all and (max-width: 1280px) {
+  .infoSectionWrapper {
+    margin-left: 0.781vw;
+    max-width: 39.063vw;
+    margin-right: 1.563vw;
+  }
+  .infoAboutOffersGen h1,
+  .sendOfferInfo h1 {
+    font-size: 1.406vw;
+  }
+  .infoAboutOffersGen span,
+  .sendOfferInfo span {
+    font-size: 1.406vw;
+    line-height: 2.5vw;
+  }
+  .formOutlineWrapper {
+    border-radius: 1.172vw;
+    padding: 1.797vw;
+    /* width: 55.469vw; */
+    width: unset;
+  }
+  .offerForm {
+    border: 0.156vw solid #5bc1a1;
+    border-radius: 1.172vw;
+    padding-left: 1.563vw;
+    padding-right: 1.016vw;
+  }
+  ::-webkit-scrollbar {
+    width: 0.781vw;
+  }
+  ::-webkit-scrollbar-track {
+    border-top-right-radius: 1.172vw;
+    border-bottom-right-radius: 1.172vw;
+    border-top-left-radius: 0.391vw;
+    border-bottom-left-radius: 0.391vw;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-top-right-radius: 1.172vw;
+    border-bottom-right-radius: 1.172vw;
+  }
+  .clearAllFieldsBtn {
+    font-size: 1.25vw;
+    border-top-left-radius: 1.172vw;
+    border-bottom-right-radius: 1.172vw;
+  }
+  .ant-divider {
+    font-size: 1.406vw !important;
+    border-bottom: 0.078vw solid #5bc1a1;
+  }
+  .info {
+    font-size: 1.094vw;
+  }
+  .ant-radio-group-outline {
+    border: 0.078vw solid #5bc1a1;
+    border-radius: 0.781vw;
+  }
+  .ant-radio-button-wrapper:first-child {
+    border-start-start-radius: 0.781vw;
+    border-end-start-radius: 0.781vw;
+  }
+  .ant-radio-button-wrapper:last-child {
+    border-start-end-radius: 0.781vw;
+    border-end-end-radius: 0.781vw;
+  }
+  .ant-input {
+    border: 0.078vw solid #5bc1a1;
+    border-radius: 0.781vw;
+  }
+  .ant-input:hover {
+    border: 0.078vw solid #5bc1a1;
+  }
+  .submitOfferBtn {
+    border-radius: 0.781vw;
+    font-size: 1.25vw;
+  }
+  .single-product {
+    border: 0.078vw solid #5bc1a1;
+    border-radius: 1.172vw;
+  }
+  .ant-upload-list-item {
+    border: 0.078vw solid #5bc1a1 !important;
+  }
+  .ant-form-item-required {
+    width: 10.156vw !important;
+  }
+}
+@media all and (max-width: 1024px) {
+  .offersPanelWrapper {
+    flex-direction: column;
+    padding-top: 6.161vh;
+  }
+  .infoSectionWrapper {
+    margin: 0 auto;
+    max-width: 69.336vw;
+  }
+  .infoAboutOffersGen {
+    margin-bottom: 4.661vh;
+  }
+  .infoAboutOffersGen h1,
+  .sendOfferInfo h1 {
+    font-size: 2.344vw;
+  }
+  .infoAboutOffersGen span:first-of-type {
+    margin-top: 1.56vh;
+  }
+  .infoAboutOffersGen span,
+  .sendOfferInfo span {
+    font-size: 1.758vw;
+    line-height: 3.125vw;
+  }
+  .sendOfferInfo {
+    margin-bottom: 2vh;
+  }
+  .formOutlineWrapper {
+    border-radius: 1.465vw;
+    padding: 2.246vw;
+    width: 69.336vw;
+    margin-bottom: 2vh;
+  }
+  .offerForm {
+    border: 0.195vw solid #5bc1a1;
+    border-radius: 1.465vw;
+    padding-left: 1.953vw;
+    padding-right: 1.27vw;
+  }
+  ::-webkit-scrollbar {
+    width: 0.977vw;
+  }
+  ::-webkit-scrollbar-track {
+    border-top-right-radius: 1.465vw;
+    border-bottom-right-radius: 1.465vw;
+    border-top-left-radius: 0.488vw;
+    border-bottom-left-radius: 0.488vw;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-top-right-radius: 1.465vw;
+    border-bottom-right-radius: 1.465vw;
+  }
+  .clearAllFieldsBtn {
+    font-size: 1.563vw;
+    border-top-left-radius: 1.465vw;
+    border-bottom-right-radius: 1.465vw;
+  }
+  .ant-divider {
+    font-size: 1.758vw !important;
+    border-bottom: 0.098vw solid #5bc1a1;
+  }
+  .info {
+    font-size: 1.367vw;
+  }
+  .ant-radio-group-outline {
+    border: 0.098vw solid #5bc1a1;
+    border-radius: 0.977vw;
+  }
+  .ant-radio-button-wrapper:first-child {
+    border-start-start-radius: 0.977vw;
+    border-end-start-radius: 0.977vw;
+  }
+  .ant-radio-button-wrapper:last-child {
+    border-start-end-radius: 0.977vw;
+    border-end-end-radius: 0.977vw;
+  }
+  .ant-input {
+    border: 0.098vw solid #5bc1a1;
+    border-radius: 0.977vw;
+    height: 35px;
+  }
+  .ant-input:hover {
+    border: 0.098vw solid #5bc1a1;
+  }
+  .submitOfferBtn {
+    border-radius: 0.977vw;
+    font-size: 1.563vw;
+  }
+  .single-product {
+    border: 0.098vw solid #5bc1a1;
+    border-radius: 1.465vw;
+  }
+  .ant-upload-list-item {
+    border: 0.098vw solid #5bc1a1 !important;
+  }
+  .ant-form-item-required {
+    width: 12.695vw !important;
+  }
+}
+@media all and (max-width: 900px) {
 }

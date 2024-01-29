@@ -16,7 +16,7 @@ let currentYear = currentTime.getFullYear();
 const Navigation = () => {
   const [sidebar, setSidebar] = useState(false);
   const [navbarOption, setNavbarOption] = useState(
-    window.innerWidth < 810 ? true : false
+    window.innerWidth <= 900 ? true : false
   );
   //TODO: on initialization get window width and set it to usestate //DONE: check if workee
   const showSidebar = () => setSidebar(!sidebar);
@@ -24,7 +24,7 @@ const Navigation = () => {
   let navigate = useNavigate();
 
   window.addEventListener("resize", function () {
-    window.matchMedia("(max-width: 810px)").matches
+    window.matchMedia("(max-width: 900px)").matches
       ? setNavbarOption(true)
       : setNavbarOption(false);
   });

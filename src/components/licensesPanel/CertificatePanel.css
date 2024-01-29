@@ -53,10 +53,10 @@
 .ant-input-affix-wrapper:focus {
   box-shadow: unset !important;
 }
-.ant-input {
+.searchBarWrapper .ant-input {
   background-color: unset;
 }
-.ant-input:focus {
+.searchBarWrapper .ant-input:focus {
   border-color: unset !important;
   border: none !important;
   box-shadow: none !important;
