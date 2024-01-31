@@ -238,7 +238,7 @@ function OffersPanel() {
 
       <div className="formWithResponse">
         <div className="formOutlineWrapper">
-          <FormGraphic className="graphicposition mirrored" />
+          <FormGraphic className="wrapperDecoration mirrored" />
           <Form className="offerForm" onFinish={formik.handleSubmit} noValidate>
             <Button
               className="clearAllFieldsBtn"

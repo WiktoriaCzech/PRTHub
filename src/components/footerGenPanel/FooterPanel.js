@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import { Divider, Form, Button, Input, Upload } from "antd";
 import "./FooterPanel.css";
 import "../offersPanel/OffersPanel.css";
-import { ArrowLeftOutlined, UploadOutlined } from "@ant-design/icons";
+import { UploadOutlined } from "@ant-design/icons";
 
 import { ReactComponent as FormGraphic } from "../images/svg/calendarGraphic.svg";
 import { ReactComponent as GmailLogo } from "../images/svg/logos_google-gmail.svg";
@@ -124,7 +124,7 @@ function FooterPanel() {
       </div>
       <div className="formWithResponse">
         <div className="formOutlineWrapper footerForm">
-          <FormGraphic className="graphicposition mirrored" />
+          <FormGraphic className="wrapperDecoration mirrored" />
           {showFooter ? (
             <div className="generatedFooter">
               <Button className="goBackToForm" onClick={getBackToForm}>

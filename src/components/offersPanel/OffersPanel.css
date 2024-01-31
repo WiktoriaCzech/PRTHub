@@ -1,7 +1,7 @@
 .offersPanelWrapper {
   display: flex;
   flex-direction: row;
-  height: 100vh;
+  min-height: 100vh;
   padding-top: 8.161vh;
 }
 .infoSectionWrapper {
@@ -213,7 +213,8 @@
   flex-direction: column;
 }
 .remove-single-item {
-  scale: 1.06;
+  height: 20px;
+  width: auto;
   margin: 0;
   align-self: self-end;
   margin-bottom: 1.32vh;
@@ -250,6 +251,11 @@
 .err-message {
   color: #ff3c00;
   margin-left: 10px;
+}
+.wrapperDecoration {
+  position: absolute;
+  height: 7.261vh;
+  z-index: 100;
 }
 @media all and (max-width: 3840px) and (min-width: 2800px) {
   .infoSectionWrapper {
@@ -691,5 +697,300 @@
     width: 12.695vw !important;
   }
 }
-@media all and (max-width: 900px) {
+@media all and (max-width: 768px) {
+  .offersPanelWrapper {
+    padding-top: 4.4vh;
+  }
+  .infoSectionWrapper {
+    max-width: 73.958vw;
+  }
+  .infoAboutOffersGen {
+    margin-bottom: 2.661vh;
+  }
+  .infoAboutOffersGen h1,
+  .sendOfferInfo h1 {
+    font-size: 3.125vw;
+  }
+  .infoAboutOffersGen span:first-of-type {
+    margin-top: 1vh;
+  }
+  .infoAboutOffersGen span,
+  .sendOfferInfo span {
+    font-size: 2.344vw;
+    line-height: 4.167vw;
+  }
+  .sendOfferInfo {
+    margin-bottom: 2vh;
+  }
+  .formOutlineWrapper {
+    border-radius: 1.953vw;
+    padding: 2.995vw;
+    width: 73.958vw;
+  }
+  .offerForm {
+    border: 0.26vw solid #5bc1a1;
+    border-radius: 1.953vw;
+    padding-left: 2.604vw;
+    padding-right: 1.693vw;
+  }
+  ::-webkit-scrollbar {
+    width: 1.302vw;
+  }
+  ::-webkit-scrollbar-track {
+    border-top-right-radius: 1.953vw;
+    border-bottom-right-radius: 1.953vw;
+    border-top-left-radius: 0.651vw;
+    border-bottom-left-radius: 0.651vw;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-top-right-radius: 1.953vw;
+    border-bottom-right-radius: 1.953vw;
+  }
+  .clearAllFieldsBtn {
+    font-size: 2.083vw;
+    border-top-left-radius: 1.953vw;
+    border-bottom-right-radius: 1.953vw;
+  }
+  .ant-divider {
+    font-size: 2.344vw !important;
+    border-bottom: 0.13vw solid #5bc1a1;
+  }
+  .info {
+    font-size: 1.823vw;
+  }
+  .ant-radio-group-outline {
+    border: 0.13vw solid #5bc1a1;
+    border-radius: 1.302vw;
+  }
+  .ant-radio-button-wrapper:first-child {
+    border-start-start-radius: 1.302vw;
+    border-end-start-radius: 1.302vw;
+  }
+  .ant-radio-button-wrapper:last-child {
+    border-start-end-radius: 1.302vw;
+    border-end-end-radius: 1.302vw;
+  }
+  .ant-input {
+    border: 0.13vw solid #5bc1a1;
+    border-radius: 1.302vw;
+    height: 35px;
+  }
+  .ant-input:hover {
+    border: 0.13vw solid #5bc1a1;
+  }
+  .submitOfferBtn {
+    border-radius: 1.302vw;
+    font-size: 2.083vw;
+  }
+  .single-product {
+    border: 0.13vw solid #5bc1a1;
+    border-radius: 1.953vw;
+  }
+  .ant-upload-list-item {
+    border: 0.13vw solid #5bc1a1 !important;
+  }
+  .ant-form-item-required {
+    width: 16.927vw !important;
+  }
+}
+@media all and (max-width: 480px) {
+  .offersPanelWrapper {
+    padding-top: 3.3vh;
+  }
+  .infoSectionWrapper {
+    max-width: 118.333vw;
+  }
+  .infoAboutOffersGen {
+    padding-left: 15.167vw;
+    margin-bottom: 1.661vh;
+  }
+  .infoAboutOffersGen h1,
+  .sendOfferInfo h1 {
+    font-size: 4.167vw;
+  }
+  .infoAboutOffersGen span:first-of-type {
+    margin-top: 0.8vh;
+  }
+  .infoAboutOffersGen span,
+  .sendOfferInfo span {
+    font-size: 3.333vw;
+    line-height: 4.667vw;
+  }
+  .sendOfferInfo {
+    margin-bottom: 3vh;
+  }
+  .formOutlineWrapper {
+    border-radius: 3.125vw;
+    padding: 2.5vw;
+    width: 92.475vw;
+    min-width: unset;
+    margin-bottom: 3.74vh;
+  }
+  .offerForm {
+    border: 0.416vw solid #5bc1a1;
+    border-radius: 3.125vw;
+    padding-left: 2.292vw;
+    padding-right: 2.708vw;
+  }
+  ::-webkit-scrollbar {
+    width: 2.083vw;
+  }
+  ::-webkit-scrollbar-track {
+    border-top-right-radius: 3.125vw;
+    border-bottom-right-radius: 3.125vw;
+    border-top-left-radius: 1.042vw;
+    border-bottom-left-radius: 1.042vw;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-top-right-radius: 3.125vw;
+    border-bottom-right-radius: 3.125vw;
+  }
+  .clearAllFieldsBtn {
+    font-size: 2.5vw;
+    border-top-left-radius: 3.125vw;
+    border-bottom-right-radius: 3.125vw;
+  }
+  .ant-divider {
+    font-size: 3.333vw !important;
+    border-bottom: 0.208vw solid #5bc1a1;
+    margin: 20px 0 5px 0 !important;
+  }
+  .info {
+    font-size: 2.5vw;
+  }
+  .info br {
+    display: none;
+  }
+  .ant-radio-group-outline {
+    border: 0.208vw solid #5bc1a1;
+    border-radius: 3.333vw;
+  }
+  .ant-radio-button-wrapper:first-child {
+    border-start-start-radius: 3.083vw;
+    border-end-start-radius: 3.083vw;
+  }
+  .ant-radio-button-wrapper:last-child {
+    border-start-end-radius: 3.083vw;
+    border-end-end-radius: 3.083vw;
+  }
+  .ant-input {
+    border: 0.208vw solid #5bc1a1;
+    border-radius: 3.333vw;
+    height: 30px;
+  }
+  .ant-input:hover {
+    border: 0.208vw solid #5bc1a1;
+  }
+  .submitOfferBtn {
+    border-radius: 2.667vw;
+    font-size: 2.917vw;
+  }
+  .single-product {
+    border: 0.208vw solid #5bc1a1;
+    border-radius: 3.125vw;
+  }
+  .ant-form-item-label {
+    padding: 0 !important;
+  }
+  .ant-form-item-label > label {
+    font-size: 2.5vw !important;
+  }
+  .ant-upload-list-item {
+    border: 0.208vw solid #5bc1a1 !important;
+  }
+  .ant-form-item-required {
+    width: 43.333vw !important;
+  }
+  .gridWrapper {
+    display: unset;
+  }
+  .ant-form-item {
+    margin-bottom: 10px;
+  }
+  .gridSpacing {
+    margin-left: unset !important;
+  }
+  .add-product {
+    margin-bottom: 10px;
+  }
+  .wrapperDecoration {
+    position: absolute;
+    height: 4.4vh;
+  }
+}
+@media all and (max-width: 400px) {
+  .infoAboutOffersGen {
+    padding-left: 16.167vw;
+    margin-bottom: 1.661vh;
+  }
+  .infoAboutOffersGen h1,
+  .sendOfferInfo h1 {
+    font-size: 4vw;
+  }
+  .infoAboutOffersGen span,
+  .sendOfferInfo span {
+    font-size: 3.5vw;
+    line-height: 5.5vw;
+  }
+  .formOutlineWrapper {
+    border-radius: 3.75vw;
+    padding: 3vw;
+  }
+  .offerForm {
+    border: 0.5vw solid #5bc1a1;
+    border-radius: 3.75vw;
+    padding-left: 2.75vw;
+    padding-right: 3.25vw;
+  }
+  .clearAllFieldsBtn {
+    font-size: 3vw;
+    border-top-left-radius: 3.75vw;
+    border-bottom-right-radius: 3.75vw;
+  }
+  .ant-divider {
+    font-size: 4vw !important;
+    border-bottom: 0.25vw solid #5bc1a1;
+  }
+  .info {
+    font-size: 3vw;
+  }
+  .ant-radio-group-outline {
+    border: 0.25vw solid #5bc1a1;
+  }
+  .ant-radio-button-wrapper:first-child {
+    border-start-start-radius: 3.5vw;
+    border-end-start-radius: 3.5vw;
+  }
+  .ant-radio-button-wrapper:last-child {
+    border-start-end-radius: 3.5vw;
+    border-end-end-radius: 3.5vw;
+  }
+  .ant-input {
+    border: 0.25vw solid #5bc1a1;
+    border-radius: 4vw;
+  }
+  .ant-input:hover {
+    border: 0.25vw solid #5bc1a1;
+  }
+  .submitOfferBtn {
+    border-radius: 4vw;
+    font-size: 3.5vw;
+  }
+  .single-product {
+    border: 0.25vw solid #5bc1a1;
+  }
+  .ant-form-item-label > label {
+    font-size: 3vw !important;
+  }
+  .ant-upload-list-item {
+    border: 0.25vw solid #5bc1a1 !important;
+  }
+}
+@media all and (max-width: 375px) {
+  .infoAboutOffersGen {
+    padding-left: 18.167vw;
+  }
+  .ant-radio-group > label {
+    font-size: 3.2vw;
+  }
 }

@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { Button, Layout } from "antd";
 import { Link, useNavigate } from "react-router-dom";
-import { CloseOutlined } from "@ant-design/icons";
 
 import NavbarBody from "./NavbarBody";
 import "./Navigation.css";
 
 import { ReactComponent as LogoWhite } from "../images/svg/logoPRzRTWhite.svg";
 import { ReactComponent as Underline } from "../images/svg/underline.svg";
+import { ReactComponent as PRzLogoCircle } from "../images/svg/PRzLogoCircle.svg";
+import { ReactComponent as CloseIcon } from "../images/svg/xIconBold.svg";
 
 const { Sider } = Layout;
 const currentTime = new Date();
@@ -44,13 +45,13 @@ const Navigation = () => {
         <>
           <Button className="barsMenu" type="primary" onClick={showSidebar}>
             {/* <img src={LogoWhite} alt="logo-icon" className="iconMobile" /> */}
-            <LogoWhite />
+            <PRzLogoCircle className="iconMobile" />
           </Button>
           <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
             <ul className="nav-menu-items" onClick={showSidebar}>
               <li className="navbar-toggle">
                 <Link to="#" className="menu-cross">
-                  <CloseOutlined />
+                  <CloseIcon className="xBtn" />
                 </Link>
               </li>
               <Sider>

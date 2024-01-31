@@ -12,6 +12,8 @@
 }
 .ant-layout-content {
   margin: 0 16px;
+  display: flex;
+  flex-direction: column;
 }
 
 .ant-layout {
@@ -20,22 +22,16 @@
 }
 
 .site-layout-background {
-  /* padding: 24px 10px; */
   height: 100vh;
   overflow: auto;
 }
 .menuCon {
   min-height: 100vh;
-  /* background-color: #272838; */
 }
-@media all and (max-width: 1024px) {
+
+@media all and (max-width: 900px) {
   .menuCon {
-    /* background-color: #272838; */
-  }
-}
-@media all and (max-width: 810px) {
-  .menuCon {
-    background-color: #aaaabc;
+    position: absolute;
   }
   .site-layout-background {
     display: grid;
@@ -43,31 +39,10 @@
     align-items: center;
   }
 }
-@media all and (max-width: 600px) {
+@media all and (max-width: 480px) {
   .site-layout-background {
-    margin-left: -30px;
-  }
-  .logout-button {
-    font-size: 14px;
-    margin: 10px 5px 5px 0;
-  }
-}
-@media all and (max-width: 430px) {
-  body {
-    background-color: #aaaabc;
-  }
-  .site-layout-background {
-    margin-left: -70px;
-  }
-  .logout-button {
-    font-size: 10px;
-    margin: 10px 5px 5px 0;
-    padding: 0.5rem 0.8rem;
-  }
-  .ant-layout-footer {
-    margin-left: -50px;
-  }
-  .ant-breadcrumb {
-    font-size: 10px !important;
+    min-height: 100vh;
+    overflow: visible;
+    flex: 1;
   }
 }
