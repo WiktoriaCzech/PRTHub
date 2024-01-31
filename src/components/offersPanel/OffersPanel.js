@@ -3,7 +3,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import "./OffersPanel.css";
 import { Button, Divider, Form, Radio, Input, Upload } from "antd";
-import { CloseOutlined, PlusOutlined, UploadOutlined } from "@ant-design/icons";
+import { PlusOutlined, UploadOutlined } from "@ant-design/icons";
 
 import { ReactComponent as FormGraphic } from "../images/svg/calendarGraphic.svg";
 import { ReactComponent as RemoveItemBtn } from "../images/svg/xIconBold.svg";
@@ -356,7 +356,7 @@ function OffersPanel() {
                   label="Kod pocztowy:"
                   name="street-number"
                   required={true}
-                  className="GridSpacing"
+                  className="gridSpacing"
                 >
                   <div className="street-number-with-response">
                     <Input
@@ -393,7 +393,7 @@ function OffersPanel() {
                   label="Kraj:"
                   name="country"
                   required={true}
-                  className="GridSpacing"
+                  className="gridSpacing"
                 >
                   <div className="country-with-response">
                     <Input

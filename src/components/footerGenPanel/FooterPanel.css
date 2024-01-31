@@ -1,222 +1,425 @@
-.generator-wrapper h1 {
-    font-size: 32px;
-    font-weight: 400;
-    color: #272838;
-    cursor: default;
+.footerPanelWrapper {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  padding-top: 8.161vh;
 }
-.generator-wrapper h2 {
-    font-size: 22px;
-    font-weight: 300;
-    margin-top: 1rem;
-    cursor: default;
+.infoSectionWrapper {
+  margin-left: 0.694vw;
+  max-width: 34.722vw;
+  margin-right: 1.389vw;
+  display: flex;
+  flex-direction: column;
 }
-.mailbox-span, .bold {
-    color: #272838;
-    font-weight: 500;
+.infoAboutFooter {
+  margin-bottom: 3.96vh;
+  color: #0d1e42;
+  display: flex;
+  flex-direction: column;
 }
-.mailbox-span:hover {
-    cursor: pointer;
-    color: #99350a;
-    transition: .2s cubic-bezier(.17,.41,.85,.65);
+.infoAboutFooter h1 {
+  font-family: "Clash Display";
+  font-size: 1.667vw;
+  font-weight: 500;
 }
-.form-content input {
-    display: block;
-    width: 100%;
-    border-radius: 5px;
-    border: 1px solid rgba(0,0,0,0.16);
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    font-weight: 300;
-    line-height: 1.5;
-    transition: border-color .15s ease-in-out,
-                box-shadow .15s ease-in-out;
+.formWithResponse {
+  margin: 0 auto;
 }
-.form-text {
-    margin-bottom: .5rem;
-    display: inline-block;
-    margin-top: 1rem;
-    font-size: 16px;
-    font-weight: 400;
+.infoAboutFooter span:first-of-type {
+  margin: 2.2vh 0;
 }
-.ant-divider{
-    font-size: 18px !important;
-    font-weight: 500 !important;
+.infoAboutFooter span {
+  font-family: "Barlow";
+  font-size: 1.25vw;
+  line-height: 2.222vw;
 }
-.form-content {
-    padding: 1rem;
-    background-color: #F2F2F2;
-    border-radius: 8px;
-    display: grid;
-    margin-top: 1rem;
-    grid-template-rows: auto;
-    grid-template-columns: 1fr 1fr;
+.textHighlited {
+  font-weight: 500;
+  color: #ff3c00;
+  text-decoration: underline;
 }
-.form-title,.section-field, .email-field,
-.tel-field, .url-field, .send-btn{
-    grid-column: 1 /span 2;
+.setTextColour {
+  color: #ff3c00;
 }
-.surname-field {
-    margin-left: 0.5rem;
+.setGapAfterInput {
+  margin-bottom: 2.64vh;
 }
-.name-field {
-    margin-right: 0.5rem;
+.gmailInstructionsWrapper {
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
-.req {
-    color: red;
-    margin-right: 0.2rem;
+.gmailInstructions {
+  display: flex;
+  flex-direction: column;
+  border: 0.069vw solid #7688b0;
+  border-radius: 1.042vw;
+  padding: 1.65vh 1.042vw;
+  gap: 0.55vh;
 }
-.err-message {
-    margin: 5px 0 5px 5px;
-    color: red;
+.mailLogoPosition {
+  display: flex;
+  padding-bottom: 1.1vh;
+  border-bottom: 0.069vw solid #7688b0;
 }
-.shadow-wrapped {
-    margin-top: 1rem;
-    max-width: 930px;
-    background-color: #454555;
-    border-radius: 8px;
-    padding: 1rem;
+.mailLogoPosition span {
+  margin-left: 0.556vw;
+  align-items: center;
+  display: flex;
+  font-family: "Clash Display";
+  font-weight: 500;
+  font-size: 1.25vw;
+  color: #0d1e42;
 }
-.dot {
-    display: inline-block;
-    cursor: pointer;
-    width: 12px;
-    height: 12px;
-    margin: 0 5px;
-    background-color: #323448;
-    border-radius: 50%;
+.instructions {
+  font-family: "Barlow";
+  font-weight: 400;
+  font-size: 1.25vw;
+  color: #0d1e42;
+  padding-left: 1.25vw;
+  border-bottom: 0.069vw solid #7688b0;
 }
-.dot:nth-child(1){
-    background-color: #99350a;
+.instructions li {
+  margin: 1.1vh 0;
 }
-.dot:nth-child(2){
-    background-color: #ce8629;
+.downloadPDF {
+  padding-top: 0.55vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.send-btn {
-    padding: .75rem 2rem;
-    border: none;
-    border-radius: 8px;
-    background-color: #616177;
-    color: #F2F2F2;
-    font-size: 17px;
-    cursor: pointer;
+.downloadPDF span {
+  display: flex;
+  align-items: center;
+  font-family: "Barlow";
+  font-weight: 400;
+  font-size: 1.25vw;
+  color: #0d1e42;
 }
-.send-btn:hover {
-    background-color: #444456;
+.downloadBtn {
+  background-color: #5bc1a1;
+  font-size: 1.111vw;
+  border-radius: 0.694vw;
+  padding: 0.66vh 0.903vw;
+  height: unset;
+  max-height: 4.4vh;
 }
-.mail-list img {
-    width: 48px;
-    height: 48px;
-    object-fit: cover;
-    background-blend-mode: darken;
-    margin-right: 1rem;
-    border-radius: 5px;
+.downloadBtn:hover {
+  color: #0e1d42 !important;
+  text-decoration: unset !important;
+  border-color: #43ab8a !important;
+  transition: 300ms ease-in-out;
+  background-color: #43ab8a;
 }
-.mail-list ul {
-    margin-top: 1rem;
-    list-style-type: none;
+.gmailIcon {
+  width: 3.125vw;
+  max-width: 45px;
+  height: auto;
 }
-.mail-list span {
-    position: absolute;
-    margin-top: 14px;
-    font-size: 15px;
+.footerForm {
+  min-width: 540px;
 }
-.mail-list .list {
-    margin-top: 0.5rem;
-    border-radius: 8px;
-    max-width: 1250px;
-    border: 1px solid rgba(0,0,0,0.16);
+.generatedFooter {
+  background-color: #f2f2f2;
+  border: 0.139vw solid #5bc1a1;
+  padding: 2.083vw;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1.042vw;
 }
-.mail-list button{
-    width: 100%;
-    border: none;
-    border-radius: inherit;
-    text-align: left;
-    background-color: #AAAABC;
-    cursor: pointer;
+.generatedFooterTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.1vh;
+  font-family: "Clash Display";
+  font-size: 1.25vw;
 }
-.forms-btn{
-    margin-top: 1rem;
-    border: none;
-    background-color: #454555;
-    border-radius: 8px;
-    padding: 0.5rem 1.5rem;
-    color: rgba(255,255,255,0.7);
-    cursor: pointer;
-    font-weight: 400;
+.goBackToForm {
+  max-width: 11.111vw;
+  background-color: #5bc1a1;
+  color: #0e1d42;
+  border-radius: 0.694vw;
+  font-family: "Barlow";
+  font-size: 0.972vw;
 }
-.forms-btn:hover {
-    color: white;
+.goBackToForm:hover {
+  color: #0e1d42 !important;
+  text-decoration: unset !important;
+  border-color: #43ab8a !important;
+  transition: 300ms ease-in-out;
+  background-color: #43ab8a;
 }
-.anticon-arrow-left {
-    color: #F2F2F2 !important;
-    margin-left: -15px;
-    margin-right: 5px;
-}
-.information ol {
-    margin-left: 1.1rem;
-}
-.information {
-    border: 1px solid rgba(0,0,0,0.16);
-    margin-left: 1px;
-    padding: 5px 5px 5px 0;
-    border-radius: 8px;
-    max-width: 1250px;
-}
-.information li {
-    margin-bottom: 10px;
-    font-size: 15px;
-}
-.info-divider {
-    margin: 12px 0 6px 0 !important;
-}
-.more-info {
-    margin-top: 0 !important;
-    position: relative !important;
-    margin-left: 5px;
 
+@media all and (max-width: 3840px) and (min-width: 2800px) {
+  .infoSectionWrapper {
+    margin-left: 0.26vw;
+    max-width: 13.021vw;
+    margin-right: 0.521vw;
+  }
+  .infoAboutFooter h1 {
+    font-size: 0.625vw;
+  }
+  .infoAboutFooter span {
+    font-size: 0.469vw;
+    line-height: 0.833vw;
+  }
+  .gmailInstructions {
+    border: 0.026vw solid #7688b0;
+    border-radius: 0.391vw;
+    padding: 1.65vh 0.391vw;
+  }
+  .mailLogoPosition {
+    border-bottom: 0.026vw solid #7688b0;
+  }
+  .mailLogoPosition span {
+    margin-left: 0.208vw;
+    font-size: 0.469vw;
+  }
+  .instructions {
+    font-size: 0.469vw;
+    padding-left: 0.469vw;
+    border-bottom: 0.026vw solid #7688b0;
+  }
+  .downloadPDF span {
+    font-size: 0.469vw;
+  }
+  .downloadBtn {
+    font-size: 0.417vw;
+    border-radius: 0.26vw;
+    padding: 0.66vh 0.339vw;
+  }
+  .generatedFooter {
+    border: 0.052vw solid #5bc1a1;
+    padding: 0.781vw;
+    border-radius: 0.391vw;
+  }
+  .generatedFooterTitle {
+    font-size: 0.469vw;
+  }
+  .goBackToForm {
+    max-width: 4.167vw;
+    border-radius: 0.26vw;
+    font-size: 0.365vw;
+  }
 }
-.list-link {
-    font-weight: 600;
-    color: #272838;
+@media all and (max-width: 2560px) and (min-width: 2000px) {
+  .infoSectionWrapper {
+    margin-left: 0.391vw;
+    max-width: 19.531vw;
+    margin-right: 0.781vw;
+  }
+  .infoAboutFooter h1 {
+    font-size: 0.938vw;
+  }
+  .infoAboutFooter span {
+    font-size: 0.703vw;
+    line-height: 1.25vw;
+  }
+  .gmailInstructions {
+    border: 0.039vw solid #7688b0;
+    border-radius: 0.586vw;
+    padding: 1.65vh 0.586vw;
+  }
+  .mailLogoPosition {
+    border-bottom: 0.039vw solid #7688b0;
+  }
+  .mailLogoPosition span {
+    margin-left: 0.313vw;
+    font-size: 0.703vw;
+  }
+  .instructions {
+    font-size: 0.703vw;
+    padding-left: 0.703vw;
+    border-bottom: 0.039vw solid #7688b0;
+  }
+  .downloadPDF span {
+    font-size: 0.703vw;
+  }
+  .downloadBtn {
+    font-size: 0.625vw;
+    border-radius: 0.391vw;
+    padding: 0.66vh 0.508vw;
+  }
+  .generatedFooter {
+    border: 0.078vw solid #5bc1a1;
+    padding: 1.172vw;
+    border-radius: 0.586vw;
+  }
+  .generatedFooterTitle {
+    font-size: 0.703vw;
+  }
+  .goBackToForm {
+    max-width: 6.25vw;
+    border-radius: 0.391vw;
+    font-size: 0.547vw;
+  }
 }
-.list-link:hover {
-    color: #99350a;
+@media all and (max-width: 1920px) and (min-width: 1600px) {
+  .infoSectionWrapper {
+    margin-left: 0.521vw;
+    max-width: 26.042vw;
+    margin-right: 1.042vw;
+  }
+  .infoAboutFooter h1 {
+    font-size: 1.25vw;
+  }
+  .infoAboutFooter span {
+    font-size: 0.938vw;
+    line-height: 1.667vw;
+  }
+  .gmailInstructions {
+    border: 0.052vw solid #7688b0;
+    border-radius: 0.781vw;
+    padding: 1.65vh 0.781vw;
+  }
+  .mailLogoPosition {
+    border-bottom: 0.052vw solid #7688b0;
+  }
+  .mailLogoPosition span {
+    margin-left: 0.417vw;
+    font-size: 0.938vw;
+  }
+  .instructions {
+    font-size: 0.938vw;
+    padding-left: 0.938vw;
+    border-bottom: 0.052vw solid #7688b0;
+  }
+  .downloadPDF span {
+    font-size: 0.938vw;
+  }
+  .downloadBtn {
+    font-size: 0.833vw;
+    border-radius: 0.521vw;
+    padding: 0.66vh 0.677vw;
+  }
+  .generatedFooter {
+    border: 0.104vw solid #5bc1a1;
+    padding: 1.563vw;
+    border-radius: 0.781vw;
+  }
+  .generatedFooterTitle {
+    font-size: 0.938vw;
+  }
+  .goBackToForm {
+    max-width: 8.333vw;
+    border-radius: 0.521vw;
+    font-size: 0.729vw;
+  }
 }
-.alert-wrapper {
-    margin-top: 2rem;
-    max-width: 1050px;
+@media all and (max-width: 1280px) {
+  .infoSectionWrapper {
+    margin-left: 0.781vw;
+    max-width: 39.063vw;
+    margin-right: 1.563vw;
+  }
+  .infoAboutFooter h1 {
+    font-size: 1.406vw;
+  }
+  .infoAboutFooter span {
+    font-size: 1.406vw;
+    line-height: 2.5vw;
+  }
+  .gmailInstructions {
+    border: 0.078vw solid #7688b0;
+    border-radius: 1.172vw;
+    padding: 1.65vh 1.172vw;
+  }
+  .mailLogoPosition {
+    border-bottom: 0.078vw solid #7688b0;
+  }
+  .mailLogoPosition span {
+    margin-left: 0.625vw;
+    font-size: 1.406vw;
+  }
+  .instructions {
+    font-size: 1.406vw;
+    padding-left: 1.406vw;
+    border-bottom: 0.078vw solid #7688b0;
+  }
+  .downloadPDF span {
+    font-size: 1.406vw;
+  }
+  .downloadBtn {
+    font-size: 1.25vw;
+    border-radius: 0.781vw;
+    padding: 0.66vh 1.016vw;
+  }
+  .generatedFooter {
+    border: 0.156vw solid #5bc1a1;
+    padding: 2.344vw;
+    border-radius: 1.172vw;
+  }
+  .generatedFooterTitle {
+    font-size: 1.406vw;
+  }
+  .goBackToForm {
+    max-width: 12.5vw;
+    border-radius: 0.781vw;
+    font-size: 1.094vw;
+  }
 }
-.generated-footer-wrapper {
-    margin: 2rem 1rem;
-    border-radius: 8px;
-    background-color: #cbcbd0;
-    max-width: 600px;
-    padding: 20px;
-}
-@media all and (max-width: 600px) {
-
-    .generator-wrapper h1 {
-        font-size: 28px;
-    }
-    .generator-wrapper h2 {
-        font-size: 20px;
-    }
-}
-@media all and (max-width: 430px) {
-    .generator-wrapper h1 {
-        font-size: 24px;
-    }
-    .generator-wrapper h2 {
-        font-size: 16px;
-    }
-    .name-field, .surname-field {
-        grid-column: 1 /span 2;
-        margin-left: 0;
-        margin-right: 0;
-    }
-}
-@media all and (max-width: 320px) {
-    .ant-divider-inner-text {
-        font-size: 15px !important;
-    }
+@media all and (max-width: 1024px) {
+  .footerPanelWrapper {
+    flex-direction: column;
+    padding-top: 6.161vh;
+  }
+  .infoSectionWrapper {
+    margin: 0 auto;
+    max-width: 69.336vw;
+  }
+  .infoAboutFooter {
+    margin-bottom: 4.661vh;
+  }
+  .infoAboutFooter h1 {
+    font-size: 2.344vw;
+  }
+  .infoAboutFooter span:first-of-type {
+    margin-top: 1.56vh;
+  }
+  .infoAboutFooter span {
+    font-size: 1.758vw;
+    line-height: 3.125vw;
+  }
+  .gmailInstructionsWrapper {
+    margin-bottom: 3.3vh;
+  }
+  .gmailInstructions {
+    border: 0.098vw solid #7688b0;
+    border-radius: 1.465vw;
+    padding: 1.65vh 1.465vw;
+  }
+  .mailLogoPosition {
+    border-bottom: 0.098vw solid #7688b0;
+  }
+  .mailLogoPosition span {
+    margin-left: 0.781vw;
+    font-size: 1.758vw;
+  }
+  .instructions {
+    font-size: 1.758vw;
+    padding-left: 1.758vw;
+    border-bottom: 0.098vw solid #7688b0;
+  }
+  .downloadPDF span {
+    font-size: 1.758vw;
+  }
+  .downloadBtn {
+    font-size: 1.563vw;
+    border-radius: 0.977vw;
+    padding: 0.66vh 1.27vw;
+  }
+  .generatedFooter {
+    border: 0.195vw solid #5bc1a1;
+    padding: 2.93vw;
+    border-radius: 1.465vw;
+  }
+  .generatedFooterTitle {
+    font-size: 1.758vw;
+  }
+  .goBackToForm {
+    max-width: 15.625vw;
+    border-radius: 0.977vw;
+    font-size: 1.367vw;
+  }
 }

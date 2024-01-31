@@ -168,7 +168,7 @@
   grid-template-columns: repeat(2, 50%);
   grid-template-rows: auto;
 }
-.GridSpacing {
+.gridSpacing {
   margin-left: 1rem !important;
 }
 .ant-btn-dashed,
@@ -186,6 +186,13 @@
   font-size: 1.111vw;
   font-family: "Barlow";
   height: 4.4vh;
+}
+.submitOfferBtn:hover {
+  color: #0e1d42 !important;
+  text-decoration: unset !important;
+  border-color: #ee673d !important;
+  transition: 300ms ease-in-out;
+  background-color: #ee673d;
 }
 .single-product-placing {
   display: flex;
@@ -239,6 +246,10 @@
 .add-product {
   display: block;
   flex: 100% !important;
+}
+.err-message {
+  color: #ff3c00;
+  margin-left: 10px;
 }
 @media all and (max-width: 3840px) and (min-width: 2800px) {
   .infoSectionWrapper {

@@ -140,7 +140,7 @@
 .v360-viewport {
   border-radius: 1.042vw;
   height: 38.504vh;
-  width: auto;
+  /* width: auto; */
 }
 .timersWrapper {
   gap: 3.85vh;
