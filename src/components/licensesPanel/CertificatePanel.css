@@ -1,9 +1,9 @@
 .licensesWrapper {
   display: flex;
   flex-direction: column;
-  margin: 0 1.694vw;
+  margin: 0 1.525rem;
   padding: 9vh 0 2.64vh 0;
-  height: 100vh;
+  min-height: 100vh;
   color: #0d1e42;
 }
 .licenceHeader {
@@ -25,14 +25,15 @@
   gap: 4.4vh;
 }
 .timer {
-  width: 31.25vw;
+  width: 34.722vw;
 }
 .searchBarWrapper {
   width: 30.694vw;
   height: 4.07vh;
   margin-bottom: 5.611vh;
   background-color: #d9d9d9;
-  border-radius: 25px;
+  /* 25px */
+  border-radius: 1.736vw;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -40,7 +41,6 @@
 .searchSVG {
   margin-left: 10px;
 }
-
 .ant-input-affix-wrapper {
   border-start-start-radius: 0 !important;
   border-end-start-radius: 0 !important;
@@ -67,8 +67,52 @@
 .ant-input::placeholder {
   color: #888888;
 }
+.ant-statistic-content {
+  /* 26px */
+  font-size: 1.806vw !important;
+}
 
-@media all and (max-width: 1920px) {
+@media all and (max-width: 3840px) and (min-width: 2561px) {
+  .licenceHeader {
+    font-size: 0.625vw;
+  }
+  .licenceInfo {
+    font-size: 0.469vw;
+  }
+  .searchBarWrapper {
+    border-radius: 0.651vw;
+    width: 11.51vw;
+  }
+  .timer {
+    border: 0.052vw solid #5bc1a1;
+    border-radius: 0.391vw;
+    width: 13.021vw;
+  }
+  .ant-statistic-content {
+    font-size: 0.677vw !important;
+  }
+}
+@media all and (max-width: 2560px) and (min-width: 1921px) {
+  .licenceHeader {
+    font-size: 0.938vw;
+  }
+  .licenceInfo {
+    font-size: 0.703vw;
+  }
+  .searchBarWrapper {
+    border-radius: 0.977vw;
+    width: 17.265vw;
+  }
+  .timer {
+    width: 19.531vw;
+    border: 0.078vw solid #5bc1a1;
+    border-radius: 0.586vw;
+  }
+  .ant-statistic-content {
+    font-size: 1.016vw !important;
+  }
+}
+@media all and (max-width: 1920px) and (min-width: 1600px) {
   .licenceHeader {
     font-size: 1.25vw;
   }
@@ -76,7 +120,32 @@
     font-size: 0.938vw;
   }
   .searchBarWrapper {
+    border-radius: 1.302vw;
     width: 23.021vw;
+  }
+  .timer {
+    width: 26.042vw;
+  }
+  .ant-statistic-content {
+    font-size: 1.354vw !important;
+  }
+}
+@media all and (max-width: 1280px) {
+  .licenceHeader {
+    font-size: 1.875vw;
+  }
+  .licenceInfo {
+    font-size: 1.406vw;
+  }
+  .searchBarWrapper {
+    border-radius: 1.953vw;
+    width: 34.531vw;
+  }
+  .timer {
+    width: 39.063vw;
+  }
+  .ant-statistic-content {
+    font-size: 2.031vw !important;
   }
 }
 @media all and (max-width: 1024px) {
@@ -87,6 +156,116 @@
     font-size: 1.758vw;
   }
   .searchBarWrapper {
-    width: 43.164vw;
+    border-radius: 2.441vw;
+    width: 43.163vw;
+  }
+  .timer {
+    width: 48.828vw;
+  }
+  .ant-statistic-content {
+    font-size: 2.539vw !important;
+  }
+}
+@media all and (max-width: 768px) {
+  .licensesWrapper {
+    padding: 30px 0 4.64vh 0;
+  }
+  .licenceHeader {
+    font-size: 3.125vw;
+  }
+  .licenceInfo {
+    font-size: 2.344vw;
+  }
+  .searchBarWrapper {
+    border-radius: 3.255vw;
+    width: 57.551vw;
+  }
+  .timer {
+    width: 65.104vw;
+    border: 0.26vw solid #5bc1a1;
+    border-radius: 1.953vw;
+  }
+  .ant-statistic-content {
+    font-size: 3.385vw !important;
+  }
+  .ant-statistic-title {
+    font-size: 2.8vw !important;
+  }
+  .translated {
+    transform: translate(-0.39vh, 0.8vw) !important;
+  }
+}
+@media all and (max-width: 480px) {
+  .licence {
+    align-items: center;
+    gap: 3.3vh;
+  }
+  .licensesWrapper {
+    padding: 30px 0 2.64vh 0;
+  }
+  .licenceHeader {
+    font-size: 4.167vw;
+    margin-left: 18vw;
+  }
+  .licenceInfo {
+    font-size: 3.333vw;
+    margin-left: 18vw;
+  }
+  .searchBarWrapper {
+    border-radius: 5.208vw;
+    width: 92.846vw;
+    margin-bottom: 4vh;
+  }
+  .timer {
+    width: 92.846vw;
+    height: 6.501vh;
+    border: 0.417vw solid #5bc1a1;
+    border-radius: 2.083vw;
+  }
+  .ant-statistic-title {
+    font-size: 3.917vw !important;
+  }
+  .ant-statistic-content {
+    font-size: 4.75vw !important;
+  }
+}
+@media all and (max-width: 400px) {
+  .licenceHeader {
+    font-size: 4vw;
+  }
+  .licenceInfo {
+    font-size: 3.5vw;
+  }
+  .searchBarWrapper {
+    border-radius: 6.25vw;
+    width: 91.5vw;
+  }
+  .timer {
+    width: 89vw;
+    height: 5.501vh;
+  }
+  .ant-statistic-content {
+    font-size: 4.5vw !important;
+  }
+}
+@media all and (max-width: 375px) {
+  .licenceHeader {
+    font-size: 4.267vw;
+    margin-left: 22vw;
+  }
+  .licenceInfo {
+    font-size: 3.733vw;
+    margin-left: 22vw;
+  }
+  .searchBarWrapper {
+    border-radius: 6.667vw;
+    width: 97.6vw;
+  }
+  .timer {
+    width: 94.933vw;
+    height: 5vh;
+  }
+  .ant-statistic-content {
+    font-size: 4.8vw !important;
   }
 }

@@ -17,12 +17,12 @@ function CertificatePanel() {
       refreshExpirationDate: new Date(`2023-04-24`),
       name: "Domena PRz-Racing",
     },
-    // {
-    //   id: 1,
-    //   deadline: new Date(`2023-07-18`),
-    //   refreshExpirationDate: new Date(`2022-10-01`),
-    //   name: "Nazwa_licencji_2",
-    // },
+    {
+      id: 1,
+      deadline: new Date(`2023-07-18`),
+      refreshExpirationDate: new Date(`2022-10-01`),
+      name: "Nazwa_licencji_2",
+    },
   ];
 
   const LicenseCounter = ({ id }) => {

@@ -306,7 +306,7 @@
 29px -> 1.51vw
 8px -> 0.417vw
 */
-@media all and (max-width: 1920px) {
+@media all and (min-width: 1500px) and (max-width: 1920px) {
   .mainSiteWrapper {
     margin: 0 1.736vw;
   }
@@ -389,7 +389,6 @@
     border-radius: 0.417vw !important;
   }
 }
-
 @media all and (max-width: 1024px) {
   .mainSiteWrapper {
     margin: 0 2.441vw;
