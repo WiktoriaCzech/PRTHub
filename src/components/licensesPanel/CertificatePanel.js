@@ -14,14 +14,22 @@ function CertificatePanel() {
     {
       id: 0,
       deadline: new Date(`2024-04-24`),
-      refreshExpirationDate: new Date(`2023-04-24`),
       name: "Domena PRz-Racing",
     },
     {
       id: 1,
-      deadline: new Date(`2023-07-18`),
-      refreshExpirationDate: new Date(`2022-10-01`),
-      name: "Nazwa_licencji_2",
+      deadline: new Date(`2025-01-25`),
+      name: "Ansys",
+    },
+    {
+      id: 2,
+      deadline: new Date(`2025-07-31`),
+      name: "Solid Works",
+    },
+    {
+      id: 3,
+      deadline: new Date(`2024-11-31`),
+      name: "3D Experience",
     },
   ];
 
