@@ -22,7 +22,7 @@
 }
 
 .site-layout-background {
-  height: 100vh;
+  min-height: 100vh;
   overflow: auto;
 }
 .menuCon {
@@ -34,7 +34,9 @@
     position: absolute;
   }
   .site-layout-background {
-    display: grid;
+    /* /////////////////////////CHECK IF WORKEEEEEE!!!!!!!!!!!!!///// */
+    display: flex;
+    /* display: grid; */
     justify-content: center;
     align-items: center;
   }

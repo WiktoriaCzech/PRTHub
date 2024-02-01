@@ -1,15 +1,15 @@
 .shortcutsWrapper {
   padding: 5.171vh 2.361vw 4.07vh 2.361vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 .buttonsWrapper {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   flex-wrap: nowrap;
-  gap: 2.778vw;
+  justify-content: space-between;
+  /* gap: 2.778vw; */
   margin-bottom: 3.63vh;
 }
 .btnLinks {
@@ -73,8 +73,70 @@
 164px -> 11.389vw
 51.595px -> 3.583vw
 */
+@media all and (max-width: 3840px) and (min-width: 2561px) {
+  .shortcutsWrapper {
+    padding: 5.171vh 0.885vw 4.07vh 0.885vw;
+  }
+  .buttonsWrapper {
+    gap: 6.042vw;
+  }
+  .btnLinks {
+    font-size: 0.717vw;
+    padding: 0.339vw 0.547vw;
+  }
+  .outlined {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.039vw solid #5bc1a1;
+    border-radius: 0.391vw;
+  }
+  .embeddedGoogleChartsWrapper {
+    border-radius: 0.391vw;
+  }
+  .embedded-file {
+    margin: 0.573vw;
+    border: 0.052vw solid #5bc1a1;
+    border-radius: 0.391vw;
+  }
+  .graphicposition {
+    height: 1.328vw;
+  }
+}
+@media all and (max-width: 2560px) and (min-width: 1921px) {
+  .shortcutsWrapper {
+    padding: 5.171vh 1.328vw 4.07vh 1.328vw;
+  }
+  .buttonsWrapper {
+    gap: 3.563vw;
+  }
+  .btnLinks {
+    font-size: 0.825vw;
+    padding: 0.508vw 0.547vw;
+  }
+  .outlined {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.059vw solid #5bc1a1;
+    border-radius: 0.586vw;
+  }
+  .embeddedGoogleChartsWrapper {
+    border-radius: 0.586vw;
+  }
+  .embedded-file {
+    margin: 0.859vw;
+    border: 0.078vw solid #5bc1a1;
+    border-radius: 0.586vw;
+  }
+  .graphicposition {
+    height: 1.992vw;
+  }
+}
 
-@media all and (max-width: 1920px) {
+@media all and (max-width: 1920px) and (min-width: 1600px) {
   .shortcutsWrapper {
     padding: 5.171vh 1.771vw 4.07vh 1.771vw;
   }
@@ -90,7 +152,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* width: 16.406vw; */
     border: 0.078vw solid #5bc1a1;
     border-radius: 0.781vw;
   }
@@ -106,19 +167,49 @@
     height: 2.687vw;
   }
 }
-@media all and (max-width: 1024px) {
+@media all and (max-width: 1280px) {
   .shortcutsWrapper {
-    padding: 5.171vh 3.32vw 4.07vh 3.32vw;
+    padding: 5.171vh 2.656vw 4.07vh 2.656vw;
   }
   .buttonsWrapper {
-    gap: 3.906vw;
+    gap: 3.125vw;
   }
   .btnLinks {
-    font-size: 1.563vw;
-    padding: 1.27vw 2.051vw;
+    font-size: 1.25vw;
+    padding: 1.016vw 1.641vw;
   }
   .outlined {
-    /* width: 30.762vw; */
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.117vw solid #5bc1a1;
+    border-radius: 1.172vw;
+  }
+  .embeddedGoogleChartsWrapper {
+    border-radius: 1.172vw;
+  }
+  .embedded-file {
+    margin: 1.719vw;
+    border: 0.156vw solid #5bc1a1;
+    border-radius: 1.172vw;
+  }
+  .graphicposition {
+    height: 3.984vw;
+  }
+}
+@media all and (max-width: 1024px) {
+  .shortcutsWrapper {
+    padding: 4.171vh 0 4.07vh 0.5vw;
+  }
+  .buttonsWrapper {
+    gap: 1.906vw;
+  }
+  .btnLinks {
+    font-size: 1.363vw;
+    padding: 0.87vw 1.051vw;
+  }
+  .outlined {
     border: 0.146vw solid #5bc1a1;
     border-radius: 1.465vw;
   }
@@ -132,5 +223,126 @@
   }
   .graphicposition {
     height: 5.039vw;
+  }
+}
+@media all and (max-width: 900px) {
+  .shortcutsWrapper {
+    padding: 8.171vh 5vw 4.07vh 5vw;
+    flex: 1;
+  }
+  .buttonsWrapper {
+    flex-direction: column;
+  }
+  .btnLinks {
+    font-size: 1.458vw;
+    padding: 0.87vw 1.051vw;
+  }
+  .outlined {
+    z-index: 100;
+    border: 0.146vw solid #5bc1a1;
+    border-radius: 1.465vw;
+  }
+}
+@media all and (max-width: 768px) {
+  .btnLinks {
+    font-size: 2.083vw;
+    padding: 1.693vw 2.734vw;
+  }
+  .outlined {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.195vw solid #5bc1a1;
+    border-radius: 1.953vw;
+  }
+  .embeddedGoogleChartsWrapper {
+    border-radius: 1.953vw;
+  }
+  .embedded-file {
+    margin: 2.865vw;
+    border: 0.26vw solid #5bc1a1;
+    border-radius: 1.953vw;
+  }
+  .graphicposition {
+    height: 6.641vw;
+  }
+}
+@media all and (max-width: 480px) {
+  .btnLinks {
+    font-size: 3.333vw;
+    padding: 2.708vw 4.375vw;
+  }
+  .outlined {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.312vw solid #5bc1a1;
+    border-radius: 3.125vw;
+  }
+  .embeddedGoogleChartsWrapper {
+    border-radius: 3.125vw;
+  }
+  .embedded-file {
+    margin: 4.583vw;
+    border: 0.417vw solid #5bc1a1;
+    border-radius: 3.125vw;
+  }
+  .graphicposition {
+    height: 10.625vw;
+  }
+  .buttonsWrapper {
+    gap: 3.906vw;
+  }
+}
+@media all and (max-width: 400px) {
+  .btnLinks {
+    font-size: 4vw;
+    padding: 3.25vw 5.25vw;
+  }
+  .outlined {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.374vw solid #5bc1a1;
+    border-radius: 3.75vw;
+  }
+  .embeddedGoogleChartsWrapper {
+    border-radius: 3.75vw;
+  }
+  .embedded-file {
+    margin: 5.5vw;
+    border: 0.5vw solid #5bc1a1;
+    border-radius: 3.75vw;
+  }
+  .graphicposition {
+    height: 12.75vw;
+  }
+}
+@media all and (max-width: 375px) {
+  .btnLinks {
+    font-size: 4.267vw;
+    padding: 3.467vw 5.6vw;
+  }
+  .outlined {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.399vw solid #5bc1a1;
+    border-radius: 4vw;
+  }
+  .embeddedGoogleChartsWrapper {
+    border-radius: 4vw;
+  }
+  .embedded-file {
+    margin: 5.867vw;
+    border: 0.533vw solid #5bc1a1;
+    border-radius: 4vw;
+  }
+  .graphicposition {
+    height: 13.6vw;
   }
 }
