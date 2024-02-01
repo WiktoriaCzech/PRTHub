@@ -99,7 +99,7 @@
   font-size: 1.111vw;
   border-top-left-radius: 1.042vw;
   border-bottom-right-radius: 1.042vw;
-  height: 3.63vh;
+  height: unset;
   float: right;
   text-decoration: unset !important;
   text-align: center;
@@ -755,7 +755,8 @@
     font-size: 2.344vw !important;
     border-bottom: 0.13vw solid #5bc1a1;
   }
-  .info {
+  .info,
+  .err-message {
     font-size: 1.823vw;
   }
   .ant-radio-group-outline {
@@ -855,7 +856,8 @@
     border-bottom: 0.208vw solid #5bc1a1;
     margin: 20px 0 5px 0 !important;
   }
-  .info {
+  .info,
+  .err-message {
     font-size: 2.5vw;
   }
   .info br {
@@ -917,6 +919,9 @@
     position: absolute;
     height: 4.4vh;
   }
+  .err-message {
+    margin-top: 5px;
+  }
 }
 @media all and (max-width: 400px) {
   .infoAboutOffersGen {
@@ -951,7 +956,8 @@
     font-size: 4vw !important;
     border-bottom: 0.25vw solid #5bc1a1;
   }
-  .info {
+  .info,
+  .err-message {
     font-size: 3vw;
   }
   .ant-radio-group-outline {

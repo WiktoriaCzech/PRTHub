@@ -1,7 +1,7 @@
 .footerPanelWrapper {
   display: flex;
   flex-direction: row;
-  height: 100vh;
+  min-height: 100vh;
   padding-top: 8.161vh;
 }
 .infoSectionWrapper {
@@ -421,5 +421,175 @@
     max-width: 15.625vw;
     border-radius: 0.977vw;
     font-size: 1.367vw;
+  }
+}
+@media all and (max-width: 768px) {
+  .footerPanelWrapper {
+    padding-top: 3.161vh;
+  }
+  .infoAboutFooter {
+    margin-bottom: 3.661vh;
+  }
+  .infoAboutFooter h1 {
+    font-size: 3.125vw;
+  }
+  .infoAboutFooter span:first-of-type {
+    margin-top: 1.26vh;
+  }
+  .infoAboutFooter span {
+    font-size: 2.344vw;
+    line-height: 4.167vw;
+  }
+  .gmailInstructions {
+    border: 0.13vw solid #7688b0;
+    border-radius: 1.953vw;
+    padding: 1.65vh 1.953vw;
+  }
+  .mailLogoPosition {
+    border-bottom: 0.13vw solid #7688b0;
+  }
+  .mailLogoPosition span {
+    margin-left: 1.042vw;
+    font-size: 2.344vw;
+  }
+  .instructions {
+    font-size: 2.344vw;
+    padding-left: 2.344vw;
+    border-bottom: 0.13vw solid #7688b0;
+  }
+  .downloadPDF span {
+    font-size: 2.344vw;
+  }
+  .downloadBtn {
+    font-size: 1.563vw;
+    border-radius: 1.302vw;
+    padding: 0.66vh 1.27vw;
+  }
+  .generatedFooter {
+    border: 0.195vw solid #5bc1a1;
+    padding: 2.93vw;
+    border-radius: 1.953vw;
+  }
+  .generatedFooterTitle {
+    font-size: 2.344vw;
+  }
+  .goBackToForm {
+    max-width: 20.833vw;
+    border-radius: 1.302vw;
+    font-size: 1.823vw;
+  }
+}
+@media all and (max-width: 480px) {
+  .infoAboutFooter {
+    margin-bottom: 3.661vh;
+  }
+  .infoAboutFooter h1 {
+    margin-left: 15vw;
+    font-size: 4.167vw;
+  }
+  .infoAboutFooter span:first-of-type {
+    text-indent: 15vw;
+  }
+  .infoAboutFooter span {
+    font-size: 3.333vw;
+    line-height: 4.667vw;
+  }
+  .gmailInstructions {
+    border: 0.208vw solid #7688b0;
+    border-radius: 3.125vw;
+    padding: 1.65vh 3.125vw;
+  }
+  .mailLogoPosition {
+    border-bottom: 0.208vw solid #7688b0;
+  }
+  .mailLogoPosition span {
+    margin-left: 1.667vw;
+    font-size: 3.75vw;
+  }
+  .instructions {
+    font-size: 3.333vw;
+    padding-left: 3.75vw;
+    border-bottom: 0.208vw solid #7688b0;
+  }
+  .downloadPDF span {
+    font-size: 3.333vw;
+  }
+  .downloadBtn {
+    font-size: 2.5vw;
+    border-radius: 1.302vw;
+    padding: 0.66vh 1.27vw;
+  }
+  .generatedFooter {
+    border: 0.195vw solid #5bc1a1;
+    padding: 2.917vw;
+    border-radius: 3.125vw;
+  }
+  .generatedFooterTitle {
+    font-size: 3.75vw;
+  }
+  .goBackToForm {
+    max-width: 27.083vw;
+    border-radius: 1.302vw;
+    font-size: 2.917vw;
+  }
+  .gmailIcon {
+    width: 5.5vw;
+  }
+}
+@media all and (max-width: 400px) {
+  .infoAboutFooter {
+    margin-bottom: 2.661vh;
+  }
+  .infoAboutFooter h1 {
+    margin-left: 20vw;
+    font-size: 4vw;
+  }
+  .infoAboutFooter span:first-of-type {
+    text-indent: 20vw;
+  }
+  .infoAboutFooter span {
+    font-size: 3.5vw;
+    line-height: 5.5vw;
+  }
+  .gmailInstructions {
+    border: 0.25vw solid #7688b0;
+    border-radius: 3.75vw;
+    padding: 1.65vh 3.75vw;
+  }
+  .mailLogoPosition {
+    border-bottom: 0.25vw solid #7688b0;
+  }
+  .mailLogoPosition span {
+    margin-left: 2vw;
+    font-size: 3.75vw;
+  }
+  .instructions {
+    font-size: 3.5vw;
+    padding-left: 3.75vw;
+    border-bottom: 0.25vw solid #7688b0;
+  }
+  .downloadPDF span {
+    font-size: 3.5vw;
+  }
+  .downloadBtn {
+    font-size: 3vw;
+    border-radius: 2vw;
+    padding: 0.66vh 1.27vw;
+  }
+  .generatedFooter {
+    border: 0.195vw solid #5bc1a1;
+    padding: 2.917vw;
+    border-radius: 3.75vw;
+  }
+  .generatedFooterTitle {
+    font-size: 4.5vw;
+  }
+  .goBackToForm {
+    max-width: 32.5vw;
+    border-radius: 2vw;
+    font-size: 3.5vw;
+  }
+  .gmailIcon {
+    width: 6vw;
   }
 }
