@@ -33,7 +33,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px 35px;
+  padding: 2.778vw 2.431vw;
 }
 .graphic {
   overflow: hidden;
@@ -64,13 +64,13 @@
   font-size: 1.389vw;
 }
 .formInput {
-  margin-bottom: 27px;
-  aspect-ratio: 386/65;
+  margin-bottom: 2.97vh;
+  aspect-ratio: 386/60;
   width: 21.978vw;
   border-radius: 1.5vmin;
   border: unset;
-  padding-left: 10px;
-  font-size: 0.972vw;
+  padding-left: 0.694vw;
+  font-size: 14px;
 }
 .formInput:focus,
 .formInput:active {
@@ -79,7 +79,7 @@
 .errMessage {
   color: #ff3c00;
   font-family: "Clash Display";
-  margin-top: -20px;
+  margin: -2.2vh 0 0.5vh 0;
   font-size: 1vw;
 }
 .footer {
@@ -88,9 +88,9 @@
   bottom: 0; */
   text-align: center;
   margin-bottom: 0.5vh;
-  font-family: Barlow;
+  font-family: "Barlow";
   font-size: 0.972vw;
-  margin-top: 1vw;
+  margin-top: 1vh;
 }
 .mainPhotoSVG {
   z-index: 10;
@@ -102,17 +102,17 @@
   margin-top: 2vw;
 } */
 .submitBtn {
-  margin-top: 2vw;
+  margin-top: 2vh;
   background-color: #5bc1a1;
   border: unset;
-  width: 21.978vw;
+  width: 22.578vw;
   text-align: center;
   border-radius: 1.5vmin;
   color: #0d1e42;
   font-family: "Clash Display";
   font-size: 1.736vw;
   font-weight: 500;
-  aspect-ratio: 386/65;
+  aspect-ratio: 386/60;
   position: relative;
   overflow: hidden;
 }
@@ -135,22 +135,403 @@
   font-family: "Clash Display";
   font-size: 1.111vw;
   font-weight: 400;
-  margin-top: 1vw;
+  margin-top: 1vh;
 }
-.hiddenBtn {
-  position: absolute;
-  top: 30vh;
-  right: 30vw;
-  z-index: 10;
-  width: 30px;
-  height: 30px;
-  background-color: #ff3c00;
-}
-@keyframes wroomWroom {
-  0% {
-    transform: translate(50px);
+
+@media all and (max-width: 3840px) and (min-width: 2561px) {
+  .loginCredentials {
+    max-width: 11.589vw;
+    padding: 1.842vw 1.211vw;
   }
-  100% {
-    transform: translate(100px);
+  .loginText {
+    font-size: 0.981vw;
+  }
+  .loginForm {
+    margin-top: 2.056vw;
+  }
+  .formLabel {
+    margin-bottom: 0.26vw;
+    font-size: 0.521vw;
+  }
+  .formInput {
+    width: 10.229vw;
+    padding-left: 0.26vw;
+    font-size: 12px;
+  }
+  .errMessage {
+    font-size: 0.475vw;
+  }
+  .footer {
+    font-size: 0.465vw;
+  }
+  .mainPhotoSVG {
+    top: 3vw;
+    right: -48vw;
+  }
+  .submitBtn {
+    width: 10.429vw;
+    font-size: 0.651vw;
+  }
+  .bolidPixel {
+    width: 3.004vw;
+  }
+  .forgottPassword {
+    font-size: 0.517vw;
+  }
+  .logoPRzRT {
+    padding-top: 0.75vw;
+    margin-left: -0.675vw;
+    width: 11.417vw;
+  }
+}
+@media all and (max-width: 2560px) and (min-width: 2000px) {
+  .loginCredentials {
+    max-width: 17.383vw;
+    padding: 1.563vw 1.367vw;
+  }
+  .loginText {
+    font-size: 1.172vw;
+  }
+  .loginForm {
+    margin-top: 2.056vw;
+  }
+  .formLabel {
+    margin-bottom: 0.694vw;
+    font-size: 0.781vw;
+  }
+  .formInput {
+    width: 12.344vw;
+    padding-left: 0.391vw;
+    font-size: 14px;
+  }
+  .errMessage {
+    font-size: 0.563vw;
+  }
+  .footer {
+    font-size: 0.547vw;
+  }
+  .mainPhotoSVG {
+    top: 3.5vw;
+    right: -45.188vw;
+  }
+  .submitBtn {
+    width: 12.654vw;
+    font-size: 0.977vw;
+  }
+  .bolidPixel {
+    width: 3.906vw;
+  }
+  .forgottPassword {
+    font-size: 0.625vw;
+  }
+  .logoPRzRT {
+    padding-top: 1.125vw;
+    margin-left: -1.012vw;
+    width: 15.625vw;
+  }
+}
+@media all and (max-width: 1280px) {
+  .backgroundSVG {
+    margin-top: -10vh;
+    margin-left: -1vh;
+  }
+  .mainPhotoSVG {
+    top: 14svw;
+  }
+}
+@media all and (max-width: 1024px) {
+  .contentsPlacing {
+    gap: unset;
+    /* position: relative; */
+    overflow: hidden;
+  }
+  .graphic {
+    top: 28vw;
+    width: 84.375vw;
+    overflow: unset;
+  }
+  .backgroundSVG {
+    width: 150vw;
+    margin-top: -13vh;
+    margin-left: -15vh;
+  }
+  .loginWrapper {
+    right: 50vw;
+    z-index: 100;
+    position: absolute;
+    /* margin-left: 20vw; */
+  }
+  .loginCredentials {
+    max-width: 43.457vw;
+    padding: 3.906vw 3.418vw;
+  }
+  .loginText {
+    font-size: 2.93vw;
+  }
+  .loginForm {
+    margin-top: 2.056vw;
+  }
+  .formLabel {
+    margin-bottom: 0.694vw;
+    font-size: 1.953vw;
+  }
+  .formInput {
+    width: 30.859vw;
+    padding-left: 0.977vw;
+    font-size: 12px;
+  }
+  .errMessage {
+    font-size: 1.406vw;
+  }
+  .footer {
+    font-size: 1.367vw;
+    color: #f2f2f2;
+  }
+  .mainPhotoSVG {
+    top: unset;
+    bottom: 0vh;
+    width: 120vw;
+  }
+  .submitBtn {
+    width: 30.859vw;
+    font-size: 2.441vw;
+  }
+  .bolidPixel {
+    width: 9.765vw;
+  }
+  .forgottPassword {
+    font-size: 1.563vw;
+  }
+  .logoPRzRT {
+    padding-top: unset;
+    margin-left: -2.531vw;
+    width: 39.063vw;
+  }
+}
+@media all and (max-width: 768px) {
+  .loginCredentials {
+    max-width: 57.943vw;
+    padding: 5.208vw 4.557vw;
+    margin-top: 5vh;
+  }
+  .loginWrapper {
+    right: 30vw;
+    top: 5vh;
+  }
+  .loginText {
+    font-size: 3.906vw;
+  }
+  .loginForm {
+    margin-top: 2.056vw;
+  }
+  .formLabel {
+    margin-bottom: 0.694vw;
+    font-size: 2.604vw;
+  }
+  .formInput {
+    width: 41.146vw;
+    padding-left: 1.302vw;
+    font-size: 12px;
+  }
+  .errMessage {
+    font-size: 1.875vw;
+  }
+  .footer {
+    font-size: 1.823vw;
+  }
+  .mainPhotoSVG {
+    top: 22vw;
+    right: -20.625vw;
+    width: 150vw;
+  }
+  .submitBtn {
+    width: 41.146vw;
+    font-size: 3.255vw;
+  }
+  .bolidPixel {
+    width: 13.02vw;
+  }
+  .forgottPassword {
+    font-size: 2.083vw;
+  }
+  .logoPRzRT {
+    padding-top: 0;
+    margin-left: -3.375vw;
+    width: 50.083vw;
+  }
+  .backgroundSVG {
+    width: 180vw;
+    margin-top: -10vh;
+    margin-left: -25vh;
+  }
+}
+@media all and (max-width: 600px) {
+  .graphic {
+    width: 90vw;
+    top: 22vw;
+  }
+  .backgroundSVG {
+    width: 210vw;
+  }
+  .mainPhotoSVG {
+    width: 180vw;
+    top: 30vw;
+    right: -40vw;
+  }
+}
+@media all and (max-width: 480px) {
+  .loginCredentials {
+    max-width: 62.5vw;
+    padding: 6.875vw 4.583vw;
+    margin-top: 5vh;
+  }
+  .loginWrapper {
+    right: 20vw;
+  }
+  .loginText {
+    font-size: 4.583vw;
+  }
+  .loginForm {
+    margin-top: 3.333vw;
+  }
+  .formLabel {
+    margin-bottom: 1.11vw;
+    font-size: 3.333vw;
+  }
+  .formInput {
+    width: 53.125vw;
+    padding-left: 1.702vw;
+    border-radius: 2vmin;
+    font-size: 12px;
+  }
+  .errMessage {
+    font-size: 2.917vw;
+  }
+  .footer {
+    font-size: 2.917vw;
+  }
+  .mainPhotoSVG {
+    top: 42vw;
+    right: -80.625vw;
+    width: 250vw;
+  }
+  .submitBtn {
+    width: 53.825vw;
+    font-size: 3.75vw;
+    border-radius: 2vmin;
+  }
+  .bolidPixel {
+    width: 20.833vw;
+  }
+  .forgottPassword {
+    font-size: 2.5vw;
+  }
+  .logoPRzRT {
+    width: 59.375vw;
+    margin-left: -8.375vw;
+  }
+  .backgroundSVG {
+    width: 300vw;
+  }
+}
+@media all and (max-width: 400px) {
+  .loginCredentials {
+    max-width: 75vw;
+    padding: 8.25vw 5.5vw;
+    margin-top: 5vh;
+  }
+  .loginWrapper {
+    right: 13vw;
+  }
+  .loginText {
+    font-size: 5.5vw;
+  }
+  .loginForm {
+    margin-top: 4vw;
+  }
+  .formLabel {
+    margin-bottom: 1.333vw;
+    font-size: 4vw;
+  }
+  .formInput {
+    width: 63.75vw;
+  }
+  .errMessage {
+    font-size: 3.5vw;
+  }
+  .footer {
+    font-size: 3.5vw;
+  }
+  .mainPhotoSVG {
+    top: 50vw;
+    right: -110.625vw;
+    width: 300vw;
+  }
+  .submitBtn {
+    width: 64.8vw;
+    font-size: 4.5vw;
+  }
+  .bolidPixel {
+    width: 20vw;
+  }
+  .forgottPassword {
+    font-size: 3vw;
+  }
+  .logoPRzRT {
+    width: 65.25vw;
+  }
+  .backgroundSVG {
+    width: 340vw;
+    margin-top: 0;
+    margin-left: -30vh;
+  }
+}
+@media all and (max-width: 375px) {
+  .loginCredentials {
+    max-width: 80vw;
+    padding: 8.8vw 5.867vw;
+    margin-top: 5vh;
+  }
+  .loginWrapper {
+    right: 9.5vw;
+  }
+  .loginText {
+    font-size: 5.867vw;
+  }
+  .loginForm {
+    margin-top: 4.267vw;
+  }
+  .formLabel {
+    margin-bottom: 1.421vw;
+    font-size: 4.267vw;
+  }
+  .formInput {
+    width: 68vw;
+  }
+  .errMessage {
+    font-size: 3.733vw;
+  }
+  .footer {
+    font-size: 3.733vw;
+  }
+  .mainPhotoSVG {
+    top: 60vw;
+  }
+  .submitBtn {
+    width: 69.4vw;
+    font-size: 4.8vw;
+  }
+  .bolidPixel {
+    width: 26.667vw;
+  }
+  .forgottPassword {
+    font-size: 3.2vw;
+  }
+  .logoPRzRT {
+    margin-left: -6.375vw;
+    width: 69.6vw;
+  }
+  .backgroundSVG {
+    margin-left: -25vh;
   }
 }
