@@ -28,7 +28,7 @@
 .btnLinks:hover {
   background-position: left;
 }
-.translated {
+.outlined .translated {
   transform: translate(-0.39vh, 0.26vw);
 }
 .outlined {
