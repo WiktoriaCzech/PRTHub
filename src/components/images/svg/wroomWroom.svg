@@ -1,0 +1,10 @@
+<svg width="95" height="21" viewBox="0 0 95 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="10" height="10.5" transform="matrix(0 1 1 0 0 0)" fill="#FF3C00" fill-opacity="0.7"/>
+<rect width="10" height="10.5" transform="matrix(0 1 1 0 10.5 10)" fill="#FF3C00" fill-opacity="0.7"/>
+<rect width="10" height="10.5" transform="matrix(0 1 1 0 21 0)" fill="#FF3C00" fill-opacity="0.7"/>
+<rect width="10" height="10.5" transform="matrix(0 1 1 0 31.5 10)" fill="#FF3C00" fill-opacity="0.7"/>
+<rect width="10" height="10.5" transform="matrix(0 1 1 0 42 0)" fill="#FF3C00" fill-opacity="0.7"/>
+<rect width="10" height="10.5" transform="matrix(0 1 1 0 52.5 10)" fill="#FF3C00" fill-opacity="0.7"/>
+<path d="M73.8022 10.3349H95.0001V20.6699H76.3132C74.9257 20.6699 73.7954 19.5396 73.7954 18.1521V10.3281L73.8022 10.3349Z" fill="#FF3C00" fill-opacity="0.7"/>
+<path d="M63 0H71.3519C72.7394 0 73.8697 1.13028 73.8697 2.51776V10.3418H63.0068V0.00676961L63 0Z" fill="#FF3C00" fill-opacity="0.7"/>
+</svg>

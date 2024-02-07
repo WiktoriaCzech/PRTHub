@@ -6,7 +6,7 @@
 .mainSiteWrapper {
   margin: 0 1.694vw;
   padding: 2.64vh 0;
-  height: 100vh;
+  min-height: 100vh;
   justify-content: space-around;
 }
 
@@ -145,15 +145,15 @@
 .timersWrapper {
   gap: 3.85vh;
   justify-content: flex-end;
-  /* margin-bottom: 2vh; */
+  margin-bottom: 1.8vh;
   margin-left: 0.88vh;
 }
 .timer {
-  width: 31.25vw;
+  width: 34.722vw;
   /* aspect-ratio: 45/8; */
   height: 7.701vh;
   background: unset;
-  border: 0.139vw solid #5bc1a1;
+  border: 0.1vw solid #5bc1a1;
   border-radius: 1.042vw;
   justify-content: center;
   align-items: center;
@@ -176,8 +176,10 @@
 .ant-statistic {
   display: flex;
 }
-.ant-statistic-title {
+.timersWrapper .ant-statistic-title {
   font-size: 1.389vw !important;
+}
+.ant-statistic-title {
   font-family: "Clash Display" !important;
   font-weight: 500 !important;
   color: #0e1d42 !important;
@@ -187,9 +189,11 @@
   align-items: center;
   margin-right: 1.389vw;
 }
+.timersWrapper .ant-statistic-content {
+  font-size: 1.806vw !important;
+}
 .ant-statistic-content {
   font-family: "Clash Display" !important;
-  font-size: 1.806vw !important;
   font-weight: 600;
   background: linear-gradient(to right, #0e1d42, #5bc1a1);
   -webkit-background-clip: text;
@@ -282,31 +286,163 @@
   align-items: center;
   cursor: pointer;
 }
+.simpleGraphic {
+  display: none;
+}
 
-/* ///////Media adjustments for 1920px///////// 
-440px -> 22.917vw
-25px -> 1.302vw
-5px -> 0.26vw
-1.44px -> 0.075vw
-545px -> 28.385vw
-15px -> 0.781vw
-14.4px -> 0.75vw
-26px  -> 1.354vw
-355px -> 18.49vw
-20px -> 1.042vw
-61px -> 3.177vw
-1.296px -> 0.068vw
-50px -> 2.604vw
-100px -> 5.208vw
-450px -> 23.438vw
-2px -> 0.104vw
-10px -> 0.521vw
-70px -> 3.646vw
-12px -> 0.625vw
-29px -> 1.51vw
-8px -> 0.417vw
-*/
-@media all and (min-width: 1500px) and (max-width: 1920px) {
+@media all and (max-width: 3840px) and (min-width: 2800px) {
+  .mainSiteWrapper {
+    margin: 0 0.859vw;
+  }
+  .telegramPhotoHolder {
+    border-radius: 0.814vw;
+    width: 17.188vw;
+  }
+  .calendarWrapper {
+    width: 21.289vw;
+    border-radius: 0.391vw;
+    border: 0.037vw solid #4f5b75;
+  }
+  .cleaningDuty {
+    font-size: 0.563vw;
+  }
+  .section {
+    font-size: 0.764vw;
+    padding: 0 0.13vw;
+  }
+  .calendar {
+    width: 13.867vw;
+    padding: 1.87vh 0.625vw;
+  }
+  .calendarGraphicPlacement {
+    width: 1.589vw;
+  }
+  .mainLinksBtn.section {
+    width: 11.094vw;
+    border: 0.034vw solid #5f6e90;
+    border-radius: 0.391vw;
+  }
+  .linkBtnPlacement {
+    width: 1.302vw;
+  }
+  .bolid360 {
+    margin-left: 2.604vw;
+  }
+  .v360-image-container,
+  .v360-viewport {
+    border-radius: 0.391vw;
+  }
+  .timer {
+    width: 14.063vw;
+    border: 0.052vw solid #5bc1a1;
+    border-radius: 0.391vw;
+  }
+  .timersWrapper .ant-statistic-title {
+    font-size: 0.521vw !important;
+    margin-right: 0.521vw;
+  }
+  .timersWrapper .ant-statistic-content {
+    font-size: 0.677vw !important;
+  }
+  .secretBtn {
+    border-radius: 0.26vw;
+    width: 1.823vw;
+    font-size: 0.313vw;
+  }
+  .ant-picker-body {
+    border-radius: 0.391vw !important;
+  }
+  .ant-picker-panel {
+    padding: 0 0.521vw;
+    border-radius: 0 0 0.391vw 0.391vw !important;
+  }
+  .calendarHeader {
+    padding: 0.391vw 0.521vw;
+  }
+  .changeMonthBtn {
+    width: 0.755vw;
+    height: 0.755vw;
+    border: 0.037vw solid #b3b3b3;
+    border-radius: 0.208vw !important;
+  }
+}
+@media all and (max-width: 2560px) and (min-width: 1921px) {
+  .mainSiteWrapper {
+    margin: 0 1.289vw;
+  }
+  .telegramPhotoHolder {
+    border-radius: 1.085vw;
+    width: 22.917vw;
+  }
+  .calendarWrapper {
+    width: 28.386vw;
+    border-radius: 0.586vw;
+    border: 0.056vw solid #4f5b75;
+  }
+  .cleaningDuty {
+    font-size: 0.75vw;
+  }
+  .section {
+    font-size: 1.146vw;
+    padding: 0 0.195vw;
+  }
+  .calendar {
+    width: 18.49vw;
+    padding: 1.87vh 0.938vw;
+  }
+  .calendarGraphicPlacement {
+    width: 2.383vw;
+  }
+  .mainLinksBtn.section {
+    width: 16.641vw;
+    border: 0.051vw solid #5f6e90;
+    border-radius: 0.586vw;
+  }
+  .linkBtnPlacement {
+    width: 1.953vw;
+  }
+  .bolid360 {
+    margin-left: 3.906vw;
+  }
+  .v360-image-container,
+  .v360-viewport {
+    border-radius: 0.586vw;
+  }
+  .timer {
+    width: 21.094vw;
+    border: 0.078vw solid #5bc1a1;
+    border-radius: 0.586vw;
+  }
+  .timersWrapper .ant-statistic-title {
+    font-size: 0.781vw !important;
+    margin-right: 0.781vw;
+  }
+  .timersWrapper .ant-statistic-content {
+    font-size: 1.016vw !important;
+  }
+  .secretBtn {
+    border-radius: 0.391vw;
+    width: 2.734vw;
+    font-size: 0.469vw;
+  }
+  .ant-picker-body {
+    border-radius: 0.586vw !important;
+  }
+  .ant-picker-panel {
+    padding: 0 0.781vw;
+    border-radius: 0 0 0.586vw 0.586vw !important;
+  }
+  .calendarHeader {
+    padding: 0.586vw 0.781vw;
+  }
+  .changeMonthBtn {
+    width: 1.133vw;
+    height: 1.133vw;
+    border: 0.056vw solid #b3b3b3;
+    border-radius: 0.313vw !important;
+  }
+}
+@media all and (max-width: 1920px) and (min-width: 1500px) {
   .mainSiteWrapper {
     margin: 0 1.736vw;
   }
@@ -360,11 +496,11 @@
   .translated {
     transform: translate(-0.89vh, 0.26vw);
   }
-  .ant-statistic-title {
+  .timersWrapper .ant-statistic-title {
     font-size: 1.042vw !important;
     margin-right: 1.042vw;
   }
-  .ant-statistic-content {
+  .timersWrapper .ant-statistic-content {
     font-size: 1.354vw !important;
   }
   .secretBtn {
@@ -389,82 +525,256 @@
     border-radius: 0.417vw !important;
   }
 }
-@media all and (max-width: 1024px) {
-  .mainSiteWrapper {
-    margin: 0 2.441vw;
-  }
-  .telegramPhotoHolder {
-    border-radius: 2.441vw;
-    width: 34.375vw;
-  }
-  .calendarWrapper {
-    width: 42.578vw;
-    border-radius: 1.465vw;
-    border: 0.141vw solid #4f5b75;
-  }
-  .cleaningDuty {
-    font-size: 1.125vw;
+@media all and (max-width: 1280px) {
+  .calendar {
+    min-width: 315px;
   }
   .section {
-    font-size: 1.042vw;
-    padding: 0 0.488vw;
+    padding: 0 1vw;
   }
-  .calendar {
-    width: 27.734vw;
-    padding: 1.87vh 1.563vw;
-  }
-  .calendarGraphicPlacement {
-    width: 5.957vw;
+  .calendarWrapper {
+    width: unset;
   }
   .mainLinksBtn.section {
-    width: 27.734vw;
-    border: 0.127vw solid #5f6e90;
-    border-radius: 1.465vw;
+    width: unset;
+    padding: 1.32vh 3.125vw;
   }
-  .linkBtnPlacement {
-    width: 4.883vw;
+  .upperHalf {
+    gap: 4vw;
+  }
+  .timersWrapper {
+    margin-left: 0.46vh;
   }
   .bolid360 {
-    margin-left: 9.766vw;
+    margin-left: 4vw;
   }
-  .v360-image-container,
-  .v360-viewport {
-    border-radius: 1.465vw;
+  .secretBtnPlacement {
+    display: none;
   }
   .timer {
-    width: 35.156vw;
-    border: 0.195vw solid #5bc1a1;
-    border-radius: 1.465vw;
+    width: 39.063vw;
   }
-  .translated {
-    transform: translate(-0.89vh, 0.488vw);
+  .timersWrapper .ant-statistic-title {
+    font-size: 1.563vw !important;
+    margin-right: 1.563vw;
   }
-  .ant-statistic-title {
-    font-size: 1.953vw !important;
-    margin-right: 1.953vw;
+  .timersWrapper .ant-statistic-content {
+    font-size: 2.031vw !important;
   }
-  .ant-statistic-content {
-    font-size: 0.488vw !important;
+}
+@media all and (max-width: 1024px) {
+  .cleaningDuty {
+    font-size: 1.237vw;
   }
-  .secretBtn {
-    border-radius: 0.977vw;
-    width: 6.836vw;
-    font-size: 1.172vw;
+  .section {
+    font-size: 1.848vw;
   }
-  .ant-picker-body {
-    border-radius: 1.465vw !important;
+  .cleaningDuty .section {
+    font-size: 2.1vw;
   }
-  .ant-picker-panel {
-    padding: 0 1.953vw;
-    border-radius: 0 0 1.465vw 1.465vw !important;
+  .timersWrapper .ant-statistic-title {
+    font-size: 1.553vw !important;
   }
-  .calendarHeader {
-    padding: 1.465vw 1.953vw;
+  .timersWrapper .ant-statistic-content {
+    font-size: 2.339vw !important;
+  }
+  .upperHalf {
+    flex-direction: row-reverse;
+  }
+  .telegramPhotoHolder {
+    display: none;
+  }
+  .bolid360 {
+    display: none;
+  }
+  .timer {
+    width: 43.828vw;
   }
   .changeMonthBtn {
     width: 2.832vw;
     height: 2.832vw;
     border: 0.141vw solid #b3b3b3;
     border-radius: 0.781vw !important;
+  }
+  .calendarGraphicPlacement {
+    width: 5.957vw;
+  }
+  .calendar {
+    padding: 1.87vh 1.922vw;
+  }
+}
+@media all and (max-width: 900px) {
+  .mainSiteWrapper {
+    gap: 4vh;
+  }
+  .upperHalf {
+    order: 2;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+  }
+  .calendarWrapper {
+    flex-direction: column-reverse;
+    width: 43.828vw;
+    border-radius: 1.563vw;
+  }
+  .calendar {
+    width: unset;
+  }
+  .cleaningDuty {
+    margin: 2vh 0;
+    flex-direction: row;
+    font-size: 1.667vw;
+  }
+  .cleaningDuty .section {
+    margin-top: 0;
+    font-size: 2.8vw;
+  }
+  .links,
+  .bottomHalf,
+  .upperHalf {
+    flex-direction: column;
+  }
+  .timersWrapper {
+    gap: 2.5vh;
+  }
+  .links {
+    order: 1;
+    gap: 2.5vh;
+    margin-top: 2.64vh;
+  }
+  .bottomHalf {
+    order: 3;
+  }
+  .mainLinksBtn.section {
+    width: 43.828vw;
+    font-size: 2.4vw;
+    border-radius: 1.563vw;
+  }
+  .timer {
+    border-radius: 1.563vw;
+  }
+  .linkBtnPlacement {
+    width: 6vw;
+  }
+  .translated {
+    transform: translate(-0.49vh, 0.62vw);
+  }
+  .timersWrapper .ant-statistic-title {
+    font-size: 1.8vw !important;
+  }
+  .simpleGraphic {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: end;
+    margin-top: 1vh;
+  }
+  .wroomEffect {
+    margin-bottom: 3px;
+  }
+}
+@media all and (max-width: 768px) {
+  .cleaningDuty {
+    font-size: 2.193vw;
+  }
+  .section {
+    font-size: 3.2vw;
+    padding: 0 3vw;
+  }
+  .cleaningDuty .section {
+    font-size: 3.2vw;
+  }
+  .timersWrapper .ant-statistic-title {
+    font-size: 2.404vw !important;
+    margin-right: 2.404vw;
+  }
+  .timersWrapper .ant-statistic-content {
+    font-size: 3.185vw !important;
+  }
+  .timer {
+    width: 60.437vw;
+    border-radius: 1.953vw;
+  }
+  .linkBtnPlacement {
+    width: 7vw;
+  }
+  .changeMonthBtn {
+    width: 3.776vw;
+    height: 3.776vw;
+    border: 0.188vw solid #b3b3b3;
+    border-radius: 1.042vw !important;
+  }
+  .calendarWrapper {
+    width: 60.437vw;
+    border-radius: 1.953vw;
+  }
+  .mainLinksBtn.section {
+    width: 60.437vw;
+    font-size: 3.2vw;
+    border-radius: 1.953vw;
+  }
+  .calendarGraphicPlacement {
+    width: 9.043vw;
+  }
+  .calendar {
+    padding: 2.563vw 2.563vw;
+  }
+}
+@media all and (max-width: 524px) {
+  .cleaningDuty {
+    font-size: 3.214vw;
+  }
+  .section {
+    font-size: 4.69vw;
+    padding: 0 4.397vw;
+  }
+  .cleaningDuty .section {
+    font-size: 4.69vw;
+  }
+  .timersWrapper .ant-statistic-title {
+    font-size: 3.523vw !important;
+    margin-right: 3.523vw;
+  }
+  .timersWrapper .ant-statistic-content {
+    font-size: 4.668vw !important;
+  }
+  .timer {
+    width: 88.579vw;
+    border-radius: 2.863vw;
+  }
+  .linkBtnPlacement {
+    width: 10.26vw;
+  }
+  .changeMonthBtn {
+    width: 5.534vw;
+    height: 5.534vw;
+    border: 0.276vw solid #b3b3b3;
+    border-radius: 1.527vw !important;
+  }
+  .calendarWrapper {
+    width: 88.579vw;
+    border-radius: 2.863vw;
+  }
+  .mainLinksBtn.section {
+    width: 88.579vw;
+    font-size: 6.874vw;
+    border-radius: 2.863vw;
+  }
+  .calendarGraphicPlacement {
+    width: 13.254vw;
+  }
+  .calendar {
+    padding: 3.756vw 3.756vw;
+  }
+  .simpleGraphicBolid {
+    width: 115px;
+    aspect-ratio: 2/1;
+  }
+  .links {
+    margin-top: 70px;
+  }
+  .upperHalf,
+  .bottomHalf {
+    z-index: 10;
   }
 }

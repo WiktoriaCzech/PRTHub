@@ -3,19 +3,21 @@ import { Statistic, Col, Card, Calendar, Row } from "antd";
 import ThreeSixty from "react-360-view";
 
 import "./CentralPanel.css";
+import BolidPixel from "../images/bolidPixelSmall.png";
 
 import { ReactComponent as ArrowR } from "../images/svg/arrowRight.svg";
 import { ReactComponent as ArrowL } from "../images/svg/arrowLeft.svg";
 import { ReactComponent as LinkBtnGraphic } from "../images/svg/linkBtnGraphic.svg";
 import { ReactComponent as CalendarGraphic } from "../images/svg/calendarGraphic.svg";
+import { ReactComponent as WroomWroom } from "../images/svg/wroomWroom.svg";
 
 const { Countdown } = Statistic;
 
 function CentralPanel() {
   const deadlinesArray = [
-    { id: 0, deadline: new Date(`2024-08-14`), fs: "FSG" },
-    { id: 1, deadline: new Date(`2024-07-18`), fs: "FSAA" },
-    { id: 2, deadline: new Date(`2024-08-28`), fs: "FSCz" },
+    { id: 0, deadline: new Date(`2024-06-21`), fs: "FSEaster" },
+    { id: 2, deadline: new Date(`2024-08-05`), fs: "FSCz" },
+    { id: 1, deadline: new Date(`2024-08-20`), fs: "FSAA" },
   ];
 
   //calendar
@@ -90,6 +92,7 @@ function CentralPanel() {
           <div className="calendar">
             <CalendarGraphic className="calendarGraphicPlacement" />
             <CalendarGraphic className="calendarGraphicPlacement mirrored" />
+
             <Calendar
               fullscreen={false}
               headerRender={({ value, onChange }) => {
@@ -164,6 +167,14 @@ function CentralPanel() {
             fileName="PMT04_{index}.png?aaaa"
             spinReverse
           />
+        </div>
+        <div className="simpleGraphic">
+          <img
+            src={BolidPixel}
+            alt="bolidPixel"
+            className="simpleGraphicBolid"
+          />
+          <WroomWroom className="wroomEffect" />
         </div>
       </div>
       <div className="secretBtnPlacement">
