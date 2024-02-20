@@ -6,6 +6,9 @@ const PostReq = async ({ data, setPostResponse, setError, endpoint }) => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Accept: "application/json",
+          "Access-Control-Allow-Origin": process.env.REACT_APP_DOMAIN_ADDRESS,
+          // "Authorization" : `Bearer ${localStorage.token}`,
         },
         body: JSON.stringify(data),
       }

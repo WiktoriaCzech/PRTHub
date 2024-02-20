@@ -72,6 +72,7 @@ function OffersPanel() {
         values.country.charAt(0).toUpperCase() + values.country.slice(1);
       values.city = values.city.charAt(0).toUpperCase() + values.city.slice(1);
 
+      //TODO: Instead of console.log change to POST req that receives pdf. Enable automatic download
       console.log(JSON.stringify(values, null, 2));
     },
   });
@@ -160,7 +161,7 @@ function OffersPanel() {
         };
         // fileDataToServer = element.fileList[0].originFileObj;
         productNamesArr[i].screen = fileDataToServer;
-        // console.log(JSON.stringify(fileDataToServer));
+        //console.log(JSON.stringify(fileDataToServer));
         i++;
       } else {
         i++;
