@@ -1,5 +1,10 @@
 .navbar-option {
   min-height: 100vh;
+  position: sticky;
+  top: 0;
+}
+.position-unset {
+  position: unset;
 }
 [data-theme="dark"],
 .navbar-option {

@@ -13,9 +13,11 @@ function NavbarBody() {
   const menuItemList = [
     { id: 1, title: "Strona główna", link: "home" },
     { id: 2, title: "Ważne linki", link: "links" },
-    { id: 3, title: "Generator ofert", link: "offerGen" },
-    { id: 4, title: "Stopki e-mail", link: "footerGen" },
-    { id: 5, title: "Licencje", link: "licenses" },
+    { id: 3, title: "Wydarzenia", link: "events" },
+    { id: 4, title: "Generator ofert", link: "offerGen" },
+    { id: 5, title: "Stopki e-mail", link: "footerGen" },
+    { id: 6, title: "Zwolnienia", link: "absence" },
+    { id: 7, title: "Licencje", link: "licenses" },
   ];
   const renderIcon = (key) => {
     if (selectedItem === key) {

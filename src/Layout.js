@@ -9,6 +9,7 @@ import FooterPanel from "./components/footerGenPanel/FooterPanel";
 import OffersPanel from "./components/offersPanel/OffersPanel";
 import CertificatePanel from "./components/licensesPanel/CertificatePanel";
 import ShortcutsPanel from "./components/shortcutsPanel/ShortcutsPanel";
+import EventsPanel from "./components/eventsPanel/EventsPanel";
 
 const { Content } = Layout;
 
@@ -25,8 +26,10 @@ function BaseLayout() {
               <Route path="/" element={<Navigate replace to="/v1/home" />} />
               <Route path="/home" element={<CentralPanel />} />
               <Route path="/offerGen" element={<OffersPanel />} />
+              <Route path="/events" element={<EventsPanel />} />
               <Route path="/footerGen" element={<FooterPanel />} />
               <Route path="/licenses" element={<CertificatePanel />} />
+              <Route path="/absence" element={<ShortcutsPanel />} />
               <Route path="/links" element={<ShortcutsPanel />} />
             </Routes>
           </div>

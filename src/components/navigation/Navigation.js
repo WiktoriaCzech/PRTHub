@@ -40,7 +40,12 @@ const Navigation = () => {
 
   //First half is responsible for mobile view, change according to Figma guidelines
   return (
-    <div className="navbar-option" id="change-navi-bg">
+    <div
+      className={
+        navbarOption ? "navbar-option position-unset" : "navbar-option"
+      }
+      id="change-navi-bg"
+    >
       {navbarOption ? (
         <>
           <Button className="barsMenu" type="primary" onClick={showSidebar}>
