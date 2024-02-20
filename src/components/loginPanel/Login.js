@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
@@ -10,34 +10,12 @@ import { ReactComponent as Logo } from "../images/svg/logoPRzRT.svg";
 import { ReactComponent as BackgroundLong } from "../images/svg/backgroundLong.svg";
 import { ReactComponent as MainPhoto } from "../images/svg/mainPhoto.svg";
 
+import PostReq from "../../fetchReq/POST";
+
 function Login() {
   let navigate = useNavigate();
-  const [loginError, setLoginError] = useState();
-
-  //TODO: fetch req
-  const sendLoginData = async (data) => {
-    try {
-      const response = await fetch(
-        process.env.REACT_APP_DOMAIN_ADDRESS + "/v1/", //TODO: check if workee
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      );
-
-      const body = await response.json();
-      if (body.success) {
-        navigate("/home");
-      } else {
-        setLoginError(true);
-      }
-    } catch (error) {
-      console.log("There was an issue with login req: ", error);
-    }
-  };
+  const [loginError, setLoginError] = useState(false);
+  const [response, setResponse] = useState({});
 
   const formik = useFormik({
     initialValues: {
@@ -51,12 +29,22 @@ function Login() {
       password: Yup.string().required("To pole jest wymagane"),
     }),
     onSubmit: (values) => {
-      console.log(values);
-      //setLoginData(values);
-
-      //sendLoginData(values);
+      //console.log(values);
+      PostReq({
+        data: values,
+        setPostResponse: setResponse,
+        setError: setLoginError,
+        endpoint: "user/getUserInfo",
+      });
     },
   });
+
+  useEffect(() => {
+    if (loginError && response && response.success) {
+      navigate("/home");
+    }
+  }, [loginError, response]);
+
   return (
     <div className="siteWrapper">
       <div className="contentsPlacing">
@@ -66,6 +54,13 @@ function Login() {
           </div>
           <div className="loginCredentials">
             <span className="loginText textLoginSite">Zaloguj się</span>
+            {loginError && (
+              <div className="fetchFailedWrapper">
+                <div className="fetchFailedMessage">
+                  Nieprawidłowy e-mail i/lub hasło
+                </div>
+              </div>
+            )}
             <form
               className="loginForm"
               onSubmit={formik.handleSubmit}
