@@ -164,7 +164,7 @@ function CentralPanel() {
           <ThreeSixty
             amount={36}
             imagePath="https://przracing.pl/uploads/react360/"
-            fileName="PMT04_{index}.png?aaaa"
+            fileName="PMT04_{index}.png?"
             spinReverse
           />
         </div>
