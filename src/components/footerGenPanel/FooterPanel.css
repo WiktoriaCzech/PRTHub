@@ -142,6 +142,8 @@
   border-radius: 0.694vw;
   font-family: "Barlow";
   font-size: 0.972vw;
+  cursor: pointer;
+  z-index: 1000;
 }
 .goBackToForm:hover {
   color: #0e1d42 !important;

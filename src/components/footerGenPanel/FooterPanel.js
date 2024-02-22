@@ -47,7 +47,7 @@ function FooterPanel() {
     initialValues: {
       name: "",
       surname: "",
-      section: "",
+      position: "",
       email: "",
       phone_number: "",
       photo_link: "",
@@ -59,7 +59,7 @@ function FooterPanel() {
       surname: Yup.string()
         .max(20, "Max 20 znaków")
         .required("To pole jest wymagane"),
-      section: Yup.string()
+      position: Yup.string()
         .max(50, "Max 50 znaków")
         .required("To pole jest wymagane"),
       email: Yup.string()
@@ -251,16 +251,18 @@ function FooterPanel() {
                   <br />
                 </span>
 
-                <Form.Item label="Stanowisko:" name="section" required={true}>
+                <Form.Item label="Stanowisko:" name="position" required={true}>
                   <div className="section-with-response">
                     <Input
-                      name="section"
+                      name="position"
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      value={formik.values.section}
+                      value={formik.values.position}
                     />
-                    {formik.touched.section && formik.errors.section ? (
-                      <div className="err-message">{formik.errors.section}</div>
+                    {formik.touched.position && formik.errors.position ? (
+                      <div className="err-message">
+                        {formik.errors.position}
+                      </div>
                     ) : null}
                   </div>
                 </Form.Item>
