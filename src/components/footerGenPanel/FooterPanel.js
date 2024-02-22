@@ -43,6 +43,24 @@ function FooterPanel() {
   const phoneRegExp =
     /(?:(?:(?:\+|00)?48)|(?:\(\+?48\)))?(?:1[2-8]|2[2-69]|3[2-49]|4[1-8]|5[0-9]|6[0-35-9]|[7-8][1-9]|9[145])\d{7}/;
 
+  const validationSchema = Yup.object({
+    name: Yup.string()
+      .max(15, "Max 15 znaków")
+      .required("To pole jest wymagane"),
+    surname: Yup.string()
+      .max(20, "Max 20 znaków")
+      .required("To pole jest wymagane"),
+    position: Yup.string()
+      .max(50, "Max 50 znaków")
+      .required("To pole jest wymagane"),
+    email: Yup.string()
+      .email("Adress email jest niepoprawny")
+      .required("To pole jest wymagane"),
+    phone_number: Yup.string()
+      .matches(phoneRegExp, "Numer telefonu jest niepoprawny")
+      .required("To pole jest wymagane"),
+  });
+
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -52,26 +70,29 @@ function FooterPanel() {
       phone_number: "",
       photo_link: "",
     },
-    validationSchema: Yup.object({
-      name: Yup.string()
-        .max(15, "Max 15 znaków")
-        .required("To pole jest wymagane"),
-      surname: Yup.string()
-        .max(20, "Max 20 znaków")
-        .required("To pole jest wymagane"),
-      position: Yup.string()
-        .max(50, "Max 50 znaków")
-        .required("To pole jest wymagane"),
-      email: Yup.string()
-        .email("Adress email jest niepoprawny")
-        .required("To pole jest wymagane"),
-      phone_number: Yup.string()
-        .matches(phoneRegExp, "Numer telefonu jest niepoprawny")
-        .required("To pole jest wymagane"),
-      photo_link: Yup.string().required("To pole jest wymagane"),
-    }),
+    validationSchema: validationSchema,
     onSubmit: (values) => {
-      setSaveData(values);
+      // Check if there's an uploaded file
+      if (fileList.length > 0) {
+        const formData = new FormData();
+        formData.append("name", values.name);
+        formData.append("surname", values.surname);
+        formData.append("position", values.position);
+        formData.append("email", values.email);
+        formData.append("phone_number", values.phone_number);
+
+        // Assuming fileList[0] exists and contains the file to upload
+        if (fileList.length > 0) {
+          formData.append("photo_link", fileList[0].originFileObj);
+        }
+        //console.log(formData);
+        setSaveData(formData);
+      } else {
+        // Handle the case where no file is uploaded but a URL might be provided
+        //console.log("Submitting form without a file:", values);
+        setSaveData(values);
+      }
+
       setShowFooter(true);
     },
   });
@@ -295,9 +316,10 @@ function FooterPanel() {
                       className="setGapAfterInput"
                     />
                     <Upload
-                      name="item.screen"
+                      name="photo_link"
                       maxCount={1}
                       listType="picture"
+                      beforeUpload={() => false} // Prevent automatic upload
                       onChange={handleUploadChange}
                       fileList={fileList}
                       disabled={isUploadDisabled}
