@@ -95,6 +95,7 @@
   transition: unset !important;
   margin: 6px;
   padding: 0;
+  z-index: 1000;
 }
 .barsMenu .iconMobile {
   padding: 0;

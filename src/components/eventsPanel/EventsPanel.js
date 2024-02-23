@@ -41,7 +41,25 @@ function EventsPanel() {
         ],
       },
       {
-        department: "Silnik",
+        department: "Szefy",
+        meetingTimes: [
+          {
+            day: "Poniedziałek",
+            time: "18:00",
+          },
+        ],
+      },
+      {
+        department: "Napęd",
+        meetingTimes: [
+          {
+            day: "Wtorek",
+            time: "20:30",
+          },
+        ],
+      },
+      {
+        department: "KN + Marketing",
         meetingTimes: [
           {
             day: "Wtorek",
@@ -49,12 +67,13 @@ function EventsPanel() {
           },
         ],
       },
+
       {
         department: "Zawieszenie",
         meetingTimes: [
           {
-            day: "Środa",
-            time: "12:00",
+            day: "Wtorek",
+            time: "18:00",
           },
         ],
       },
@@ -63,7 +82,16 @@ function EventsPanel() {
         meetingTimes: [
           {
             day: "Środa",
-            time: "18:00",
+            time: "19:30",
+          },
+        ],
+      },
+      {
+        department: "Areodynamika",
+        meetingTimes: [
+          {
+            day: "Środa",
+            time: "19:00",
           },
         ],
       },
@@ -90,7 +118,7 @@ function EventsPanel() {
     // Generate time slots from 12:00 to 22:00
     const generateTimeSlots = () => {
       const slots = [];
-      for (let hour = 12; hour <= 22; hour += 0.5) {
+      for (let hour = 15; hour <= 22; hour += 0.5) {
         const time = `${Math.floor(hour).toString().padStart(2, "0")}:${
           hour % 1 === 0 ? "00" : "30"
         }`;
@@ -114,19 +142,13 @@ function EventsPanel() {
     };
 
     return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <table style={{ textAlign: "center", borderCollapse: "collapse" }}>
+      <div className="generateTableWrapper">
+        <table className="generatedTable">
           <thead>
             <tr>
               <th />
               {daysOfWeek.map((day) => (
-                <th key={day} style={{ padding: "10px" }}>
+                <th key={day} className="dayOfWeek">
                   {day}
                 </th>
               ))}
@@ -137,7 +159,7 @@ function EventsPanel() {
               <tr key={slot}>
                 <td>{slot}</td>
                 {daysOfWeek.map((day) => (
-                  <td key={day + slot} style={{ padding: "5px" }}>
+                  <td key={day + slot} className="tableContents">
                     {findMeeting(day, slot)}
                   </td> // Display the department name if there's a meeting
                 ))}
@@ -172,7 +194,7 @@ function EventsPanel() {
         <div className="timetable">
           <span className="tableHeader">Najbliższe wydarzenie:</span>
           <div className="tableContentsWrapper">
-            <div className="embedded-file">
+            <div className="embedded-file nearestEvent">
               <span className="eventTitle">{nearestMeeting.eventName}</span>
               <Divider />
               <div className="dateAndTimeWrapper">

@@ -163,7 +163,7 @@ function CentralPanel() {
         <div className="bolid360">
           <ThreeSixty
             amount={36}
-            imagePath="https://przracing.pl/uploads/react360/"
+            imagePath="http://przracing.pl/uploads/react360/"
             fileName="PMT04_{index}.png?"
             spinReverse
           />

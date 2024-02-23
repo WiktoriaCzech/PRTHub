@@ -31,12 +31,12 @@
   display: flex;
   flex-direction: row;
   flex: 1;
-  gap: 80px;
+  gap: 5.556vw;
 }
 .todaysDate {
   font-family: "Clash Display";
   font-weight: 500;
-  font-size: 26px;
+  font-size: 1.806vw;
   color: #0e1d42;
 }
 .timetable {
@@ -50,8 +50,8 @@
   border-radius: 1.042vw;
   display: flex;
   position: relative;
-  margin-top: 20px;
-  margin-bottom: 80px;
+  margin-top: 2.2vh;
+  margin-bottom: 8.8vh;
 }
 .schedule {
   flex: 1.7;
@@ -62,30 +62,34 @@
   align-items: center; /* Center children horizontally */
   /* justify-content: center;  */
   text-align: center;
-  padding: 20px;
+  padding: 1.389vw;
   /* flex: 1; */
   margin: 1.528vw;
   border: 0.139vw solid #5bc1a1;
   border-radius: 1.042vw;
   background-color: #fff;
 }
+.nearestEvent {
+  max-width: min-content;
+}
 .row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  gap: 30px;
 }
 .dateAndTimeWrapper {
   width: 100%;
-  padding: 0 20px;
-  gap: 30px;
+  padding: 0 1.389vw;
+  gap: 2.083vw;
   display: flex;
   flex-direction: column;
 }
 .eventTitle {
   font-family: "Clash Display";
   font-weight: 500;
-  font-size: 20px;
+  font-size: 1.389vw;
   color: #0e1d42;
   text-align: center;
 }
@@ -97,6 +101,461 @@
 .bold {
   font-family: "Clash Display";
   font-weight: 500;
-  font-size: 18px;
+  font-size: 1.25vw;
   color: #0e1d42;
+}
+.generateTableWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.generatedTable {
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.dayOfWeek {
+  padding: 0.694vw;
+  font-size: 1.111vw;
+}
+.tableContents {
+  font-size: 1.111vw;
+  padding: 0.347vw;
+}
+@media all and (max-width: 3840px) and (min-width: 2561px) {
+  .eventsWrapper {
+    margin: 0 1.525rem;
+    padding: 8vh 0 2.64vh 0;
+  }
+  .eventsHeader {
+    font-size: 0.625vw;
+  }
+  .eventsDescription,
+  .dateInfo,
+  .tableHeader {
+    font-size: 0.469vw;
+  }
+  .timetablesWrapper {
+    gap: 2.083vw;
+  }
+  .todaysDate {
+    font-size: 0.677vw;
+  }
+  .tableContentsWrapper {
+    border-radius: 0.391vw;
+  }
+  .embedded-file {
+    margin: 0.573vw;
+    border: 0.052vw solid #5bc1a1;
+    border-radius: 0.391vw;
+    padding: 0.521vw;
+  }
+  .dateAndTimeWrapper {
+    padding: 0 0.521vw;
+    gap: 0.781vw;
+  }
+  .eventTitle {
+    font-size: 0.521vw;
+  }
+  .textInNearestEvent,
+  .bold {
+    font-size: 0.469vw;
+  }
+  .dayOfWeek {
+    padding: 0.26vw;
+    font-size: 0.417vw;
+  }
+  .tableContents {
+    font-size: 0.417vw;
+    padding: 0.13vw;
+  }
+  .timetable {
+    flex: unset;
+  }
+}
+@media all and (max-width: 2560px) and (min-width: 1921px) {
+  .eventsHeader {
+    font-size: 0.938vw;
+  }
+  .eventsDescription,
+  .dateInfo,
+  .tableHeader {
+    font-size: 0.703vw;
+  }
+  .timetablesWrapper {
+    gap: 3.125vw;
+  }
+  .todaysDate {
+    font-size: 1.016vw;
+  }
+  .tableContentsWrapper {
+    border-radius: 0.586vw;
+  }
+  .embedded-file {
+    margin: 0.859vw;
+    border: 0.078vw solid #5bc1a1;
+    border-radius: 0.586vw;
+    padding: 0.781vw;
+  }
+  .dateAndTimeWrapper {
+    gap: 1.172vw;
+    padding: 0 0.781vw;
+  }
+  .eventTitle {
+    font-size: 0.781vw;
+  }
+  .textInNearestEvent,
+  .bold {
+    font-size: 0.703vw;
+  }
+  .dayOfWeek {
+    padding: 0.391vw;
+    font-size: 0.625vw;
+  }
+  .tableContents {
+    font-size: 0.625vw;
+    padding: 0.195vw;
+  }
+  .timetable {
+    flex: unset;
+  }
+}
+@media all and (max-width: 1920px) and (min-width: 1600px) {
+  .eventsHeader {
+    font-size: 1.25vw;
+  }
+  .eventsDescription,
+  .dateInfo,
+  .tableHeader {
+    font-size: 0.938vw;
+  }
+  .timetablesWrapper {
+    gap: 4.167vw;
+  }
+  .todaysDate {
+    font-size: 1.354vw;
+  }
+  .tableContentsWrapper {
+    border-radius: 0.781vw;
+  }
+  .embedded-file {
+    margin: 1.146vw;
+    border: 0.104vw solid #5bc1a1;
+    border-radius: 0.781vw;
+    padding: 1.042vw;
+  }
+  .dateAndTimeWrapper {
+    padding: 0 1.042vw;
+    gap: 1.563vw;
+  }
+  .eventTitle {
+    font-size: 1.042vw;
+  }
+  .textInNearestEvent,
+  .bold {
+    font-size: 0.938vw;
+  }
+  .dayOfWeek {
+    padding: 0.521vw;
+    font-size: 0.833vw;
+  }
+  .tableContents {
+    font-size: 0.833vw;
+    padding: 0.26vw;
+  }
+  .timetable {
+    flex: unset;
+  }
+}
+@media all and (max-width: 1280px) {
+  .eventsHeader {
+    font-size: 1.875vw;
+  }
+  .eventsDescription,
+  .dateInfo,
+  .tableHeader {
+    font-size: 1.406vw;
+  }
+  .timetablesWrapper {
+    flex-direction: column;
+    gap: 4vw;
+  }
+  .todaysDate {
+    font-size: 2.031vw;
+  }
+  .tableContentsWrapper {
+    border-radius: 1.172vw;
+    max-width: min-content;
+    margin-bottom: unset;
+  }
+  .embedded-file {
+    margin: 1.719vw;
+    border: 0.156vw solid #5bc1a1;
+    border-radius: 1.172vw;
+    padding: 1.563vw;
+  }
+  .dateAndTimeWrapper {
+    padding: 0 1.563vw;
+    gap: 2.344vw;
+  }
+  .eventTitle {
+    font-size: 1.563vw;
+  }
+  .textInNearestEvent,
+  .bold {
+    font-size: 1.406vw;
+  }
+  .dayOfWeek {
+    padding: 0.781vw;
+    font-size: 1.25vw;
+  }
+  .tableContents {
+    font-size: 1.25vw;
+    padding: 0.391vw;
+  }
+}
+@media all and (max-width: 1024px) {
+  .eventsWrapper {
+    padding: 50px 0 4.64vh 0;
+  }
+  .eventsHeader {
+    font-size: 2.344vw;
+  }
+  .eventsDescription,
+  .dateInfo,
+  .tableHeader {
+    font-size: 1.758vw;
+  }
+
+  .todaysDate {
+    font-size: 2.539vw;
+  }
+  .tableContentsWrapper {
+    border-radius: 1.465vw;
+    display: block;
+  }
+  .embedded-file {
+    border: 0.195vw solid #5bc1a1;
+    border-radius: 1.465vw;
+    min-width: min-content;
+  }
+  .schedule {
+    min-width: min-content;
+  }
+  .dateAndTimeWrapper {
+    padding: 0 1.953vw;
+    gap: 2.93vw;
+  }
+  .eventTitle {
+    font-size: 1.953vw;
+  }
+  .textInNearestEvent,
+  .bold {
+    font-size: 1.758vw;
+  }
+  .dayOfWeek {
+    font-size: 1.563vw;
+  }
+  .tableContents {
+    font-size: 1.563vw;
+  }
+  .todaysDate {
+    margin-bottom: 3vh;
+  }
+}
+@media all and (max-width: 900px) {
+  .eventsWrapper {
+    padding: 30px 0 4.64vh 60px;
+  }
+}
+@media all and (max-width: 768px) {
+  .eventsWrapper {
+    margin: 0;
+    padding: 30px 0 4.64vh 0;
+    z-index: 1;
+    overflow-x: auto;
+  }
+  .eventsHeader {
+    margin-left: 80px;
+    font-size: 3.125vw;
+  }
+  .eventsDescription {
+    margin-left: 80px;
+  }
+  .eventsDescription,
+  .dateInfo,
+  .tableHeader {
+    font-size: 2.344vw;
+  }
+  .dateWrapper,
+  .timetablesWrapper {
+    margin: 0 10px;
+  }
+  .todaysDate {
+    font-size: 3.385vw;
+  }
+  .tableContentsWrapper {
+    border-radius: 1.953vw;
+  }
+  .embedded-file {
+    margin: 2.865vw;
+    border: 0.26vw solid #5bc1a1;
+    border-radius: 1.953vw;
+    padding: 2.604vw;
+  }
+  .dateAndTimeWrapper {
+    gap: 3.906vw;
+    padding: 0 2.604vw;
+  }
+  .eventTitle {
+    font-size: 2.604vw;
+  }
+  .textInNearestEvent,
+  .bold {
+    font-size: 2.344vw;
+  }
+  .dayOfWeek {
+    /* padding: 1.302vw; */
+    font-size: 2.083vw;
+  }
+  .tableContents {
+    font-size: 2.083vw;
+    /* padding: 0.651vw; */
+  }
+}
+@media all and (max-width: 660px) {
+  .embedded-file {
+    padding: 1.389vw;
+    margin: 2.2vw;
+    min-height: min-content;
+  }
+  .tableContentsWrapper {
+    flex: unset;
+  }
+}
+@media all and (max-width: 480px) {
+  .eventsWrapper {
+    padding: 30px 0 2.64vh 0;
+  }
+  .eventsHeader {
+    font-size: 5.167vw;
+  }
+  .eventsDescription,
+  .dateInfo,
+  .tableHeader {
+    font-size: 3.833vw;
+  }
+  .todaysDate {
+    font-size: 5.417vw;
+  }
+  .tableContentsWrapper {
+    border-radius: 3.125vw;
+  }
+  .embedded-file {
+    margin: 3.083vw;
+    border: 0.417vw solid #5bc1a1;
+    border-radius: 3.125vw;
+    padding: 3.167vw;
+  }
+  .dateAndTimeWrapper {
+    gap: 6.25vw;
+    padding: 0 4.167vw;
+  }
+  .eventTitle {
+    font-size: 4.167vw;
+  }
+  .textInNearestEvent,
+  .bold {
+    font-size: 3.75vw;
+  }
+  .dayOfWeek {
+    padding: 2.083vw;
+    font-size: 3.333vw;
+  }
+  .tableContents {
+    font-size: 3.333vw;
+    padding: 1.042vw;
+  }
+}
+@media all and (max-width: 400px) {
+  .eventsHeader {
+    font-size: 5vw;
+  }
+  .eventsDescription,
+  .dateInfo,
+  .tableHeader {
+    font-size: 3.5vw;
+  }
+  .todaysDate {
+    font-size: 6.5vw;
+  }
+  .tableContentsWrapper {
+    border-radius: 3.75vw;
+  }
+  .embedded-file {
+    margin: 4.5vw;
+    border: 0.5vw solid #5bc1a1;
+    border-radius: 3.75vw;
+    padding: 4vw;
+  }
+  .dateAndTimeWrapper {
+    padding: 0 5vw;
+    gap: 7.5vw;
+  }
+  .eventTitle {
+    font-size: 5vw;
+  }
+  .textInNearestEvent,
+  .bold {
+    font-size: 4.5vw;
+  }
+  .dayOfWeek {
+    padding: 2.5vw;
+    font-size: 4vw;
+  }
+  .tableContents {
+    font-size: 4vw;
+    padding: 1.25vw;
+  }
+}
+@media all and (max-width: 375px) {
+  .eventsHeader {
+    font-size: 5.267vw;
+  }
+  .eventsDescription,
+  .dateInfo,
+  .tableHeader {
+    font-size: 4.433vw;
+  }
+  .todaysDate {
+    font-size: 6.933vw;
+  }
+  .tableContentsWrapper {
+    border-radius: 4vw;
+  }
+  .embedded-file {
+    margin: 4.867vw;
+    border: 0.533vw solid #5bc1a1;
+    border-radius: 4vw;
+    padding: 4.333vw;
+  }
+  .dateAndTimeWrapper {
+    gap: 8vw;
+    padding: 0 5.333vw;
+  }
+  .eventTitle {
+    font-size: 5.333vw;
+  }
+  .textInNearestEvent,
+  .bold {
+    font-size: 4.8vw;
+  }
+  .dayOfWeek {
+    padding: 2.667vw;
+    font-size: 4.267vw;
+  }
+  .tableContents {
+    font-size: 4.267vw;
+    padding: 1.333vw;
+  }
 }
